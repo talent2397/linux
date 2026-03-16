@@ -9,4 +9,5 @@ void page_time_setting1(void);
 void page_time_setting2(void);
 void page_time_setting3(void);
 void page_wifi_setting(void);
+void page_tomato_setting(void);
 #endif

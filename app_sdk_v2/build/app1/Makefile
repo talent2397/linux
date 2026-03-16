@@ -287,6 +287,33 @@ ui/page_time_setting.c.s:
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_time_setting.c.s
 .PHONY : ui/page_time_setting.c.s
 
+ui/page_tomato_setting.o: ui/page_tomato_setting.c.o
+
+.PHONY : ui/page_tomato_setting.o
+
+# target to build an object file
+ui/page_tomato_setting.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_tomato_setting.c.o
+.PHONY : ui/page_tomato_setting.c.o
+
+ui/page_tomato_setting.i: ui/page_tomato_setting.c.i
+
+.PHONY : ui/page_tomato_setting.i
+
+# target to preprocess a source file
+ui/page_tomato_setting.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_tomato_setting.c.i
+.PHONY : ui/page_tomato_setting.c.i
+
+ui/page_tomato_setting.s: ui/page_tomato_setting.c.s
+
+.PHONY : ui/page_tomato_setting.s
+
+# target to generate assembly for a file
+ui/page_tomato_setting.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_tomato_setting.c.s
+.PHONY : ui/page_tomato_setting.c.s
+
 ui/page_wifi_setting.o: ui/page_wifi_setting.c.o
 
 .PHONY : ui/page_wifi_setting.o
@@ -341,6 +368,9 @@ help:
 	@echo "... ui/page_time_setting.o"
 	@echo "... ui/page_time_setting.i"
 	@echo "... ui/page_time_setting.s"
+	@echo "... ui/page_tomato_setting.o"
+	@echo "... ui/page_tomato_setting.i"
+	@echo "... ui/page_tomato_setting.s"
 	@echo "... ui/page_wifi_setting.o"
 	@echo "... ui/page_wifi_setting.i"
 	@echo "... ui/page_wifi_setting.s"

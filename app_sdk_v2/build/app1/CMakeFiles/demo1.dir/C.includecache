@@ -1036,7 +1036,7 @@ lv_label.h
 
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_conf.h
 
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_wifi_setting.c
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_tomato_setting.c
 stdio.h
 -
 stdlib.h

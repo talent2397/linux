@@ -416,12 +416,12 @@ component/player/CMakeFiles/player.dir/clean:
 component/font/CMakeFiles/font.dir/all:
 	$(MAKE) -f component/font/CMakeFiles/font.dir/build.make component/font/CMakeFiles/font.dir/depend
 	$(MAKE) -f component/font/CMakeFiles/font.dir/build.make component/font/CMakeFiles/font.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=3 "Built target font"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num= "Built target font"
 .PHONY : component/font/CMakeFiles/font.dir/all
 
 # Build rule for subdir invocation for target.
 component/font/CMakeFiles/font.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 component/font/CMakeFiles/font.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles 0
 .PHONY : component/font/CMakeFiles/font.dir/rule
@@ -527,7 +527,7 @@ app1/CMakeFiles/demo1.dir/all: component/font/CMakeFiles/font.dir/all
 app1/CMakeFiles/demo1.dir/all: lvgl/CMakeFiles/lvgl.dir/all
 	$(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/depend
 	$(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=1,2 "Built target demo1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=1,2,3 "Built target demo1"
 .PHONY : app1/CMakeFiles/demo1.dir/all
 
 # Build rule for subdir invocation for target.

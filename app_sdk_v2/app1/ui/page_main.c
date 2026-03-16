@@ -53,6 +53,9 @@ static void lv_event_cb_func(lv_event_t *e)
 
     case MENU_TOMATO_CLOCK:
         printf("番茄时钟 click\n");
+        lv_obj_t *act_tomato_setting = lv_scr_act();
+        lv_obj_clean(act_tomato_setting);
+        page_tomato_setting();
         break;
 
     case MENU_WIFI_SETTING:
