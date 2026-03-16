@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xiaoyubb/xiangmu/app_sdk_v2/component/font/font_utils.c
+stdint.h
+-
+stdio.h
+-
+stdlib.h
+-
+font_utils.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/component/font/font_utils.h
+
+/home/xiaoyubb/xiangmu/app_sdk_v2/component/font/font_utils.h
+lvgl/lvgl.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/component/font/lvgl/lvgl.h
+

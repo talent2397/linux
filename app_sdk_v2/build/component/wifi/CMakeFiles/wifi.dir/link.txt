@@ -1,0 +1,2 @@
+/usr/bin/ar qc libwifi.a  CMakeFiles/wifi.dir/wpa_manager.c.o CMakeFiles/wifi.dir/utils/base_utils.c.o
+/usr/bin/ranlib libwifi.a

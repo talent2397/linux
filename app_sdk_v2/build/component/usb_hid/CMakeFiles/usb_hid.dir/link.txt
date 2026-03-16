@@ -1,0 +1,2 @@
+/usr/bin/ar qc libusb_hid.a  CMakeFiles/usb_hid.dir/usb_hid_async.c.o CMakeFiles/usb_hid.dir/usb_hid_utils.c.o
+/usr/bin/ranlib libusb_hid.a

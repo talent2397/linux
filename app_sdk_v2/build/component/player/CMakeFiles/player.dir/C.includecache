@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../component/hal/em_hal_audio.h
+
+../component/osal/osal_conf.h
+
+../component/osal/osal_queue.h
+stdint.h
+-
+osal_conf.h
+../component/osal/osal_conf.h
+
+../component/osal/osal_thread.h
+stdint.h
+-
+pthread.h
+-
+osal_conf.h
+../component/osal/osal_conf.h
+
+/home/xiaoyubb/xiangmu/app_sdk_v2/component/player/audio_player_async.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+osal_thread.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/component/player/osal_thread.h
+osal_queue.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/component/player/osal_queue.h
+em_hal_audio.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/component/player/em_hal_audio.h
+

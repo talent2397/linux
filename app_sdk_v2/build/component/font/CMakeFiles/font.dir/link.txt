@@ -1,0 +1,2 @@
+/usr/bin/ar qc libfont.a  CMakeFiles/font.dir/font_utils.c.o
+/usr/bin/ranlib libfont.a

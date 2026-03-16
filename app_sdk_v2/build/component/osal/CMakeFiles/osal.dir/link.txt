@@ -1,0 +1,2 @@
+/usr/bin/ar qc libosal.a  CMakeFiles/osal.dir/osal_queue.c.o CMakeFiles/osal.dir/osal_thread.c.o
+/usr/bin/ranlib libosal.a

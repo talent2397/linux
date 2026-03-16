@@ -1,0 +1,2 @@
+/usr/bin/ar qc libplayer.a  CMakeFiles/player.dir/audio_player_async.c.o
+/usr/bin/ranlib libplayer.a
