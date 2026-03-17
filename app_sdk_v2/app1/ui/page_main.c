@@ -37,7 +37,9 @@ static void lv_event_cb_func(lv_event_t *e)
 
     case MENU_BLUETOOTH_SPEAKER:
         printf("蓝牙音响 click\n");
-        // 实际写： bluetooth_setting_open();
+        lv_obj_t *act_yinxiang_setting = lv_scr_act();
+        lv_obj_clean(act_yinxiang_setting);
+        page_yingxiang_setting();
         break;
 
     case MENU_DIAL_SETTING:
@@ -49,6 +51,9 @@ static void lv_event_cb_func(lv_event_t *e)
 
     case MENU_CITY_SETTING:
         printf("城市设置 click\n");
+        lv_obj_t *act_city_setting = lv_scr_act();
+        lv_obj_clean(act_city_setting);
+        page_city_setting();
         break;
 
     case MENU_TOMATO_CLOCK:

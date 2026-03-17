@@ -10,4 +10,6 @@ void page_time_setting2(void);
 void page_time_setting3(void);
 void page_wifi_setting(void);
 void page_tomato_setting(void);
+void page_city_setting(void);
+void page_yingxiang_setting(void);
 #endif

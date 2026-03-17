@@ -7,11 +7,13 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/main.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/main.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_alarm.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_alarm.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_alarm_dialog.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_alarm_dialog.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_city_setting.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_city_setting.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_main.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_main.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_seeting.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_time_setting.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_time_setting.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_tomato_setting.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_tomato_setting.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_wifi_setting.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_yingxiang_setting.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

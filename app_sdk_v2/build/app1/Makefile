@@ -206,6 +206,33 @@ ui/page_alarm_dialog.c.s:
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_alarm_dialog.c.s
 .PHONY : ui/page_alarm_dialog.c.s
 
+ui/page_city_setting.o: ui/page_city_setting.c.o
+
+.PHONY : ui/page_city_setting.o
+
+# target to build an object file
+ui/page_city_setting.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_city_setting.c.o
+.PHONY : ui/page_city_setting.c.o
+
+ui/page_city_setting.i: ui/page_city_setting.c.i
+
+.PHONY : ui/page_city_setting.i
+
+# target to preprocess a source file
+ui/page_city_setting.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_city_setting.c.i
+.PHONY : ui/page_city_setting.c.i
+
+ui/page_city_setting.s: ui/page_city_setting.c.s
+
+.PHONY : ui/page_city_setting.s
+
+# target to generate assembly for a file
+ui/page_city_setting.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_city_setting.c.s
+.PHONY : ui/page_city_setting.c.s
+
 ui/page_main.o: ui/page_main.c.o
 
 .PHONY : ui/page_main.o
@@ -341,6 +368,33 @@ ui/page_wifi_setting.c.s:
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.s
 .PHONY : ui/page_wifi_setting.c.s
 
+ui/page_yingxiang_setting.o: ui/page_yingxiang_setting.c.o
+
+.PHONY : ui/page_yingxiang_setting.o
+
+# target to build an object file
+ui/page_yingxiang_setting.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.o
+.PHONY : ui/page_yingxiang_setting.c.o
+
+ui/page_yingxiang_setting.i: ui/page_yingxiang_setting.c.i
+
+.PHONY : ui/page_yingxiang_setting.i
+
+# target to preprocess a source file
+ui/page_yingxiang_setting.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.i
+.PHONY : ui/page_yingxiang_setting.c.i
+
+ui/page_yingxiang_setting.s: ui/page_yingxiang_setting.c.s
+
+.PHONY : ui/page_yingxiang_setting.s
+
+# target to generate assembly for a file
+ui/page_yingxiang_setting.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.s
+.PHONY : ui/page_yingxiang_setting.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -359,6 +413,9 @@ help:
 	@echo "... ui/page_alarm_dialog.o"
 	@echo "... ui/page_alarm_dialog.i"
 	@echo "... ui/page_alarm_dialog.s"
+	@echo "... ui/page_city_setting.o"
+	@echo "... ui/page_city_setting.i"
+	@echo "... ui/page_city_setting.s"
 	@echo "... ui/page_main.o"
 	@echo "... ui/page_main.i"
 	@echo "... ui/page_main.s"
@@ -374,6 +431,9 @@ help:
 	@echo "... ui/page_wifi_setting.o"
 	@echo "... ui/page_wifi_setting.i"
 	@echo "... ui/page_wifi_setting.s"
+	@echo "... ui/page_yingxiang_setting.o"
+	@echo "... ui/page_yingxiang_setting.i"
+	@echo "... ui/page_yingxiang_setting.s"
 .PHONY : help
 
 

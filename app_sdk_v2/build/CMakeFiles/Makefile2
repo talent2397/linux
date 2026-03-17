@@ -361,7 +361,7 @@ component/wifi/CMakeFiles/wifi.dir/clean:
 component/net/CMakeFiles/http.dir/all: component/osal/CMakeFiles/osal.dir/all
 	$(MAKE) -f component/net/CMakeFiles/http.dir/build.make component/net/CMakeFiles/http.dir/depend
 	$(MAKE) -f component/net/CMakeFiles/http.dir/build.make component/net/CMakeFiles/http.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=4 "Built target http"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=5 "Built target http"
 .PHONY : component/net/CMakeFiles/http.dir/all
 
 # Build rule for subdir invocation for target.
@@ -416,12 +416,12 @@ component/player/CMakeFiles/player.dir/clean:
 component/font/CMakeFiles/font.dir/all:
 	$(MAKE) -f component/font/CMakeFiles/font.dir/build.make component/font/CMakeFiles/font.dir/depend
 	$(MAKE) -f component/font/CMakeFiles/font.dir/build.make component/font/CMakeFiles/font.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num= "Built target font"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=4 "Built target font"
 .PHONY : component/font/CMakeFiles/font.dir/all
 
 # Build rule for subdir invocation for target.
 component/font/CMakeFiles/font.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 component/font/CMakeFiles/font.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles 0
 .PHONY : component/font/CMakeFiles/font.dir/rule
@@ -498,12 +498,12 @@ lvgl/CMakeFiles/lvgl_demos.dir/clean:
 lvgl/CMakeFiles/lvgl.dir/all: platform/x86linux/src/CMakeFiles/lvgl_porting.dir/all
 	$(MAKE) -f lvgl/CMakeFiles/lvgl.dir/build.make lvgl/CMakeFiles/lvgl.dir/depend
 	$(MAKE) -f lvgl/CMakeFiles/lvgl.dir/build.make lvgl/CMakeFiles/lvgl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68 "Built target lvgl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68 "Built target lvgl"
 .PHONY : lvgl/CMakeFiles/lvgl.dir/all
 
 # Build rule for subdir invocation for target.
 lvgl/CMakeFiles/lvgl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles 69
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles 68
 	$(MAKE) -f CMakeFiles/Makefile2 lvgl/CMakeFiles/lvgl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles 0
 .PHONY : lvgl/CMakeFiles/lvgl.dir/rule
