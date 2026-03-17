@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/cmake_install.cmake")
+  include("/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/x86linux/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

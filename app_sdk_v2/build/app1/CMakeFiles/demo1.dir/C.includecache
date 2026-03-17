@@ -18,9 +18,13 @@ res_conf.h
 
 ../app1/res/res_conf.h
 
+../app1/ui/page_conf.h
+
 ../component/font/font_utils.h
 lvgl/lvgl.h
 ../component/font/lvgl/lvgl.h
+
+../component/net/http_manager.h
 
 ../component/wifi/wpa_manager.h
 
@@ -1036,10 +1040,34 @@ lv_label.h
 lv_label.h
 ../lvgl/src/widgets/lv_label.h
 
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/main.c
+unistd.h
+-
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+lvgl.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/lvgl.h
+page_conf.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/page_conf.h
+font_conf.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/font_conf.h
+wpa_manager.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/wpa_manager.h
+http_manager.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/http_manager.h
+
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_conf.h
 
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_main.c
 stdio.h
+-
+stdlib.h
+-
+string.h
 -
 lvgl.h
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/lvgl.h
@@ -1053,4 +1081,6 @@ time.h
 -
 wpa_manager.h
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/wpa_manager.h
+http_manager.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/http_manager.h
 

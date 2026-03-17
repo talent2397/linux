@@ -31,10 +31,6 @@ cJSON/cJSON.h
 /home/xiaoyubb/xiangmu/app_sdk_v2/component/net/cJSON/cJSON.h
 curl/curl.h
 -
-stdio.h
--
-stdlib.h
--
 string.h
 -
 assert.h

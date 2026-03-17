@@ -1,8 +1,8 @@
-The target system is: Linux -  - arm
+The target system is: Linux -  - 
 The host system is: Linux - 5.15.0-139-generic - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc 
-Build flags: 
+Compiler: /usr/bin/gcc 
+Build flags: -g
 Id flags:  
 
 The output was:
@@ -14,7 +14,7 @@ Compilation of the C compiler identification source "CMakeCCompilerId.c" produce
 The C compiler identification is GNU, found in "/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/3.16.3/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-Compiler: /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-g++ 
+Compiler: /usr/bin/g++ 
 Build flags: 
 Id flags:  
 
@@ -29,13 +29,13 @@ The CXX compiler identification is GNU, found in "/home/xiaoyubb/xiangmu/app_sdk
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_004a9/fast && /usr/bin/make -f CMakeFiles/cmTC_004a9.dir/build.make CMakeFiles/cmTC_004a9.dir/build
+Run Build Command(s):/usr/bin/make cmTC_294a1/fast && /usr/bin/make -f CMakeFiles/cmTC_294a1.dir/build.make CMakeFiles/cmTC_294a1.dir/build
 make[1]: Entering directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_004a9.dir/testCCompiler.c.o
-/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc   -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -march=armv7-a -mtune=cortex-a7 -mfpu=neon -mfloat-abi=hard -O0 -ldl -rdynamic -g -funwind-tables -ffunction-sections -o CMakeFiles/cmTC_004a9.dir/testCCompiler.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_004a9
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_004a9.dir/link.txt --verbose=1
-/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc      -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/ -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/ -lpthread -lfreetype -lrt -ldl -znow -zrelro -luapi -lm -lz -lbz2 -O0 -rdynamic -g -funwind-tables -ffunction-sections -fPIC -Wl,-gc-sections CMakeFiles/cmTC_004a9.dir/testCCompiler.c.o  -o cmTC_004a9 
+Building C object CMakeFiles/cmTC_294a1.dir/testCCompiler.c.o
+/usr/bin/gcc   -g    -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include -o CMakeFiles/cmTC_294a1.dir/testCCompiler.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_294a1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_294a1.dir/link.txt --verbose=1
+/usr/bin/gcc -g     -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib -pthread CMakeFiles/cmTC_294a1.dir/testCCompiler.c.o  -o cmTC_294a1 
 make[1]: Leaving directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp'
 
 
@@ -43,63 +43,66 @@ make[1]: Leaving directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/C
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_d6ca2/fast && /usr/bin/make -f CMakeFiles/cmTC_d6ca2.dir/build.make CMakeFiles/cmTC_d6ca2.dir/build
+Run Build Command(s):/usr/bin/make cmTC_8ca29/fast && /usr/bin/make -f CMakeFiles/cmTC_8ca29.dir/build.make CMakeFiles/cmTC_8ca29.dir/build
 make[1]: Entering directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o
-/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc   -v -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -march=armv7-a -mtune=cortex-a7 -mfpu=neon -mfloat-abi=hard -O0 -ldl -rdynamic -g -funwind-tables -ffunction-sections -o CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
-Reading specs from /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/specs
-COLLECT_GCC=arm-openwrt-linux-gnueabi-gcc.bin
-Target: arm-openwrt-linux-gnueabi
-Configured with: /home/xuqiang/workspace/tina-r528/out/v853-perf1/compile_dir/toolchain/gcc-8.3.0/configure --with-bugurl=https://dev.openwrt.org/ --with-pkgversion='OpenWrt/CodeSourcery GCC 8.3.0 2021.08' --prefix=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-openwrt-linux-gnueabi --with-gnu-ld --enable-target-optspace --enable-libgomp --disable-libmudflap --disable-multilib --disable-nls --without-isl --without-cloog --with-host-libstdcxx=-lstdc++ --with-gmp=/home/xuqiang/workspace/tina-r528/out/host --with-mpfr=/home/xuqiang/workspace/tina-r528/out/host --with-mpc=/home/xuqiang/workspace/tina-r528/out/host --disable-decimal-float --with-diagnostics-color=auto-if-env --enable-libssp --enable-__cxa_atexit --with-cpu=cortex-a7 --with-fpu=neon --with-float=hard --with-headers=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/include --enable-libsanitizer --enable-languages=c,c++,fortran --enable-shared --enable-threads --with-slibdir=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/lib --enable-lto --with-libelf=/home/xuqiang/workspace/tina-r528/out/host
+Building C object CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o
+/usr/bin/gcc   -g    -v -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include -o CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/usr/bin/gcc
+OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
-gcc version 8.3.0 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) 
-COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype'  '-mtune=cortex-a7' '-mfpu=neon' '-mfloat-abi=hard' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-o' 'CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o' '-c' '-mtls-dialect=gnu' '-marm' '-march=armv7-a+simd'
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/cc1 -quiet -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -iprefix /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/ -idirafter /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/include /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=cortex-a7 -mfpu=neon -mfloat-abi=hard -mtls-dialect=gnu -marm -march=armv7-a+simd -auxbase-strip CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o -g -O0 -version -funwind-tables -ffunction-sections -o /tmp/ccLniLJt.s
-GNU C17 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) version 8.3.0 (arm-openwrt-linux-gnueabi)
-	compiled by GNU C version 4.8.4, GMP version 6.1.0, MPFR version 3.1.3, MPC version 1.0.3, isl version none
+gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
+COLLECT_GCC_OPTIONS='-g' '-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include' '-o' 'CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o -g -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccJnpDKF.s
+GNU C17 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)
+	compiled by GNU C version 9.4.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include"
-ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed"
-ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/sys-include"
-ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include"
-ignoring nonexistent directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/include"
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/include"
 ignoring nonexistent directory "/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos"
 #include "..." search starts here:
 #include <...> search starts here:
- /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting
+ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting
  /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp
- /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include
- /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/sys-include
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include
+ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include
+ /usr/lib/gcc/x86_64-linux-gnu/9/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
 End of search list.
-GNU C17 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) version 8.3.0 (arm-openwrt-linux-gnueabi)
-	compiled by GNU C version 4.8.4, GMP version 6.1.0, MPFR version 3.1.3, MPC version 1.0.3, isl version none
+GNU C17 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)
+	compiled by GNU C version 9.4.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-Compiler executable checksum: a3b0939f9eecabf6dbe8df2649638084
-COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype'  '-mtune=cortex-a7' '-mfpu=neon' '-mfloat-abi=hard' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-o' 'CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o' '-c' '-mtls-dialect=gnu' '-marm' '-march=armv7-a+simd'
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/bin/as -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -march=armv7-a -mfloat-abi=hard -mfpu=neon -meabi=5 -o CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o /tmp/ccLniLJt.s
-GNU assembler version 2.28 (arm-openwrt-linux-gnueabi) using BFD version (GNU Binutils) 2.28
-COMPILER_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/bin/
-LIBRARY_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/
-COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype'  '-mtune=cortex-a7' '-mfpu=neon' '-mfloat-abi=hard' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-o' 'CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o' '-c' '-mtls-dialect=gnu' '-marm' '-march=armv7-a+simd'
-Linking C executable cmTC_d6ca2
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d6ca2.dir/link.txt --verbose=1
-/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc     -v -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/ -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/ -lpthread -lfreetype -lrt -ldl -znow -zrelro -luapi -lm -lz -lbz2 -O0 -rdynamic -g -funwind-tables -ffunction-sections -fPIC -Wl,-gc-sections CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o  -o cmTC_d6ca2 
-Reading specs from /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/specs
-COLLECT_GCC=arm-openwrt-linux-gnueabi-gcc.bin
-COLLECT_LTO_WRAPPER=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/lto-wrapper
-Target: arm-openwrt-linux-gnueabi
-Configured with: /home/xuqiang/workspace/tina-r528/out/v853-perf1/compile_dir/toolchain/gcc-8.3.0/configure --with-bugurl=https://dev.openwrt.org/ --with-pkgversion='OpenWrt/CodeSourcery GCC 8.3.0 2021.08' --prefix=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-openwrt-linux-gnueabi --with-gnu-ld --enable-target-optspace --enable-libgomp --disable-libmudflap --disable-multilib --disable-nls --without-isl --without-cloog --with-host-libstdcxx=-lstdc++ --with-gmp=/home/xuqiang/workspace/tina-r528/out/host --with-mpfr=/home/xuqiang/workspace/tina-r528/out/host --with-mpc=/home/xuqiang/workspace/tina-r528/out/host --disable-decimal-float --with-diagnostics-color=auto-if-env --enable-libssp --enable-__cxa_atexit --with-cpu=cortex-a7 --with-fpu=neon --with-float=hard --with-headers=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/include --enable-libsanitizer --enable-languages=c,c++,fortran --enable-shared --enable-threads --with-slibdir=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/lib --enable-lto --with-libelf=/home/xuqiang/workspace/tina-r528/out/host
+Compiler executable checksum: 01da938ff5dc2163489aa33cb3b747a7
+COLLECT_GCC_OPTIONS='-g' '-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include' '-o' 'CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+ as -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include --64 -o CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o /tmp/ccJnpDKF.s
+GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-g' '-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include' '-o' 'CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+Linking C executable cmTC_8ca29
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ca29.dir/link.txt --verbose=1
+/usr/bin/gcc -g    -v -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib -pthread CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o  -o cmTC_8ca29 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
-gcc version 8.3.0 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) 
-COMPILER_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/bin/
-LIBRARY_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/
-COLLECT_GCC_OPTIONS='-v' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/' '-z' 'now' '-z' 'relro' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-fPIC' '-o' 'cmTC_d6ca2' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon' '-mtls-dialect=gnu' '-marm' '-march=armv7ve+neon'
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/collect2 -plugin /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/liblto_plugin.so -plugin-opt=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKXvBR8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -o cmTC_d6ca2 -z now -z relro /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crt1.o /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crti.o /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/crtbegin.o -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/ -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/ -L /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib -rpath-link /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib -L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0 -L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc -L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib -lpthread -lfreetype -lrt -ldl -luapi -lm -lz -lbz2 -gc-sections CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/crtend.o /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/' '-z' 'now' '-z' 'relro' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-fPIC' '-o' 'cmTC_d6ca2' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon' '-mtls-dialect=gnu' '-marm' '-march=armv7ve+neon'
+gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-g' '-v' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib' '-pthread' '-o' 'cmTC_8ca29' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGhTAE4.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8ca29 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lpthread -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-g' '-v' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib' '-pthread' '-o' 'cmTC_8ca29' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp'
 
 
@@ -107,162 +110,162 @@ make[1]: Leaving directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/C
 Parsed C implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting]
+    add: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting]
     add: [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp]
-    add: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include]
-    add: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype]
-    add: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include]
-    add: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed]
-    add: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/sys-include]
-    add: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include]
+    add: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include]
+    add: [/usr/lib/gcc/x86_64-linux-gnu/9/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
   end of search list found
-  collapse include dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting]
+  collapse include dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting]
   collapse include dir [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp]
-  collapse include dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include]
-  collapse include dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype]
-  collapse include dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include]
-  collapse include dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed]
-  collapse include dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/sys-include] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/sys-include]
-  collapse include dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include]
-  implicit include dirs: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting;/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp;/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include;/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/sys-include;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include]
+  collapse include dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include]
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/9/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/9/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting;/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp;/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include;/usr/lib/gcc/x86_64-linux-gnu/9/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
 
 
 Parsed C implicit link information from above output:
-  link line regex: [^( *|.*[/\])(arm-openwrt-linux-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_d6ca2/fast && /usr/bin/make -f CMakeFiles/cmTC_d6ca2.dir/build.make CMakeFiles/cmTC_d6ca2.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_8ca29/fast && /usr/bin/make -f CMakeFiles/cmTC_8ca29.dir/build.make CMakeFiles/cmTC_8ca29.dir/build]
   ignore line: [make[1]: Entering directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc   -v -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -march=armv7-a -mtune=cortex-a7 -mfpu=neon -mfloat-abi=hard -O0 -ldl -rdynamic -g -funwind-tables -ffunction-sections -o CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
-  ignore line: [Reading specs from /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/specs]
-  ignore line: [COLLECT_GCC=arm-openwrt-linux-gnueabi-gcc.bin]
-  ignore line: [Target: arm-openwrt-linux-gnueabi]
-  ignore line: [Configured with: /home/xuqiang/workspace/tina-r528/out/v853-perf1/compile_dir/toolchain/gcc-8.3.0/configure --with-bugurl=https://dev.openwrt.org/ --with-pkgversion='OpenWrt/CodeSourcery GCC 8.3.0 2021.08' --prefix=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-openwrt-linux-gnueabi --with-gnu-ld --enable-target-optspace --enable-libgomp --disable-libmudflap --disable-multilib --disable-nls --without-isl --without-cloog --with-host-libstdcxx=-lstdc++ --with-gmp=/home/xuqiang/workspace/tina-r528/out/host --with-mpfr=/home/xuqiang/workspace/tina-r528/out/host --with-mpc=/home/xuqiang/workspace/tina-r528/out/host --disable-decimal-float --with-diagnostics-color=auto-if-env --enable-libssp --enable-__cxa_atexit --with-cpu=cortex-a7 --with-fpu=neon --with-float=hard --with-headers=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/include --enable-libsanitizer --enable-languages=c,c++,fortran --enable-shared --enable-threads --with-slibdir=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/lib --enable-lto --with-libelf=/home/xuqiang/workspace/tina-r528/out/host]
+  ignore line: [Building C object CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/gcc   -g    -v -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include -o CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/gcc]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 8.3.0 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype'  '-mtune=cortex-a7' '-mfpu=neon' '-mfloat-abi=hard' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-o' 'CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o' '-c' '-mtls-dialect=gnu' '-marm' '-march=armv7-a+simd']
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/cc1 -quiet -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -iprefix /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/ -idirafter /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/include /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=cortex-a7 -mfpu=neon -mfloat-abi=hard -mtls-dialect=gnu -marm -march=armv7-a+simd -auxbase-strip CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o -g -O0 -version -funwind-tables -ffunction-sections -o /tmp/ccLniLJt.s]
-  ignore line: [GNU C17 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) version 8.3.0 (arm-openwrt-linux-gnueabi)]
-  ignore line: [	compiled by GNU C version 4.8.4  GMP version 6.1.0  MPFR version 3.1.3  MPC version 1.0.3  isl version none]
+  ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include' '-o' 'CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1 -quiet -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include -imultiarch x86_64-linux-gnu /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o -g -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccJnpDKF.s]
+  ignore line: [GNU C17 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+  ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include"]
-  ignore line: [ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed"]
-  ignore line: [ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/sys-include"]
-  ignore line: [ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include"]
-  ignore line: [ignoring nonexistent directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/include"]
+  ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/include"]
   ignore line: [ignoring nonexistent directory "/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting]
+  ignore line: [ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting]
   ignore line: [ /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp]
-  ignore line: [ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include]
-  ignore line: [ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype]
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include]
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed]
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/sys-include]
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include]
+  ignore line: [ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
   ignore line: [End of search list.]
-  ignore line: [GNU C17 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) version 8.3.0 (arm-openwrt-linux-gnueabi)]
-  ignore line: [	compiled by GNU C version 4.8.4  GMP version 6.1.0  MPFR version 3.1.3  MPC version 1.0.3  isl version none]
+  ignore line: [GNU C17 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+  ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [Compiler executable checksum: a3b0939f9eecabf6dbe8df2649638084]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype'  '-mtune=cortex-a7' '-mfpu=neon' '-mfloat-abi=hard' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-o' 'CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o' '-c' '-mtls-dialect=gnu' '-marm' '-march=armv7-a+simd']
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/bin/as -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -march=armv7-a -mfloat-abi=hard -mfpu=neon -meabi=5 -o CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o /tmp/ccLniLJt.s]
-  ignore line: [GNU assembler version 2.28 (arm-openwrt-linux-gnueabi) using BFD version (GNU Binutils) 2.28]
-  ignore line: [COMPILER_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/bin/]
-  ignore line: [LIBRARY_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype'  '-mtune=cortex-a7' '-mfpu=neon' '-mfloat-abi=hard' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-o' 'CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o' '-c' '-mtls-dialect=gnu' '-marm' '-march=armv7-a+simd']
-  ignore line: [Linking C executable cmTC_d6ca2]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d6ca2.dir/link.txt --verbose=1]
-  ignore line: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc     -v -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/ -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/ -lpthread -lfreetype -lrt -ldl -znow -zrelro -luapi -lm -lz -lbz2 -O0 -rdynamic -g -funwind-tables -ffunction-sections -fPIC -Wl,-gc-sections CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o  -o cmTC_d6ca2 ]
-  ignore line: [Reading specs from /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/specs]
-  ignore line: [COLLECT_GCC=arm-openwrt-linux-gnueabi-gcc.bin]
-  ignore line: [COLLECT_LTO_WRAPPER=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/lto-wrapper]
-  ignore line: [Target: arm-openwrt-linux-gnueabi]
-  ignore line: [Configured with: /home/xuqiang/workspace/tina-r528/out/v853-perf1/compile_dir/toolchain/gcc-8.3.0/configure --with-bugurl=https://dev.openwrt.org/ --with-pkgversion='OpenWrt/CodeSourcery GCC 8.3.0 2021.08' --prefix=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-openwrt-linux-gnueabi --with-gnu-ld --enable-target-optspace --enable-libgomp --disable-libmudflap --disable-multilib --disable-nls --without-isl --without-cloog --with-host-libstdcxx=-lstdc++ --with-gmp=/home/xuqiang/workspace/tina-r528/out/host --with-mpfr=/home/xuqiang/workspace/tina-r528/out/host --with-mpc=/home/xuqiang/workspace/tina-r528/out/host --disable-decimal-float --with-diagnostics-color=auto-if-env --enable-libssp --enable-__cxa_atexit --with-cpu=cortex-a7 --with-fpu=neon --with-float=hard --with-headers=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/include --enable-libsanitizer --enable-languages=c,c++,fortran --enable-shared --enable-threads --with-slibdir=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/lib --enable-lto --with-libelf=/home/xuqiang/workspace/tina-r528/out/host]
+  ignore line: [Compiler executable checksum: 01da938ff5dc2163489aa33cb3b747a7]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include' '-o' 'CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include --64 -o CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o /tmp/ccJnpDKF.s]
+  ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include' '-o' 'CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking C executable cmTC_8ca29]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ca29.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/gcc -g    -v -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib -pthread CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o  -o cmTC_8ca29 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 8.3.0 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) ]
-  ignore line: [COMPILER_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/bin/]
-  ignore line: [LIBRARY_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/' '-z' 'now' '-z' 'relro' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-fPIC' '-o' 'cmTC_d6ca2' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon' '-mtls-dialect=gnu' '-marm' '-march=armv7ve+neon']
-  link line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/collect2 -plugin /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/liblto_plugin.so -plugin-opt=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKXvBR8.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -o cmTC_d6ca2 -z now -z relro /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crt1.o /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crti.o /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/crtbegin.o -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/ -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/ -L /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib -rpath-link /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib -L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0 -L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc -L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib -lpthread -lfreetype -lrt -ldl -luapi -lm -lz -lbz2 -gc-sections CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/crtend.o /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crtn.o]
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/collect2] ==> ignore
+  ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-g' '-v' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib' '-pthread' '-o' 'cmTC_8ca29' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/ccGhTAE4.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_8ca29 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lpthread -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/collect2] ==> ignore
     arg [-plugin] ==> ignore
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/liblto_plugin.so] ==> ignore
-    arg [-plugin-opt=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccKXvBR8.res] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccGhTAE4.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
-    arg [-export-dynamic] ==> ignore
-    arg [-dynamic-linker] ==> ignore
-    arg [/lib/ld-linux-armhf.so.3] ==> ignore
-    arg [-X] ==> ignore
     arg [-m] ==> ignore
-    arg [armelf_linux_eabi] ==> ignore
-    arg [-o] ==> ignore
-    arg [cmTC_d6ca2] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crt1.o] ==> ignore
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crti.o] ==> ignore
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/crtbegin.o] ==> ignore
-    arg [-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib] ==> dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib]
-    arg [-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/] ==> dir [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/]
-    arg [-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/] ==> dir [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/]
-    arg [-L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib] ==> dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib]
-    arg [-rpath-link] ==> ignore
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib] ==> ignore
-    arg [-L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0] ==> dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0]
-    arg [-L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc] ==> dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc]
-    arg [-L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib] ==> dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib]
-    arg [-lpthread] ==> lib [pthread]
-    arg [-lfreetype] ==> lib [freetype]
-    arg [-lrt] ==> lib [rt]
-    arg [-ldl] ==> lib [dl]
-    arg [-luapi] ==> lib [uapi]
-    arg [-lm] ==> lib [m]
-    arg [-lz] ==> lib [z]
-    arg [-lbz2] ==> lib [bz2]
-    arg [-gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_d6ca2.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_8ca29] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o] ==> ignore
+    arg [-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib] ==> dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
+    arg [CMakeFiles/cmTC_8ca29.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
-    arg [--no-as-needed] ==> ignore
+    arg [--pop-state] ==> ignore
+    arg [-lpthread] ==> lib [pthread]
     arg [-lc] ==> lib [c]
     arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
-    arg [--no-as-needed] ==> ignore
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/crtend.o] ==> ignore
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crtn.o] ==> ignore
-  collapse library dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib]
-  collapse library dir [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs], skipping non-system directory
-  collapse library dir [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs], skipping non-system directory
-  collapse library dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib]
-  collapse library dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0]
-  collapse library dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc]
-  collapse library dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/lib]
-  implicit libs: [pthread;freetype;rt;dl;uapi;m;z;bz2;gcc;gcc_s;c;gcc;gcc_s]
-  implicit dirs: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/lib]
+    arg [--pop-state] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9] ==> [/usr/lib/gcc/x86_64-linux-gnu/9]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;pthread;c;gcc;gcc_s]
+  implicit dirs: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib;/usr/lib/gcc/x86_64-linux-gnu/9;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
   implicit fwks: []
 
 
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_8f1cb/fast && /usr/bin/make -f CMakeFiles/cmTC_8f1cb.dir/build.make CMakeFiles/cmTC_8f1cb.dir/build
+Run Build Command(s):/usr/bin/make cmTC_346ae/fast && /usr/bin/make -f CMakeFiles/cmTC_346ae.dir/build.make CMakeFiles/cmTC_346ae.dir/build
 make[1]: Entering directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_8f1cb.dir/testCXXCompiler.cxx.o
-/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-g++    -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -march=armv7-a -mtune=cortex-a7 -mfpu=neon -mfloat-abi=hard -O0 -ldl -rdynamic -g -funwind-tables -ffunction-sections -o CMakeFiles/cmTC_8f1cb.dir/testCXXCompiler.cxx.o -c /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_8f1cb
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f1cb.dir/link.txt --verbose=1
-/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-g++       -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/ -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/ -lpthread -lfreetype -lrt -ldl -znow -zrelro -luapi -lm -lz -lbz2 -O0 -rdynamic -g -funwind-tables -ffunction-sections -fPIC -Wl,-gc-sections CMakeFiles/cmTC_8f1cb.dir/testCXXCompiler.cxx.o  -o cmTC_8f1cb 
+Building CXX object CMakeFiles/cmTC_346ae.dir/testCXXCompiler.cxx.o
+/usr/bin/g++    -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include -o CMakeFiles/cmTC_346ae.dir/testCXXCompiler.cxx.o -c /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_346ae
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_346ae.dir/link.txt --verbose=1
+/usr/bin/g++       -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib -pthread CMakeFiles/cmTC_346ae.dir/testCXXCompiler.cxx.o  -o cmTC_346ae 
 make[1]: Leaving directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp'
 
 
@@ -270,69 +273,70 @@ make[1]: Leaving directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/C
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_64ff0/fast && /usr/bin/make -f CMakeFiles/cmTC_64ff0.dir/build.make CMakeFiles/cmTC_64ff0.dir/build
+Run Build Command(s):/usr/bin/make cmTC_af203/fast && /usr/bin/make -f CMakeFiles/cmTC_af203.dir/build.make CMakeFiles/cmTC_af203.dir/build
 make[1]: Entering directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o
-/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-g++    -v -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -march=armv7-a -mtune=cortex-a7 -mfpu=neon -mfloat-abi=hard -O0 -ldl -rdynamic -g -funwind-tables -ffunction-sections -o CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
-Reading specs from /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/specs
-COLLECT_GCC=arm-openwrt-linux-gnueabi-g++.bin
-Target: arm-openwrt-linux-gnueabi
-Configured with: /home/xuqiang/workspace/tina-r528/out/v853-perf1/compile_dir/toolchain/gcc-8.3.0/configure --with-bugurl=https://dev.openwrt.org/ --with-pkgversion='OpenWrt/CodeSourcery GCC 8.3.0 2021.08' --prefix=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-openwrt-linux-gnueabi --with-gnu-ld --enable-target-optspace --enable-libgomp --disable-libmudflap --disable-multilib --disable-nls --without-isl --without-cloog --with-host-libstdcxx=-lstdc++ --with-gmp=/home/xuqiang/workspace/tina-r528/out/host --with-mpfr=/home/xuqiang/workspace/tina-r528/out/host --with-mpc=/home/xuqiang/workspace/tina-r528/out/host --disable-decimal-float --with-diagnostics-color=auto-if-env --enable-libssp --enable-__cxa_atexit --with-cpu=cortex-a7 --with-fpu=neon --with-float=hard --with-headers=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/include --enable-libsanitizer --enable-languages=c,c++,fortran --enable-shared --enable-threads --with-slibdir=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/lib --enable-lto --with-libelf=/home/xuqiang/workspace/tina-r528/out/host
+Building CXX object CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/g++    -v -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include -o CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/usr/bin/g++
+OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
-gcc version 8.3.0 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) 
-COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype'  '-mtune=cortex-a7' '-mfpu=neon' '-mfloat-abi=hard' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-o' 'CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtls-dialect=gnu' '-marm' '-march=armv7-a+simd'
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/cc1plus -quiet -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -iprefix /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/ -D_GNU_SOURCE -idirafter /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/include /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=cortex-a7 -mfpu=neon -mfloat-abi=hard -mtls-dialect=gnu -marm -march=armv7-a+simd -auxbase-strip CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o -g -O0 -version -funwind-tables -ffunction-sections -o /tmp/ccwUZ2iD.s
-GNU C++14 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) version 8.3.0 (arm-openwrt-linux-gnueabi)
-	compiled by GNU C version 4.8.4, GMP version 6.1.0, MPFR version 3.1.3, MPC version 1.0.3, isl version none
+gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
+COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include' '-o' 'CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cclgrfsz.s
+GNU C++14 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)
+	compiled by GNU C version 9.4.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0"
-ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0/arm-openwrt-linux-gnueabi"
-ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0/backward"
-ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include"
-ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed"
-ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/sys-include"
-ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include"
-ignoring nonexistent directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/include"
+ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/9"
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/include"
 ignoring nonexistent directory "/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos"
 #include "..." search starts here:
 #include <...> search starts here:
- /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting
+ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting
  /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp
- /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include
- /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0/arm-openwrt-linux-gnueabi
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0/backward
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/sys-include
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include
+ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include
+ /usr/include/c++/9
+ /usr/include/x86_64-linux-gnu/c++/9
+ /usr/include/c++/9/backward
+ /usr/lib/gcc/x86_64-linux-gnu/9/include
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
 End of search list.
-GNU C++14 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) version 8.3.0 (arm-openwrt-linux-gnueabi)
-	compiled by GNU C version 4.8.4, GMP version 6.1.0, MPFR version 3.1.3, MPC version 1.0.3, isl version none
+GNU C++14 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)
+	compiled by GNU C version 9.4.0, GMP version 6.2.0, MPFR version 4.0.2, MPC version 1.1.0, isl version isl-0.22.1-GMP
+
 GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
-Compiler executable checksum: d9bd3926152649c8083a8b2795c04462
-COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype'  '-mtune=cortex-a7' '-mfpu=neon' '-mfloat-abi=hard' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-o' 'CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtls-dialect=gnu' '-marm' '-march=armv7-a+simd'
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/bin/as -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -march=armv7-a -mfloat-abi=hard -mfpu=neon -meabi=5 -o CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccwUZ2iD.s
-GNU assembler version 2.28 (arm-openwrt-linux-gnueabi) using BFD version (GNU Binutils) 2.28
-COMPILER_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/bin/
-LIBRARY_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/
-COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype'  '-mtune=cortex-a7' '-mfpu=neon' '-mfloat-abi=hard' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-o' 'CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtls-dialect=gnu' '-marm' '-march=armv7-a+simd'
-Linking CXX executable cmTC_64ff0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_64ff0.dir/link.txt --verbose=1
-/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-g++      -v -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/ -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/ -lpthread -lfreetype -lrt -ldl -znow -zrelro -luapi -lm -lz -lbz2 -O0 -rdynamic -g -funwind-tables -ffunction-sections -fPIC -Wl,-gc-sections CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_64ff0 
-Reading specs from /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/specs
-COLLECT_GCC=arm-openwrt-linux-gnueabi-g++.bin
-COLLECT_LTO_WRAPPER=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/lto-wrapper
-Target: arm-openwrt-linux-gnueabi
-Configured with: /home/xuqiang/workspace/tina-r528/out/v853-perf1/compile_dir/toolchain/gcc-8.3.0/configure --with-bugurl=https://dev.openwrt.org/ --with-pkgversion='OpenWrt/CodeSourcery GCC 8.3.0 2021.08' --prefix=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-openwrt-linux-gnueabi --with-gnu-ld --enable-target-optspace --enable-libgomp --disable-libmudflap --disable-multilib --disable-nls --without-isl --without-cloog --with-host-libstdcxx=-lstdc++ --with-gmp=/home/xuqiang/workspace/tina-r528/out/host --with-mpfr=/home/xuqiang/workspace/tina-r528/out/host --with-mpc=/home/xuqiang/workspace/tina-r528/out/host --disable-decimal-float --with-diagnostics-color=auto-if-env --enable-libssp --enable-__cxa_atexit --with-cpu=cortex-a7 --with-fpu=neon --with-float=hard --with-headers=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/include --enable-libsanitizer --enable-languages=c,c++,fortran --enable-shared --enable-threads --with-slibdir=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/lib --enable-lto --with-libelf=/home/xuqiang/workspace/tina-r528/out/host
+Compiler executable checksum: 3d1eba838554fa2348dba760e4770469
+COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include' '-o' 'CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ as -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include --64 -o CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o /tmp/cclgrfsz.s
+GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include' '-o' 'CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+Linking CXX executable cmTC_af203
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af203.dir/link.txt --verbose=1
+/usr/bin/g++      -v -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib -pthread CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_af203 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/g++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none:hsa
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr,hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
 Thread model: posix
-gcc version 8.3.0 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) 
-COMPILER_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/bin/
-LIBRARY_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/
-COLLECT_GCC_OPTIONS='-v' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/' '-z' 'now' '-z' 'relro' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-fPIC' '-o' 'cmTC_64ff0' '-shared-libgcc' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon' '-mtls-dialect=gnu' '-marm' '-march=armv7ve+neon'
- /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/collect2 -plugin /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/liblto_plugin.so -plugin-opt=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjhhN51.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -o cmTC_64ff0 -z now -z relro /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crt1.o /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crti.o /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/crtbegin.o -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/ -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/ -L /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib -rpath-link /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib -L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0 -L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc -L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib -lpthread -lfreetype -lrt -ldl -luapi -lz -lbz2 -gc-sections CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/crtend.o /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/' '-z' 'now' '-z' 'relro' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-fPIC' '-o' 'cmTC_64ff0' '-shared-libgcc' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon' '-mtls-dialect=gnu' '-marm' '-march=armv7ve+neon'
+gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib' '-pthread' '-o' 'cmTC_af203' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9dSXq3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_af203 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib' '-pthread' '-o' 'cmTC_af203' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 make[1]: Leaving directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp'
 
 
@@ -340,158 +344,155 @@ make[1]: Leaving directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/C
 Parsed CXX implicit include dir info from above output: rv=done
   found start of include info
   found start of implicit include info
-    add: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting]
+    add: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting]
     add: [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp]
-    add: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include]
-    add: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype]
-    add: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0]
-    add: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0/arm-openwrt-linux-gnueabi]
-    add: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0/backward]
-    add: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include]
-    add: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed]
-    add: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/sys-include]
-    add: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include]
+    add: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include]
+    add: [/usr/include/c++/9]
+    add: [/usr/include/x86_64-linux-gnu/c++/9]
+    add: [/usr/include/c++/9/backward]
+    add: [/usr/lib/gcc/x86_64-linux-gnu/9/include]
+    add: [/usr/local/include]
+    add: [/usr/include/x86_64-linux-gnu]
+    add: [/usr/include]
   end of search list found
-  collapse include dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting]
+  collapse include dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting]
   collapse include dir [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp]
-  collapse include dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include]
-  collapse include dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype]
-  collapse include dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include/c++/8.3.0]
-  collapse include dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0/arm-openwrt-linux-gnueabi] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include/c++/8.3.0/arm-openwrt-linux-gnueabi]
-  collapse include dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0/backward] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include/c++/8.3.0/backward]
-  collapse include dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include]
-  collapse include dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed]
-  collapse include dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/sys-include] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/sys-include]
-  collapse include dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include]
-  implicit include dirs: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting;/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp;/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include;/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include/c++/8.3.0;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include/c++/8.3.0/arm-openwrt-linux-gnueabi;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include/c++/8.3.0/backward;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/sys-include;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include]
+  collapse include dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include]
+  collapse include dir [/usr/include/c++/9] ==> [/usr/include/c++/9]
+  collapse include dir [/usr/include/x86_64-linux-gnu/c++/9] ==> [/usr/include/x86_64-linux-gnu/c++/9]
+  collapse include dir [/usr/include/c++/9/backward] ==> [/usr/include/c++/9/backward]
+  collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/9/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/9/include]
+  collapse include dir [/usr/local/include] ==> [/usr/local/include]
+  collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+  collapse include dir [/usr/include] ==> [/usr/include]
+  implicit include dirs: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting;/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp;/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include;/usr/include/c++/9;/usr/include/x86_64-linux-gnu/c++/9;/usr/include/c++/9/backward;/usr/lib/gcc/x86_64-linux-gnu/9/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
 
 
 Parsed CXX implicit link information from above output:
-  link line regex: [^( *|.*[/\])(arm-openwrt-linux-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/make cmTC_64ff0/fast && /usr/bin/make -f CMakeFiles/cmTC_64ff0.dir/build.make CMakeFiles/cmTC_64ff0.dir/build]
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_af203/fast && /usr/bin/make -f CMakeFiles/cmTC_af203.dir/build.make CMakeFiles/cmTC_af203.dir/build]
   ignore line: [make[1]: Entering directory '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-g++    -v -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -march=armv7-a -mtune=cortex-a7 -mfpu=neon -mfloat-abi=hard -O0 -ldl -rdynamic -g -funwind-tables -ffunction-sections -o CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Reading specs from /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/specs]
-  ignore line: [COLLECT_GCC=arm-openwrt-linux-gnueabi-g++.bin]
-  ignore line: [Target: arm-openwrt-linux-gnueabi]
-  ignore line: [Configured with: /home/xuqiang/workspace/tina-r528/out/v853-perf1/compile_dir/toolchain/gcc-8.3.0/configure --with-bugurl=https://dev.openwrt.org/ --with-pkgversion='OpenWrt/CodeSourcery GCC 8.3.0 2021.08' --prefix=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-openwrt-linux-gnueabi --with-gnu-ld --enable-target-optspace --enable-libgomp --disable-libmudflap --disable-multilib --disable-nls --without-isl --without-cloog --with-host-libstdcxx=-lstdc++ --with-gmp=/home/xuqiang/workspace/tina-r528/out/host --with-mpfr=/home/xuqiang/workspace/tina-r528/out/host --with-mpc=/home/xuqiang/workspace/tina-r528/out/host --disable-decimal-float --with-diagnostics-color=auto-if-env --enable-libssp --enable-__cxa_atexit --with-cpu=cortex-a7 --with-fpu=neon --with-float=hard --with-headers=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/include --enable-libsanitizer --enable-languages=c,c++,fortran --enable-shared --enable-threads --with-slibdir=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/lib --enable-lto --with-libelf=/home/xuqiang/workspace/tina-r528/out/host]
+  ignore line: [Building CXX object CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/g++    -v -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include -o CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/g++]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 8.3.0 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) ]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype'  '-mtune=cortex-a7' '-mfpu=neon' '-mfloat-abi=hard' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-o' 'CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtls-dialect=gnu' '-marm' '-march=armv7-a+simd']
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/cc1plus -quiet -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -iprefix /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/ -D_GNU_SOURCE -idirafter /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/include /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=cortex-a7 -mfpu=neon -mfloat-abi=hard -mtls-dialect=gnu -marm -march=armv7-a+simd -auxbase-strip CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o -g -O0 -version -funwind-tables -ffunction-sections -o /tmp/ccwUZ2iD.s]
-  ignore line: [GNU C++14 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) version 8.3.0 (arm-openwrt-linux-gnueabi)]
-  ignore line: [	compiled by GNU C version 4.8.4  GMP version 6.1.0  MPFR version 3.1.3  MPC version 1.0.3  isl version none]
+  ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include' '-o' 'CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/cc1plus -quiet -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include -imultiarch x86_64-linux-gnu -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/cclgrfsz.s]
+  ignore line: [GNU C++14 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+  ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0"]
-  ignore line: [ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0/arm-openwrt-linux-gnueabi"]
-  ignore line: [ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0/backward"]
-  ignore line: [ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include"]
-  ignore line: [ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed"]
-  ignore line: [ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/sys-include"]
-  ignore line: [ignoring duplicate directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/../../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include"]
-  ignore line: [ignoring nonexistent directory "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/include"]
+  ignore line: [ignoring duplicate directory "/usr/include/x86_64-linux-gnu/c++/9"]
+  ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/include-fixed"]
+  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/9/../../../../x86_64-linux-gnu/include"]
   ignore line: [ignoring nonexistent directory "/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos"]
   ignore line: [#include "..." search starts here:]
   ignore line: [#include <...> search starts here:]
-  ignore line: [ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting]
+  ignore line: [ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting]
   ignore line: [ /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp]
-  ignore line: [ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include]
-  ignore line: [ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype]
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0]
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0/arm-openwrt-linux-gnueabi]
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include/c++/8.3.0/backward]
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include]
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed]
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/sys-include]
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/include]
+  ignore line: [ /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include]
+  ignore line: [ /usr/include/c++/9]
+  ignore line: [ /usr/include/x86_64-linux-gnu/c++/9]
+  ignore line: [ /usr/include/c++/9/backward]
+  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/9/include]
+  ignore line: [ /usr/local/include]
+  ignore line: [ /usr/include/x86_64-linux-gnu]
+  ignore line: [ /usr/include]
   ignore line: [End of search list.]
-  ignore line: [GNU C++14 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) version 8.3.0 (arm-openwrt-linux-gnueabi)]
-  ignore line: [	compiled by GNU C version 4.8.4  GMP version 6.1.0  MPFR version 3.1.3  MPC version 1.0.3  isl version none]
+  ignore line: [GNU C++14 (Ubuntu 9.4.0-1ubuntu1~20.04.2) version 9.4.0 (x86_64-linux-gnu)]
+  ignore line: [	compiled by GNU C version 9.4.0  GMP version 6.2.0  MPFR version 4.0.2  MPC version 1.1.0  isl version isl-0.22.1-GMP]
+  ignore line: []
   ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
-  ignore line: [Compiler executable checksum: d9bd3926152649c8083a8b2795c04462]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype'  '-mtune=cortex-a7' '-mfpu=neon' '-mfloat-abi=hard' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-o' 'CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtls-dialect=gnu' '-marm' '-march=armv7-a+simd']
-  ignore line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/bin/as -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype -march=armv7-a -mfloat-abi=hard -mfpu=neon -meabi=5 -o CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccwUZ2iD.s]
-  ignore line: [GNU assembler version 2.28 (arm-openwrt-linux-gnueabi) using BFD version (GNU Binutils) 2.28]
-  ignore line: [COMPILER_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/bin/]
-  ignore line: [LIBRARY_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype'  '-mtune=cortex-a7' '-mfpu=neon' '-mfloat-abi=hard' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-o' 'CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtls-dialect=gnu' '-marm' '-march=armv7-a+simd']
-  ignore line: [Linking CXX executable cmTC_64ff0]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_64ff0.dir/link.txt --verbose=1]
-  ignore line: [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-g++      -v -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/ -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/ -lpthread -lfreetype -lrt -ldl -znow -zrelro -luapi -lm -lz -lbz2 -O0 -rdynamic -g -funwind-tables -ffunction-sections -fPIC -Wl,-gc-sections CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_64ff0 ]
-  ignore line: [Reading specs from /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/specs]
-  ignore line: [COLLECT_GCC=arm-openwrt-linux-gnueabi-g++.bin]
-  ignore line: [COLLECT_LTO_WRAPPER=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/lto-wrapper]
-  ignore line: [Target: arm-openwrt-linux-gnueabi]
-  ignore line: [Configured with: /home/xuqiang/workspace/tina-r528/out/v853-perf1/compile_dir/toolchain/gcc-8.3.0/configure --with-bugurl=https://dev.openwrt.org/ --with-pkgversion='OpenWrt/CodeSourcery GCC 8.3.0 2021.08' --prefix=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=arm-openwrt-linux-gnueabi --with-gnu-ld --enable-target-optspace --enable-libgomp --disable-libmudflap --disable-multilib --disable-nls --without-isl --without-cloog --with-host-libstdcxx=-lstdc++ --with-gmp=/home/xuqiang/workspace/tina-r528/out/host --with-mpfr=/home/xuqiang/workspace/tina-r528/out/host --with-mpc=/home/xuqiang/workspace/tina-r528/out/host --disable-decimal-float --with-diagnostics-color=auto-if-env --enable-libssp --enable-__cxa_atexit --with-cpu=cortex-a7 --with-fpu=neon --with-float=hard --with-headers=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/include --enable-libsanitizer --enable-languages=c,c++,fortran --enable-shared --enable-threads --with-slibdir=/home/xuqiang/workspace/tina-r528/out/v853-perf1/staging_dir/toolchain/lib --enable-lto --with-libelf=/home/xuqiang/workspace/tina-r528/out/host]
+  ignore line: [Compiler executable checksum: 3d1eba838554fa2348dba760e4770469]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include' '-o' 'CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [ as -v -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp -I /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos -I /home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include --64 -o CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o /tmp/cclgrfsz.s]
+  ignore line: [GNU assembler version 2.34 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.34]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/lvgl/demos' '-I' '/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include' '-o' 'CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  ignore line: [Linking CXX executable cmTC_af203]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_af203.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/g++      -v -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib -pthread CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_af203 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:hsa]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 9.4.0-1ubuntu1~20.04.2' --with-bugurl=file:///usr/share/doc/gcc-9/README.Bugs --enable-languages=c ada c++ go brig d fortran objc obj-c++ gm2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-9 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-9-9QDOt0/gcc-9-9.4.0/debian/tmp-nvptx/usr hsa --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
   ignore line: [Thread model: posix]
-  ignore line: [gcc version 8.3.0 (OpenWrt/CodeSourcery GCC 8.3.0 2021.08) ]
-  ignore line: [COMPILER_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/bin/]
-  ignore line: [LIBRARY_PATH=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/' '-z' 'now' '-z' 'relro' '-O0' '-rdynamic' '-g' '-funwind-tables' '-ffunction-sections' '-fPIC' '-o' 'cmTC_64ff0' '-shared-libgcc' '-mcpu=cortex-a7' '-mfloat-abi=hard' '-mfpu=neon' '-mtls-dialect=gnu' '-marm' '-march=armv7ve+neon']
-  link line: [ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/collect2 -plugin /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/liblto_plugin.so -plugin-opt=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccjhhN51.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -o cmTC_64ff0 -z now -z relro /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crt1.o /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crti.o /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/crtbegin.o -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/ -L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/ -L /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib -rpath-link /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib -L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0 -L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc -L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib -lpthread -lfreetype -lrt -ldl -luapi -lz -lbz2 -gc-sections CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/crtend.o /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crtn.o]
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/collect2] ==> ignore
+  ignore line: [gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/9/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/9/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib' '-pthread' '-o' 'cmTC_af203' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/9/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9dSXq3.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_af203 /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o -L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib -L/usr/lib/gcc/x86_64-linux-gnu/9 -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/9/../../.. CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/collect2] ==> ignore
     arg [-plugin] ==> ignore
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/liblto_plugin.so] ==> ignore
-    arg [-plugin-opt=/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../libexec/gcc/arm-openwrt-linux-gnueabi/8.3.0/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccjhhN51.res] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/9/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc9dSXq3.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--build-id] ==> ignore
     arg [--eh-frame-hdr] ==> ignore
-    arg [-export-dynamic] ==> ignore
-    arg [-dynamic-linker] ==> ignore
-    arg [/lib/ld-linux-armhf.so.3] ==> ignore
-    arg [-X] ==> ignore
     arg [-m] ==> ignore
-    arg [armelf_linux_eabi] ==> ignore
-    arg [-o] ==> ignore
-    arg [cmTC_64ff0] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crt1.o] ==> ignore
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crti.o] ==> ignore
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/crtbegin.o] ==> ignore
-    arg [-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib] ==> dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib]
-    arg [-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/] ==> dir [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/]
-    arg [-L/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/] ==> dir [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/]
-    arg [-L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib] ==> dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib]
-    arg [-rpath-link] ==> ignore
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib] ==> ignore
-    arg [-L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0] ==> dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0]
-    arg [-L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc] ==> dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc]
-    arg [-L/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib] ==> dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib]
-    arg [-lpthread] ==> lib [pthread]
-    arg [-lfreetype] ==> lib [freetype]
-    arg [-lrt] ==> lib [rt]
-    arg [-ldl] ==> lib [dl]
-    arg [-luapi] ==> lib [uapi]
-    arg [-lz] ==> lib [z]
-    arg [-lbz2] ==> lib [bz2]
-    arg [-gc-sections] ==> ignore
-    arg [CMakeFiles/cmTC_64ff0.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_af203] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtbeginS.o] ==> ignore
+    arg [-L/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib] ==> dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..]
+    arg [CMakeFiles/cmTC_af203.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
     arg [-lgcc] ==> lib [gcc]
+    arg [-lpthread] ==> lib [pthread]
     arg [-lc] ==> lib [c]
     arg [-lgcc_s] ==> lib [gcc_s]
     arg [-lgcc] ==> lib [gcc]
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/crtend.o] ==> ignore
-    arg [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib/crtn.o] ==> ignore
-  collapse library dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib]
-  collapse library dir [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs/] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/wifi/libs], skipping non-system directory
-  collapse library dir [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs/] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp/net/libs], skipping non-system directory
-  collapse library dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib]
-  collapse library dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0]
-  collapse library dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc]
-  collapse library dir [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/../lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/../../../../arm-openwrt-linux-gnueabi/lib] ==> [/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/lib]
-  implicit libs: [pthread;freetype;rt;dl;uapi;z;bz2;stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
-  implicit dirs: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/lib]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/crtendS.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib] ==> [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9] ==> [/usr/lib/gcc/x86_64-linux-gnu/9]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/9/../../..] ==> [/usr/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;pthread;c;gcc_s;gcc]
+  implicit dirs: [/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib;/usr/lib/gcc/x86_64-linux-gnu/9;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
   implicit fwks: []
 
 

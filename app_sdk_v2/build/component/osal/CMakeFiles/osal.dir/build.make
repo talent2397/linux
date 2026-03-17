@@ -60,28 +60,28 @@ include component/osal/CMakeFiles/osal.dir/flags.make
 component/osal/CMakeFiles/osal.dir/osal_queue.c.o: component/osal/CMakeFiles/osal.dir/flags.make
 component/osal/CMakeFiles/osal.dir/osal_queue.c.o: ../component/osal/osal_queue.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object component/osal/CMakeFiles/osal.dir/osal_queue.c.o"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/osal.dir/osal_queue.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/osal/osal_queue.c
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/osal.dir/osal_queue.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/osal/osal_queue.c
 
 component/osal/CMakeFiles/osal.dir/osal_queue.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/osal.dir/osal_queue.c.i"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/osal/osal_queue.c > CMakeFiles/osal.dir/osal_queue.c.i
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/osal/osal_queue.c > CMakeFiles/osal.dir/osal_queue.c.i
 
 component/osal/CMakeFiles/osal.dir/osal_queue.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/osal.dir/osal_queue.c.s"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/osal/osal_queue.c -o CMakeFiles/osal.dir/osal_queue.c.s
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/osal/osal_queue.c -o CMakeFiles/osal.dir/osal_queue.c.s
 
 component/osal/CMakeFiles/osal.dir/osal_thread.c.o: component/osal/CMakeFiles/osal.dir/flags.make
 component/osal/CMakeFiles/osal.dir/osal_thread.c.o: ../component/osal/osal_thread.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object component/osal/CMakeFiles/osal.dir/osal_thread.c.o"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/osal.dir/osal_thread.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/osal/osal_thread.c
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/osal.dir/osal_thread.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/osal/osal_thread.c
 
 component/osal/CMakeFiles/osal.dir/osal_thread.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/osal.dir/osal_thread.c.i"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/osal/osal_thread.c > CMakeFiles/osal.dir/osal_thread.c.i
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/osal/osal_thread.c > CMakeFiles/osal.dir/osal_thread.c.i
 
 component/osal/CMakeFiles/osal.dir/osal_thread.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/osal.dir/osal_thread.c.s"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/osal/osal_thread.c -o CMakeFiles/osal.dir/osal_thread.c.s
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/osal/osal_thread.c -o CMakeFiles/osal.dir/osal_thread.c.s
 
 # Object files for target osal
 osal_OBJECTS = \

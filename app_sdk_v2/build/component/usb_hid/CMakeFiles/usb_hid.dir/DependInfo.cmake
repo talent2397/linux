@@ -16,11 +16,12 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../component/usb_hid/."
   "../component/hal"
   "../component/osal"
+  "../platform/x86linux/src/porting/device"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/src/CMakeFiles/lvgl_porting.dir/DependInfo.cmake"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/x86linux/src/CMakeFiles/lvgl_porting.dir/DependInfo.cmake"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal/CMakeFiles/osal.dir/DependInfo.cmake"
   )
 

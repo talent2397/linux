@@ -6,6 +6,7 @@
 #include "page_conf.h"
 #include "font_conf.h"
 #include "wpa_manager.h"
+#include "http_manager.h"
 
 extern void lv_port_disp_init(bool is_disp_orientation);
 extern void lv_port_indev_init(void);
@@ -22,13 +23,14 @@ int main()
     lv_init();
     lv_port_disp_init(false);
     lv_port_indev_init();
+
+    http_request_create();
+
     font_init();
 
     // 页面初始化
     page_test_init();
 
-    // 1. 打开 WiFi 管理器
-    printf("正在初始化 wpa_manager...\n");
     wpa_manager_open();
 
     // 【修改点1】：关键延时！给 wpa_supplicant 守护进程和 Socket 建立留出时间

@@ -6,6 +6,7 @@ app1/CMakeFiles/demo1.dir/main.c.o
  ../app1/res/res_conf.h
  ../app1/ui/page_conf.h
  ../component/font/font_utils.h
+ ../component/net/http_manager.h
  ../component/wifi/wpa_manager.h
  ../lvgl/lvgl.h
  ../lvgl/src/core/lv_disp.h
@@ -526,6 +527,7 @@ app1/CMakeFiles/demo1.dir/ui/page_main.c.o
  ../app1/res/image/image_conf.h
  ../app1/res/res_conf.h
  ../component/font/font_utils.h
+ ../component/net/http_manager.h
  ../component/wifi/wpa_manager.h
  ../lvgl/lvgl.h
  ../lvgl/src/core/lv_disp.h

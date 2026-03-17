@@ -53,7 +53,7 @@ CMAKE_BINARY_DIR = /home/xiaoyubb/xiangmu/app_sdk_v2/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: platform/t113/all
+all: platform/x86linux/all
 all: component/osal/all
 all: component/wifi/all
 all: component/net/all
@@ -66,7 +66,7 @@ all: app1/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: platform/t113/preinstall
+preinstall: platform/x86linux/preinstall
 preinstall: component/osal/preinstall
 preinstall: component/wifi/preinstall
 preinstall: component/net/preinstall
@@ -79,7 +79,7 @@ preinstall: app1/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: platform/t113/clean
+clean: platform/x86linux/clean
 clean: component/osal/clean
 clean: component/wifi/clean
 clean: component/net/clean
@@ -238,67 +238,67 @@ lvgl/clean: lvgl/CMakeFiles/lvgl.dir/clean
 .PHONY : lvgl/clean
 
 #=============================================================================
-# Directory level rules for directory platform/t113
+# Directory level rules for directory platform/x86linux
 
 # Recursive "all" directory target.
-platform/t113/all: platform/t113/src/all
+platform/x86linux/all: platform/x86linux/src/all
 
-.PHONY : platform/t113/all
+.PHONY : platform/x86linux/all
 
 # Recursive "preinstall" directory target.
-platform/t113/preinstall: platform/t113/src/preinstall
+platform/x86linux/preinstall: platform/x86linux/src/preinstall
 
-.PHONY : platform/t113/preinstall
+.PHONY : platform/x86linux/preinstall
 
 # Recursive "clean" directory target.
-platform/t113/clean: platform/t113/src/clean
+platform/x86linux/clean: platform/x86linux/src/clean
 
-.PHONY : platform/t113/clean
+.PHONY : platform/x86linux/clean
 
 #=============================================================================
-# Directory level rules for directory platform/t113/src
+# Directory level rules for directory platform/x86linux/src
 
 # Recursive "all" directory target.
-platform/t113/src/all: platform/t113/src/CMakeFiles/lvgl_porting.dir/all
+platform/x86linux/src/all: platform/x86linux/src/CMakeFiles/lvgl_porting.dir/all
 
-.PHONY : platform/t113/src/all
+.PHONY : platform/x86linux/src/all
 
 # Recursive "preinstall" directory target.
-platform/t113/src/preinstall:
+platform/x86linux/src/preinstall:
 
-.PHONY : platform/t113/src/preinstall
+.PHONY : platform/x86linux/src/preinstall
 
 # Recursive "clean" directory target.
-platform/t113/src/clean: platform/t113/src/CMakeFiles/lvgl_porting.dir/clean
+platform/x86linux/src/clean: platform/x86linux/src/CMakeFiles/lvgl_porting.dir/clean
 
-.PHONY : platform/t113/src/clean
+.PHONY : platform/x86linux/src/clean
 
 #=============================================================================
-# Target rules for target platform/t113/src/CMakeFiles/lvgl_porting.dir
+# Target rules for target platform/x86linux/src/CMakeFiles/lvgl_porting.dir
 
 # All Build rule for target.
-platform/t113/src/CMakeFiles/lvgl_porting.dir/all:
-	$(MAKE) -f platform/t113/src/CMakeFiles/lvgl_porting.dir/build.make platform/t113/src/CMakeFiles/lvgl_porting.dir/depend
-	$(MAKE) -f platform/t113/src/CMakeFiles/lvgl_porting.dir/build.make platform/t113/src/CMakeFiles/lvgl_porting.dir/build
+platform/x86linux/src/CMakeFiles/lvgl_porting.dir/all:
+	$(MAKE) -f platform/x86linux/src/CMakeFiles/lvgl_porting.dir/build.make platform/x86linux/src/CMakeFiles/lvgl_porting.dir/depend
+	$(MAKE) -f platform/x86linux/src/CMakeFiles/lvgl_porting.dir/build.make platform/x86linux/src/CMakeFiles/lvgl_porting.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=92,93,94,95,96 "Built target lvgl_porting"
-.PHONY : platform/t113/src/CMakeFiles/lvgl_porting.dir/all
+.PHONY : platform/x86linux/src/CMakeFiles/lvgl_porting.dir/all
 
 # Build rule for subdir invocation for target.
-platform/t113/src/CMakeFiles/lvgl_porting.dir/rule: cmake_check_build_system
+platform/x86linux/src/CMakeFiles/lvgl_porting.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles 5
-	$(MAKE) -f CMakeFiles/Makefile2 platform/t113/src/CMakeFiles/lvgl_porting.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 platform/x86linux/src/CMakeFiles/lvgl_porting.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles 0
-.PHONY : platform/t113/src/CMakeFiles/lvgl_porting.dir/rule
+.PHONY : platform/x86linux/src/CMakeFiles/lvgl_porting.dir/rule
 
 # Convenience name for target.
-lvgl_porting: platform/t113/src/CMakeFiles/lvgl_porting.dir/rule
+lvgl_porting: platform/x86linux/src/CMakeFiles/lvgl_porting.dir/rule
 
 .PHONY : lvgl_porting
 
 # clean rule for target.
-platform/t113/src/CMakeFiles/lvgl_porting.dir/clean:
-	$(MAKE) -f platform/t113/src/CMakeFiles/lvgl_porting.dir/build.make platform/t113/src/CMakeFiles/lvgl_porting.dir/clean
-.PHONY : platform/t113/src/CMakeFiles/lvgl_porting.dir/clean
+platform/x86linux/src/CMakeFiles/lvgl_porting.dir/clean:
+	$(MAKE) -f platform/x86linux/src/CMakeFiles/lvgl_porting.dir/build.make platform/x86linux/src/CMakeFiles/lvgl_porting.dir/clean
+.PHONY : platform/x86linux/src/CMakeFiles/lvgl_porting.dir/clean
 
 #=============================================================================
 # Target rules for target component/osal/CMakeFiles/osal.dir
@@ -385,7 +385,7 @@ component/net/CMakeFiles/http.dir/clean:
 # Target rules for target component/player/CMakeFiles/player.dir
 
 # All Build rule for target.
-component/player/CMakeFiles/player.dir/all: platform/t113/src/CMakeFiles/lvgl_porting.dir/all
+component/player/CMakeFiles/player.dir/all: platform/x86linux/src/CMakeFiles/lvgl_porting.dir/all
 component/player/CMakeFiles/player.dir/all: component/osal/CMakeFiles/osal.dir/all
 	$(MAKE) -f component/player/CMakeFiles/player.dir/build.make component/player/CMakeFiles/player.dir/depend
 	$(MAKE) -f component/player/CMakeFiles/player.dir/build.make component/player/CMakeFiles/player.dir/build
@@ -440,7 +440,7 @@ component/font/CMakeFiles/font.dir/clean:
 # Target rules for target component/usb_hid/CMakeFiles/usb_hid.dir
 
 # All Build rule for target.
-component/usb_hid/CMakeFiles/usb_hid.dir/all: platform/t113/src/CMakeFiles/lvgl_porting.dir/all
+component/usb_hid/CMakeFiles/usb_hid.dir/all: platform/x86linux/src/CMakeFiles/lvgl_porting.dir/all
 component/usb_hid/CMakeFiles/usb_hid.dir/all: component/osal/CMakeFiles/osal.dir/all
 	$(MAKE) -f component/usb_hid/CMakeFiles/usb_hid.dir/build.make component/usb_hid/CMakeFiles/usb_hid.dir/depend
 	$(MAKE) -f component/usb_hid/CMakeFiles/usb_hid.dir/build.make component/usb_hid/CMakeFiles/usb_hid.dir/build
@@ -495,7 +495,7 @@ lvgl/CMakeFiles/lvgl_demos.dir/clean:
 # Target rules for target lvgl/CMakeFiles/lvgl.dir
 
 # All Build rule for target.
-lvgl/CMakeFiles/lvgl.dir/all: platform/t113/src/CMakeFiles/lvgl_porting.dir/all
+lvgl/CMakeFiles/lvgl.dir/all: platform/x86linux/src/CMakeFiles/lvgl_porting.dir/all
 	$(MAKE) -f lvgl/CMakeFiles/lvgl.dir/build.make lvgl/CMakeFiles/lvgl.dir/depend
 	$(MAKE) -f lvgl/CMakeFiles/lvgl.dir/build.make lvgl/CMakeFiles/lvgl.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68 "Built target lvgl"
@@ -522,7 +522,7 @@ lvgl/CMakeFiles/lvgl.dir/clean:
 # Target rules for target app1/CMakeFiles/demo1.dir
 
 # All Build rule for target.
-app1/CMakeFiles/demo1.dir/all: platform/t113/src/CMakeFiles/lvgl_porting.dir/all
+app1/CMakeFiles/demo1.dir/all: platform/x86linux/src/CMakeFiles/lvgl_porting.dir/all
 app1/CMakeFiles/demo1.dir/all: component/osal/CMakeFiles/osal.dir/all
 app1/CMakeFiles/demo1.dir/all: component/wifi/CMakeFiles/wifi.dir/all
 app1/CMakeFiles/demo1.dir/all: component/net/CMakeFiles/http.dir/all
