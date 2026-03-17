@@ -1,2 +1,2 @@
-/usr/bin/ar qc libfont.a  CMakeFiles/font.dir/font_utils.c.o
-/usr/bin/ranlib libfont.a
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ar qc libfont.a  CMakeFiles/font.dir/font_utils.c.o
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ranlib libfont.a

@@ -1,2 +1,2 @@
-/usr/bin/ar qc libusb_hid.a  CMakeFiles/usb_hid.dir/usb_hid_async.c.o CMakeFiles/usb_hid.dir/usb_hid_utils.c.o
-/usr/bin/ranlib libusb_hid.a
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ar qc libusb_hid.a  CMakeFiles/usb_hid.dir/usb_hid_async.c.o CMakeFiles/usb_hid.dir/usb_hid_utils.c.o
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ranlib libusb_hid.a

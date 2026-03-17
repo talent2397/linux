@@ -6,14 +6,58 @@
 #include "font_conf.h"
 #include "page_conf.h"
 
+// 【新增】声明主页面中的城市更新接口
+extern void update_weather_city(const char *city_pinyin);
+
 static lv_style_t com_style;
 
 // ======================= 全局状态管理 =======================
 
-// 当前选择的城市
-static char selected_city[20] = "成都";
+// 当前选择的城市（默认与 page_main.c 一致，设为重庆）
+static char selected_city[20] = "重庆";
 static lv_obj_t *city_roller = NULL;
 static lv_obj_t *update_label = NULL;
+
+const char *cities[] = {
+    "成都", "重庆", "宜宾", "北京", "上海",
+    "广州", "深圳", "杭州", "武汉", "西安"};
+
+// 【新增】中文到拼音的转换函数，保证 HTTP API 稳定调用
+static const char *get_city_pinyin(const char *chinese_name)
+{
+    if (strcmp(chinese_name, "成都") == 0)
+        return "chengdu";
+    if (strcmp(chinese_name, "重庆") == 0)
+        return "chongqing";
+    if (strcmp(chinese_name, "宜宾") == 0)
+        return "yibin";
+    if (strcmp(chinese_name, "北京") == 0)
+        return "beijing";
+    if (strcmp(chinese_name, "上海") == 0)
+        return "shanghai";
+    if (strcmp(chinese_name, "广州") == 0)
+        return "guangzhou";
+    if (strcmp(chinese_name, "深圳") == 0)
+        return "shenzhen";
+    if (strcmp(chinese_name, "杭州") == 0)
+        return "hangzhou";
+    if (strcmp(chinese_name, "武汉") == 0)
+        return "wuhan";
+    if (strcmp(chinese_name, "西安") == 0)
+        return "xian";
+    return "chongqing"; // 默认兜底
+}
+
+// 【新增】根据名称寻找索引，用于界面记忆功能
+static int get_city_index(const char *chinese_name)
+{
+    for (int i = 0; i < 10; i++)
+    {
+        if (strcmp(cities[i], chinese_name) == 0)
+            return i;
+    }
+    return 1; // 默认返回重庆的索引
+}
 
 // 封装字库获取函数
 static void obj_font_set(lv_obj_t *obj, int type, uint16_t weight)
@@ -29,7 +73,6 @@ static void obj_font_set(lv_obj_t *obj, int type, uint16_t weight)
 static void lv_event_cb_func(lv_event_t *e)
 {
     lv_obj_clean(lv_scr_act());
-
     page_test_init();
 }
 
@@ -38,11 +81,6 @@ static void city_roller_event_handler(lv_event_t *e)
 {
     lv_obj_t *roller = lv_event_get_target(e);
     int selected_index = lv_roller_get_selected(roller);
-
-    // 根据索引获取城市名称
-    const char *cities[] = {
-        "成都", "重庆", "宜宾", "北京", "上海",
-        "广州", "深圳", "杭州", "武汉", "西安"};
 
     if (selected_index >= 0 && selected_index < 10)
     {
@@ -65,13 +103,12 @@ static void update_city_event_cb(lv_event_t *e)
 
     printf("城市已更新为: %s\n", selected_city);
 
-    // 这里可以调用其他函数，传递城市参数
-    // 例如: update_weather_data(selected_city);
+    // 【修改】调用 page_main 提供的更新函数，传递城市的拼音给服务器发请求
+    update_weather_city(get_city_pinyin(selected_city));
 }
 
 // ======================= UI初始化模块 =======================
 
-// 初始化通用样式
 static void com_style_init()
 {
     lv_style_init(&com_style);
@@ -133,7 +170,6 @@ static lv_obj_t *init()
 
 static lv_obj_t *init_imag_text(lv_obj_t *parent, const char *src, const char *str)
 {
-    // 创建对象作为容器
     lv_obj_t *cont = lv_obj_create(parent);
     lv_obj_set_size(cont, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
     lv_obj_add_style(cont, &com_style, LV_PART_MAIN);
@@ -151,30 +187,21 @@ static lv_obj_t *init_imag_text(lv_obj_t *parent, const char *src, const char *s
     return cont;
 }
 
-static lv_obj_t *init_select_btn(lv_obj_t *parent, int lenth,
-                                 int width, int redius, const char *str,
-                                 const char size, const char py_x, const char py_y)
+static lv_obj_t *init_select_btn(lv_obj_t *parent, int lenth, int width, int redius, const char *str, const char size, const char py_x, const char py_y)
 {
-    // 初始化按钮控件
     lv_obj_t *btn = lv_btn_create(parent);
     lv_obj_add_style(btn, &com_style, LV_PART_MAIN);
-    // 设置按钮大小
     lv_obj_set_size(btn, lenth, width);
-    // 清除焦点状态
     lv_obj_clear_state(btn, LV_STATE_FOCUS_KEY);
-    // 设置边框、阴影为0
     lv_obj_set_style_border_width(btn, 0, LV_PART_MAIN);
     lv_obj_set_style_shadow_width(btn, 0, LV_PART_MAIN);
-    // 设置圆角为35
     lv_obj_set_style_radius(btn, redius, LV_PART_MAIN);
-    // 设置背景颜色为蓝色
     lv_obj_set_style_bg_color(btn, lv_color_hex(0x1F94D2), 0);
-    // 初始化按钮显示文字
+
     lv_obj_t *btn_label = lv_label_create(btn);
     obj_font_set(btn_label, FONT_TYPE_CN, size);
     lv_obj_set_style_text_color(btn_label, lv_color_hex(0xffffff), 0);
     lv_label_set_text(btn_label, str);
-    // 进行偏移对齐
     lv_obj_align(btn_label, LV_ALIGN_CENTER, py_x, py_y);
     return btn;
 }
@@ -214,24 +241,22 @@ static lv_obj_t *init_gunlun(lv_obj_t *parent)
 
 // ======================= 页面主函数 =======================
 
-void page_city_setting() // 日期格式
+void page_city_setting()
 {
     lv_obj_t *cont = init();
 
-    // 更新提示标签 - 创建在cont容器上，确保正确显示
     update_label = lv_label_create(lv_scr_act());
-    obj_font_set(update_label, FONT_TYPE_CN, 28);                         // 增大字体
-    lv_obj_set_style_text_color(update_label, lv_color_hex(0xFFA500), 0); // 使用橙色更醒目
+    obj_font_set(update_label, FONT_TYPE_CN, 28);
+    lv_obj_set_style_text_color(update_label, lv_color_hex(0xFFA500), 0);
     lv_label_set_text(update_label, "请选择城市");
-    lv_obj_align(update_label, LV_ALIGN_TOP_MID, 0, 0);  // 调整到更靠上的位置
-    lv_obj_set_style_bg_opa(update_label, LV_OPA_80, 0); // 增加背景不透明度
+    lv_obj_align(update_label, LV_ALIGN_TOP_MID, 0, 0);
+    lv_obj_set_style_bg_opa(update_label, LV_OPA_80, 0);
     lv_obj_set_style_bg_color(update_label, lv_color_hex(0x000000), 0);
-    lv_obj_set_style_pad_all(update_label, 15, 0); // 增加内边距
+    lv_obj_set_style_pad_all(update_label, 15, 0);
     lv_obj_set_style_border_color(update_label, lv_color_hex(0xFFA500), 0);
-    lv_obj_set_style_radius(update_label, 10, 0); // 圆角边框
-    lv_obj_move_foreground(update_label);         // 确保在最前面显示
+    lv_obj_set_style_radius(update_label, 10, 0);
+    lv_obj_move_foreground(update_label);
 
-    // 主容器 - 水平布局
     lv_obj_t *main_container = lv_obj_create(cont);
     lv_obj_set_size(main_container, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
     lv_obj_add_style(main_container, &com_style, LV_PART_MAIN);
@@ -241,14 +266,12 @@ void page_city_setting() // 日期格式
     lv_obj_set_flex_align(main_container, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
     lv_obj_set_style_pad_column(main_container, 30, LV_PART_MAIN);
 
-    // 城市图标和标签
     lv_obj_t *city_label = init_imag_text(main_container, GET_IMAGE_PATH("icon_city.png"), "城市：");
 
-    // 城市滚轮
     city_roller = init_gunlun(main_container);
-    lv_roller_set_selected(city_roller, 0, LV_ANIM_OFF); // 默认选择成都
+    // 【修改】动态获取当前缓存的城市索引，防止返回时重置为0
+    lv_roller_set_selected(city_roller, get_city_index(selected_city), LV_ANIM_OFF);
 
-    // 更新城市按钮
     lv_obj_t *update_btn = init_select_btn(main_container, 151, 66, 35, "确定更新城市", 20, 0, 0);
     lv_obj_add_event_cb(update_btn, update_city_event_cb, LV_EVENT_CLICKED, NULL);
 }
