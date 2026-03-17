@@ -60,15 +60,15 @@ include component/net/CMakeFiles/http.dir/flags.make
 component/net/CMakeFiles/http.dir/http_manager.c.o: component/net/CMakeFiles/http.dir/flags.make
 component/net/CMakeFiles/http.dir/http_manager.c.o: ../component/net/http_manager.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object component/net/CMakeFiles/http.dir/http_manager.c.o"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/net && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/http.dir/http_manager.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/net/http_manager.c
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/net && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/http.dir/http_manager.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/net/http_manager.c
 
 component/net/CMakeFiles/http.dir/http_manager.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/http.dir/http_manager.c.i"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/net && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/net/http_manager.c > CMakeFiles/http.dir/http_manager.c.i
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/net && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/net/http_manager.c > CMakeFiles/http.dir/http_manager.c.i
 
 component/net/CMakeFiles/http.dir/http_manager.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/http.dir/http_manager.c.s"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/net && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/net/http_manager.c -o CMakeFiles/http.dir/http_manager.c.s
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/net && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/net/http_manager.c -o CMakeFiles/http.dir/http_manager.c.s
 
 # Object files for target http
 http_OBJECTS = \

@@ -1,7 +1,7 @@
-set(CMAKE_CXX_COMPILER "/usr/bin/g++")
+set(CMAKE_CXX_COMPILER "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-g++")
 set(CMAKE_CXX_COMPILER_ARG1 "")
 set(CMAKE_CXX_COMPILER_ID "GNU")
-set(CMAKE_CXX_COMPILER_VERSION "9.4.0")
+set(CMAKE_CXX_COMPILER_VERSION "8.3.0")
 set(CMAKE_CXX_COMPILER_VERSION_INTERNAL "")
 set(CMAKE_CXX_COMPILER_WRAPPER "")
 set(CMAKE_CXX_STANDARD_COMPUTED_DEFAULT "14")
@@ -19,11 +19,11 @@ set(CMAKE_CXX_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "/usr/bin/ar")
-set(CMAKE_CXX_COMPILER_AR "/usr/bin/gcc-ar-9")
-set(CMAKE_RANLIB "/usr/bin/ranlib")
-set(CMAKE_CXX_COMPILER_RANLIB "/usr/bin/gcc-ranlib-9")
-set(CMAKE_LINKER "/usr/bin/ld")
+set(CMAKE_AR "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ar")
+set(CMAKE_CXX_COMPILER_AR "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc-ar")
+set(CMAKE_RANLIB "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ranlib")
+set(CMAKE_CXX_COMPILER_RANLIB "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc-ranlib")
+set(CMAKE_LINKER "/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ld")
 set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCXX 1)
 set(CMAKE_CXX_COMPILER_LOADED 1)
@@ -57,9 +57,9 @@ set(CMAKE_CXX_LINKER_PREFERENCE 30)
 set(CMAKE_CXX_LINKER_PREFERENCE_PROPAGATES 1)
 
 # Save compiler ABI information.
-set(CMAKE_CXX_SIZEOF_DATA_PTR "8")
+set(CMAKE_CXX_SIZEOF_DATA_PTR "4")
 set(CMAKE_CXX_COMPILER_ABI "ELF")
-set(CMAKE_CXX_LIBRARY_ARCHITECTURE "x86_64-linux-gnu")
+set(CMAKE_CXX_LIBRARY_ARCHITECTURE "")
 
 if(CMAKE_CXX_SIZEOF_DATA_PTR)
   set(CMAKE_SIZEOF_VOID_P "${CMAKE_CXX_SIZEOF_DATA_PTR}")
@@ -70,7 +70,7 @@ if(CMAKE_CXX_COMPILER_ABI)
 endif()
 
 if(CMAKE_CXX_LIBRARY_ARCHITECTURE)
-  set(CMAKE_LIBRARY_ARCHITECTURE "x86_64-linux-gnu")
+  set(CMAKE_LIBRARY_ARCHITECTURE "")
 endif()
 
 set(CMAKE_CXX_CL_SHOWINCLUDES_PREFIX "")
@@ -82,7 +82,7 @@ endif()
 
 
 
-set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/src/porting;/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp;/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/include;/usr/include/c++/9;/usr/include/x86_64-linux-gnu/c++/9;/usr/include/c++/9/backward;/usr/lib/gcc/x86_64-linux-gnu/9/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include")
-set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;m;gcc_s;gcc;pthread;c;gcc_s;gcc")
-set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/lib;/usr/lib/gcc/x86_64-linux-gnu/9;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib")
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/src/porting;/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/CMakeTmp;/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include;/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/include/freetype;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include/c++/8.3.0;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include/c++/8.3.0/arm-openwrt-linux-gnueabi;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include/c++/8.3.0/backward;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/sys-include;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/include")
+set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "pthread;freetype;rt;dl;uapi;z;bz2;stdc++;m;gcc_s;gcc;c;gcc_s;gcc")
+set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/lib;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin:/usr/lib;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc;/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/arm-openwrt-linux-gnueabi/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

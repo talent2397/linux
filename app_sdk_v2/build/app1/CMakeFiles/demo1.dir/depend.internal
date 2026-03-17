@@ -6,6 +6,7 @@ app1/CMakeFiles/demo1.dir/main.c.o
  ../app1/res/res_conf.h
  ../app1/ui/page_conf.h
  ../component/font/font_utils.h
+ ../component/wifi/wpa_manager.h
  ../lvgl/lvgl.h
  ../lvgl/src/core/lv_disp.h
  ../lvgl/src/core/lv_event.h
@@ -525,6 +526,7 @@ app1/CMakeFiles/demo1.dir/ui/page_main.c.o
  ../app1/res/image/image_conf.h
  ../app1/res/res_conf.h
  ../component/font/font_utils.h
+ ../component/wifi/wpa_manager.h
  ../lvgl/lvgl.h
  ../lvgl/src/core/lv_disp.h
  ../lvgl/src/core/lv_event.h
@@ -1298,7 +1300,5 @@ app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.o
  ../lvgl/src/widgets/lv_switch.h
  ../lvgl/src/widgets/lv_table.h
  ../lvgl/src/widgets/lv_textarea.h
- /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/bg_bt_audio_img.h
- /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/output.h
  /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_conf.h
  /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_yingxiang_setting.c

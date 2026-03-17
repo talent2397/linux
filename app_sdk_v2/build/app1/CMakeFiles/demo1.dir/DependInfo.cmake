@@ -20,7 +20,6 @@ set(CMAKE_C_COMPILER_ID "GNU")
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
   "LV_CONF_INCLUDE_SIMPLE"
-  "SIMULATOR_LINUX"
   )
 
 # The include file search paths:
@@ -33,6 +32,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../app1/./ui"
   "../component/font"
   "../lvgl"
+  "../component/wifi"
+  "../component/net"
   "../lvgl/.."
   "../lvgl/src"
   "../lvgl/src/core"
@@ -90,15 +91,16 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../lvgl/src/hal"
   "../lvgl/src/misc"
   "../lvgl/src/widgets"
-  "../platform/x86linux/src/porting/device"
-  "../component/hal"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/xiaoyubb/xiangmu/app_sdk_v2/build/lvgl/CMakeFiles/lvgl.dir/DependInfo.cmake"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/font/CMakeFiles/font.dir/DependInfo.cmake"
-  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/x86linux/src/CMakeFiles/lvgl_porting.dir/DependInfo.cmake"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi/CMakeFiles/wifi.dir/DependInfo.cmake"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/net/CMakeFiles/http.dir/DependInfo.cmake"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/src/CMakeFiles/lvgl_porting.dir/DependInfo.cmake"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal/CMakeFiles/osal.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

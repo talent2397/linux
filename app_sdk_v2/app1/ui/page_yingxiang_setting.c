@@ -5,8 +5,6 @@
 #include "image_conf.h"
 #include "font_conf.h"
 #include "page_conf.h"
-#include "output.h"
-#include "bg_bt_audio_img.h"
 
 static lv_style_t com_style;
 
@@ -61,14 +59,14 @@ static lv_obj_t *init_back_view(lv_obj_t *parent)
     lv_obj_set_style_pad_top(back_img, 20, 0);
 
     lv_obj_t *menu_img = lv_img_create(cont);
-    lv_img_set_src(menu_img, GET_IMAGE_PATH("icon_city.png"));
+    lv_img_set_src(menu_img, GET_IMAGE_PATH("icon_volume.png"));
     lv_obj_set_align(menu_img, LV_ALIGN_TOP_LEFT);
     lv_obj_set_style_pad_top(menu_img, 20, 0);
     lv_obj_align_to(menu_img, back_img, LV_ALIGN_OUT_RIGHT_MID, 20, 0);
 
     lv_obj_t *title = lv_label_create(cont);
     obj_font_set(title, FONT_TYPE_CN, 24);
-    lv_label_set_text(title, "天气城市设置");
+    lv_label_set_text(title, "蓝牙音箱");
     lv_obj_set_style_text_color(title, lv_color_hex(0xffffff), 0);
     lv_obj_align_to(title, menu_img, LV_ALIGN_OUT_RIGHT_MID, 20, 3);
 
@@ -84,12 +82,6 @@ static lv_obj_t *init()
     lv_obj_t *cont = lv_obj_create(lv_scr_act());
     lv_obj_set_size(cont, LV_PCT(100), LV_PCT(100));
     lv_obj_add_style(cont, &com_style, LV_PART_MAIN);
-
-    // 背景图片 - 占满整个屏幕（使用C数组形式提高性能）
-    lv_obj_t *bg_img = lv_img_create(cont);
-    lv_img_set_src(bg_img, &bg_bt_audio_img);
-    lv_obj_set_size(bg_img, LV_PCT(100), LV_PCT(100));
-    lv_obj_align(bg_img, LV_ALIGN_CENTER, 0, 0);
 
     init_back_view(cont);
     return cont;

@@ -44,13 +44,8 @@ build/app/demo
 adb push platform/t113/lib/* /usr/lib/  #仅第一次需要push，不修改无需重新push
 adb push build/app1/res/* /usr/res/      #仅第一次需要push，不修改无需重新push
 adb push build/app1/demo1 /usr/bin/
-
+adb push build/app1/demo1 /data
  vi /etc/init.d/rc.final 
  ./usr/bin/demo & 
 修改后，记得保存，最好用reboot重启确保可以完全写入
 
-更多课程：
-https://space.bilibili.com/383943678?spm_id_from=333.788.0.0
-
-
-```

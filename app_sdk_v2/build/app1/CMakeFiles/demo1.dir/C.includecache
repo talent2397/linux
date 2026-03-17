@@ -22,6 +22,8 @@ res_conf.h
 lvgl/lvgl.h
 ../component/font/lvgl/lvgl.h
 
+../component/wifi/wpa_manager.h
+
 ../lvgl/lvgl.h
 src/misc/lv_log.h
 ../lvgl/src/misc/lv_log.h
@@ -1034,22 +1036,10 @@ lv_label.h
 lv_label.h
 ../lvgl/src/widgets/lv_label.h
 
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/bg_bt_audio_img.h
-lvgl.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/lvgl.h
-output.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/output.h
-
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/output.h
-
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_conf.h
 
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_yingxiang_setting.c
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_main.c
 stdio.h
--
-stdlib.h
--
-string.h
 -
 lvgl.h
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/lvgl.h
@@ -1059,8 +1049,8 @@ font_conf.h
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/font_conf.h
 page_conf.h
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_conf.h
-output.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/output.h
-bg_bt_audio_img.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/bg_bt_audio_img.h
+time.h
+-
+wpa_manager.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/wpa_manager.h
 
