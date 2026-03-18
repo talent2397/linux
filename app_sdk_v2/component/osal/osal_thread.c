@@ -13,26 +13,29 @@
  * @param arg 传递给线程函数的参数
  * @return 操作结果
  */
-OSAL_RESULT_T osal_thread_create(osal_thread_t *thandle, 
-                               void* (*thread_fun)(void *), 
-                               void *arg)
+OSAL_RESULT_T osal_thread_create(osal_thread_t *thandle,
+                                 void *(*thread_fun)(void *),
+                                 void *arg)
 {
     // 参数有效性检查
-    if (thandle == NULL || thread_fun == NULL) {
+    if (thandle == NULL || thread_fun == NULL)
+    {
         printf("osal_thread_create: Invalid parameters\n");
         return OSAL_INVALID_PARAM;
     }
 
     // 分配线程ID存储内存
     pthread_t *tid = (pthread_t *)malloc(sizeof(pthread_t));
-    if (tid == NULL) {
+    if (tid == NULL)
+    {
         printf("osal_thread_create: Memory allocation failed\n");
         return OSAL_MEMORY_ERROR;
     }
 
     // 创建线程
     int ret = pthread_create(tid, NULL, thread_fun, arg);
-    if (ret != 0) {
+    if (ret != 0)
+    {
         printf("osal_thread_create: pthread_create failed, errno=%d\n", ret);
         free(tid);
         return OSAL_SYSTEM_ERROR;
@@ -50,14 +53,16 @@ OSAL_RESULT_T osal_thread_create(osal_thread_t *thandle,
 OSAL_RESULT_T osal_thread_cancel(osal_thread_t *thandle)
 {
     // 参数有效性检查
-    if (thandle == NULL || *thandle == NULL) {
+    if (thandle == NULL || *thandle == NULL)
+    {
         printf("osal_thread_cancel: Invalid thread handle\n");
         return OSAL_INVALID_PARAM;
     }
 
     pthread_t *tid = (pthread_t *)*thandle;
     int ret = pthread_cancel(*tid);
-    if (ret != 0) {
+    if (ret != 0)
+    {
         printf("osal_thread_cancel: pthread_cancel failed, errno=%d\n", ret);
         return OSAL_SYSTEM_ERROR;
     }
@@ -73,14 +78,16 @@ OSAL_RESULT_T osal_thread_cancel(osal_thread_t *thandle)
 void osal_thread_join(osal_thread_t *thandle, void **thread_return)
 {
     // 参数有效性检查
-    if (thandle == NULL || *thandle == NULL) {
+    if (thandle == NULL || *thandle == NULL)
+    {
         printf("osal_thread_join: Invalid thread handle\n");
         return;
     }
 
     pthread_t *tid = (pthread_t *)*thandle;
     int ret = pthread_join(*tid, thread_return);
-    if (ret != 0) {
+    if (ret != 0)
+    {
         printf("osal_thread_join: pthread_join failed, errno=%d\n", ret);
     }
 
@@ -97,7 +104,8 @@ void osal_thread_join(osal_thread_t *thandle, void **thread_return)
 OSAL_RESULT_T osal_thread_delete(osal_thread_t *thandle)
 {
     // 参数有效性检查
-    if (thandle != NULL && *thandle != NULL) {
+    if (thandle != NULL && *thandle != NULL)
+    {
         free(*thandle);
         *thandle = NULL;
     }
@@ -114,5 +122,5 @@ OSAL_RESULT_T osal_thread_delete(osal_thread_t *thandle)
  */
 void osal_thread_sleep(int32_t msecs)
 {
-    usleep(msecs*1000);
+    usleep(msecs * 1000);
 }
