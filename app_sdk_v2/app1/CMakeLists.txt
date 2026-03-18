@@ -23,8 +23,10 @@ target_include_directories(demo1 PRIVATE
                                 ./ui
                                 ${CMAKE_SOURCE_DIR}/component/font
                                 ${CMAKE_SOURCE_DIR}/lvgl
-                                    ${CMAKE_SOURCE_DIR}/component/wifi
-                                      ${CMAKE_SOURCE_DIR}/component/net
+                                ${CMAKE_SOURCE_DIR}/component/wifi
+                                ${CMAKE_SOURCE_DIR}/component/net
+                                ${CMAKE_SOURCE_DIR}/component/hal
+                                ${CMAKE_SOURCE_DIR}/component/player
                                 )
 # 引入依赖库
 target_link_libraries(demo1 PRIVATE
@@ -32,6 +34,8 @@ target_link_libraries(demo1 PRIVATE
                         font
                         wifi
                         http
+                         lvgl_porting
+                         player
                         )
 # 当使用 PRIVATE 关键字时，表示所链接的库仅用于当前目标的实现，而不会传递给依赖该目标的其他目标。
 # 换句话说：

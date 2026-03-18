@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "lvgl.h"
 #include "image_conf.h"
 #include "font_conf.h"
 #include "page_conf.h"
+#include "music_conf.h"
+#include "audio_player_async.h"
 
 static lv_style_t com_style;
 
@@ -13,6 +16,19 @@ static lv_obj_t *label_top;
 static lv_obj_t *roller_countdown; // 倒计时滚轮
 static lv_obj_t *roller_hour;      // 定时-小时滚轮
 static lv_obj_t *roller_min;       // 定时-分钟滚轮
+
+// 闹钟管理相关变量
+typedef struct
+{
+    bool active;          // 闹钟是否激活
+    time_t target_time;   // 目标时间戳
+    int type;             // 闹钟类型：0-倒计时，1-定时
+    char description[64]; // 闹钟描述
+} alarm_t;
+
+static alarm_t alarm1 = {false, 0, 0, ""};
+static alarm_t alarm2 = {false, 0, 0, ""};
+static lv_timer_t *alarm_timer = NULL;
 
 // 封装字库获取函数
 static void obj_font_set(lv_obj_t *obj, int type, uint16_t weight)
@@ -32,11 +48,131 @@ static void lv_event_cb_func(lv_event_t *e)
 
 // ======================= 按钮点击事件 =======================
 
+/* 设置倒计时闹钟 */
+static void set_countdown_alarm(int minutes)
+{
+    time_t current_time;
+    time(&current_time);
+
+    // 设置闹钟1（如果未激活）
+    if (!alarm1.active)
+    {
+        alarm1.active = true;
+        alarm1.target_time = current_time + minutes * 60;
+        alarm1.type = 0;
+        snprintf(alarm1.description, sizeof(alarm1.description), "%d分钟后提醒", minutes);
+        lv_label_set_text_fmt(label_top, "闹钟1已设置：%d分钟后提醒", minutes);
+    }
+    // 设置闹钟2（如果闹钟1已激活且闹钟2未激活）
+    else if (!alarm2.active)
+    {
+        alarm2.active = true;
+        alarm2.target_time = current_time + minutes * 60;
+        alarm2.type = 0;
+        snprintf(alarm2.description, sizeof(alarm2.description), "%d分钟后提醒", minutes);
+        lv_label_set_text_fmt(label_top, "闹钟2已设置：%d分钟后提醒", minutes);
+    }
+    // 两个闹钟都已激活
+    else
+    {
+        lv_label_set_text(label_top, "闹钟已满，请先取消一个闹钟");
+    }
+}
+
+/* 设置定时闹钟 */
+static void set_absolute_alarm(int hour, int minute)
+{
+    time_t current_time;
+    time(&current_time);
+    struct tm *timeinfo = localtime(&current_time);
+
+    // 设置目标时间
+    struct tm target_tm = *timeinfo;
+    target_tm.tm_hour = hour;
+    target_tm.tm_min = minute;
+    target_tm.tm_sec = 0;
+
+    time_t target_time = mktime(&target_tm);
+
+    // 如果设置的时间已经过去，则设置为明天的同一时间
+    if (target_time <= current_time)
+    {
+        target_time += 24 * 60 * 60; // 加一天
+    }
+
+    // 设置闹钟1（如果未激活）
+    if (!alarm1.active)
+    {
+        alarm1.active = true;
+        alarm1.target_time = target_time;
+        alarm1.type = 1;
+        snprintf(alarm1.description, sizeof(alarm1.description), "%02d:%02d提醒", hour, minute);
+        lv_label_set_text_fmt(label_top, "闹钟1已设置：%02d:%02d提醒", hour, minute);
+    }
+    // 设置闹钟2（如果闹钟1已激活且闹钟2未激活）
+    else if (!alarm2.active)
+    {
+        alarm2.active = true;
+        alarm2.target_time = target_time;
+        alarm2.type = 1;
+        snprintf(alarm2.description, sizeof(alarm2.description), "%02d:%02d提醒", hour, minute);
+        lv_label_set_text_fmt(label_top, "闹钟2已设置：%02d:%02d提醒", hour, minute);
+    }
+    // 两个闹钟都已激活
+    else
+    {
+        lv_label_set_text(label_top, "闹钟已满，请先取消一个闹钟");
+    }
+}
+
+/* 播放闹钟提示音 */
+static void play_alarm_sound(void)
+{
+    start_play_audio_async(GET_MUSIC_PATH("audio_finish2.wav"));
+}
+
+/* 取消闹钟1按钮回调 */
+static void cancel_alarm1_cb(lv_event_t *e)
+{
+    alarm1.active = false;
+    lv_label_set_text(label_top, "闹钟1已取消");
+}
+
+/* 取消闹钟2按钮回调 */
+static void cancel_alarm2_cb(lv_event_t *e)
+{
+    alarm2.active = false;
+    lv_label_set_text(label_top, "闹钟2已取消");
+}
+
+/* 闹钟定时器回调函数 */
+static void alarm_timer_cb(lv_timer_t *timer)
+{
+    time_t current_time;
+    time(&current_time);
+
+    // 检查闹钟1
+    if (alarm1.active && current_time >= alarm1.target_time)
+    {
+        lv_label_set_text_fmt(label_top, "闹钟1时间到：%s", alarm1.description);
+        play_alarm_sound();
+        alarm1.active = false; // 闹钟触发后关闭
+    }
+
+    // 检查闹钟2
+    if (alarm2.active && current_time >= alarm2.target_time)
+    {
+        lv_label_set_text_fmt(label_top, "闹钟2时间到：%s", alarm2.description);
+        play_alarm_sound();
+        alarm2.active = false; // 闹钟触发后关闭
+    }
+}
+
 // 倒计时设置按钮
 static void btn_click_countdown_cb(lv_event_t *e)
 {
     int min = lv_roller_get_selected(roller_countdown); // 直接获取滚轮当前值
-    lv_label_set_text_fmt(label_top, "好的，将在 %d 分钟后提醒你!", min);
+    set_countdown_alarm(min);
 }
 
 // 定时设置按钮
@@ -44,7 +180,7 @@ static void btn_click_absolute_cb(lv_event_t *e)
 {
     int h = lv_roller_get_selected(roller_hour);
     int m = lv_roller_get_selected(roller_min);
-    lv_label_set_text_fmt(label_top, "好的，将在 %02d:%02d 提醒你!", h, m);
+    set_absolute_alarm(h, m);
 }
 
 // ======================= 基础UI组件封装 =======================
@@ -174,6 +310,12 @@ void page_alarm()
 {
     com_style_init();
 
+    // 初始化闹钟定时器（每秒检查一次）
+    if (alarm_timer == NULL)
+    {
+        alarm_timer = lv_timer_create(alarm_timer_cb, 1000, NULL);
+    }
+
     lv_obj_t *cont = lv_obj_create(lv_scr_act());
     lv_obj_set_size(cont, LV_PCT(100), LV_PCT(100));
     lv_obj_add_style(cont, &com_style, LV_PART_MAIN);
@@ -232,4 +374,13 @@ void page_alarm()
     lv_obj_t *btn2 = init_select_btn(cont, 150, 50, 35, "设置");
     lv_obj_align_to(btn2, alarm_hour_cont, LV_ALIGN_OUT_RIGHT_MID, 20, 0);
     lv_obj_add_event_cb(btn2, btn_click_absolute_cb, LV_EVENT_SHORT_CLICKED, NULL);
+
+    // 添加取消闹钟按钮
+    lv_obj_t *cancel_btn1 = init_select_btn(cont, 150, 50, 35, "取消闹钟1");
+    lv_obj_align_to(cancel_btn1, alarm_min_cont, LV_ALIGN_OUT_BOTTOM_MID, 0, 0);
+    lv_obj_add_event_cb(cancel_btn1, cancel_alarm1_cb, LV_EVENT_SHORT_CLICKED, NULL);
+
+    lv_obj_t *cancel_btn2 = init_select_btn(cont, 150, 50, 35, "取消闹钟2");
+    lv_obj_align_to(cancel_btn2, alarm_hour_cont, LV_ALIGN_OUT_BOTTOM_MID, 0, 0);
+    lv_obj_add_event_cb(cancel_btn2, cancel_alarm2_cb, LV_EVENT_SHORT_CLICKED, NULL);
 }

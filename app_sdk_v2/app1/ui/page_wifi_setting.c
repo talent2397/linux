@@ -5,6 +5,7 @@
 #include "image_conf.h"
 #include "font_conf.h"
 #include "page_conf.h"
+#include "wpa_manager.h"
 
 static lv_style_t com_style;
 
@@ -12,6 +13,16 @@ static lv_style_t com_style;
 
 // 当前激活的文本框指针
 static lv_obj_t *active_textarea = NULL;
+
+// WiFi连接状态
+static bool wifi_connecting = false;
+static bool wifi_connected = false;
+static lv_timer_t *connect_timer = NULL;
+static lv_obj_t *status_label = NULL;
+
+// WiFi账号和密码输入框
+static lv_obj_t *ssid_ta = NULL;
+static lv_obj_t *psw_ta = NULL;
 
 // 封装字库获取函数
 static void obj_font_set(lv_obj_t *obj, int type, uint16_t weight)
@@ -93,6 +104,99 @@ static void kb_show_event_cb(lv_event_t *e)
         // 聚焦到文本框
         lv_obj_add_state(ta, LV_STATE_FOCUSED);
     }
+}
+
+// 声明外部的WiFi连接状态回调函数
+extern void wifi_connect_status_callback(WPA_WIFI_CONNECT_STATUS_E status);
+
+// WiFi连接状态回调函数
+static void wifi_setting_connect_status_callback(WPA_WIFI_CONNECT_STATUS_E status)
+{
+    if (status == WPA_WIFI_CONNECT)
+    {
+        wifi_connecting = false;
+        wifi_connected = true;
+        if (connect_timer) {
+            lv_timer_del(connect_timer);
+            connect_timer = NULL;
+        }
+        if (status_label) {
+            lv_label_set_text(status_label, "连接成功");
+            lv_obj_set_style_text_color(status_label, lv_color_hex(0x00ff00), 0);
+        }
+        printf("WiFi连接成功\n");
+    }
+    else if (status == WPA_WIFI_DISCONNECT)
+    {
+        wifi_connecting = false;
+        wifi_connected = false;
+        if (!connect_timer) {
+            // 只有在非连接过程中的断开才显示错误
+            if (status_label) {
+                lv_label_set_text(status_label, "连接失败，请重试");
+                lv_obj_set_style_text_color(status_label, lv_color_hex(0xff0000), 0);
+            }
+        }
+        printf("WiFi连接失败\n");
+    }
+    
+    // 调用外部的回调函数，更新WiFi图标和天气时间
+    wifi_connect_status_callback(status);
+}
+
+// WiFi连接超时处理函数
+static void wifi_connect_timeout(lv_timer_t *timer)
+{
+    if (wifi_connecting) {
+        wifi_connecting = false;
+        if (status_label) {
+            lv_label_set_text(status_label, "连接超时，请重试");
+            lv_obj_set_style_text_color(status_label, lv_color_hex(0xff0000), 0);
+        }
+        printf("WiFi连接超时\n");
+    }
+    connect_timer = NULL;
+}
+
+// 开始连接WiFi按钮点击事件处理
+static void btn_connect_event_cb(lv_event_t *e)
+{
+    if (wifi_connecting) return;
+
+    // 获取输入的WiFi账号和密码
+    const char *ssid = lv_textarea_get_text(ssid_ta);
+    const char *psw = lv_textarea_get_text(psw_ta);
+
+    if (!ssid || !psw || strlen(ssid) == 0 || strlen(psw) == 0) {
+        if (status_label) {
+            lv_label_set_text(status_label, "请输入WiFi账号和密码");
+            lv_obj_set_style_text_color(status_label, lv_color_hex(0xffff00), 0);
+        }
+        return;
+    }
+
+    // 设置连接状态
+    wifi_connecting = true;
+    wifi_connected = false;
+    if (status_label) {
+        lv_label_set_text(status_label, "正在连接...");
+        lv_obj_set_style_text_color(status_label, lv_color_hex(0x00ffff), 0);
+    }
+
+    // 准备WiFi连接信息
+    wpa_ctrl_wifi_info_t wifi_info;
+    memset(&wifi_info, 0, sizeof(wpa_ctrl_wifi_info_t));
+    strcpy(wifi_info.ssid, ssid);
+    strcpy(wifi_info.psw, psw);
+
+    printf("准备连接 WiFi, SSID: %s\n", wifi_info.ssid);
+    wpa_manager_wifi_connect(&wifi_info);
+
+    // 启动10秒超时定时器
+    if (connect_timer) {
+        lv_timer_del(connect_timer);
+    }
+    connect_timer = lv_timer_create(wifi_connect_timeout, 10000, NULL);
 }
 
 static void btn_click_event_cb_func(lv_event_t *e)
@@ -211,6 +315,9 @@ void page_wifi_setting() // 日期格式
 {
     lv_obj_t *cont = init();
 
+    // 注册WiFi连接状态回调函数
+    wpa_manager_add_callback(NULL, wifi_setting_connect_status_callback);
+
     lv_obj_t *cont1 = lv_obj_create(cont);
     lv_obj_set_size(cont1, LV_SIZE_CONTENT, LV_SIZE_CONTENT);
     lv_obj_add_style(cont1, &com_style, LV_PART_MAIN);
@@ -218,24 +325,33 @@ void page_wifi_setting() // 日期格式
     lv_obj_set_flex_flow(cont1, LV_FLEX_FLOW_COLUMN);
     lv_obj_set_style_pad_row(cont1, 40, LV_PART_MAIN);
 
-    lv_obj_t *ta1 = lv_textarea_create(cont);
-    lv_textarea_set_one_line(ta1, true);
-    lv_textarea_set_placeholder_text(ta1, "input your user");
-    lv_obj_add_event_cb(ta1, ta_focus_event_cb, LV_EVENT_ALL, NULL);
+    // 创建WiFi账号输入框
+    ssid_ta = lv_textarea_create(cont);
+    lv_textarea_set_one_line(ssid_ta, true);
+    lv_textarea_set_placeholder_text(ssid_ta, "input your user");
+    lv_obj_add_event_cb(ssid_ta, ta_focus_event_cb, LV_EVENT_ALL, NULL);
 
-    lv_obj_t *ta2 = lv_textarea_create(cont);
-    lv_textarea_set_one_line(ta2, true);
-    lv_textarea_set_placeholder_text(ta2, "input your code");
-    lv_obj_add_event_cb(ta2, ta_focus_event_cb, LV_EVENT_ALL, NULL);
+    // 创建WiFi密码输入框
+    psw_ta = lv_textarea_create(cont);
+    lv_textarea_set_one_line(psw_ta, true);
+    lv_textarea_set_placeholder_text(psw_ta, "input your code");
+    lv_obj_add_event_cb(psw_ta, ta_focus_event_cb, LV_EVENT_ALL, NULL);
 
     lv_obj_t *wifi_user = init_imag_text(cont1, GET_IMAGE_PATH("icon_2.png"), "WiFi账号:");
-    lv_obj_align_to(ta1, wifi_user, LV_ALIGN_OUT_RIGHT_MID, 10, -30);
+    lv_obj_align_to(ssid_ta, wifi_user, LV_ALIGN_OUT_RIGHT_MID, 10, -30);
     lv_obj_t *wifi_code = init_imag_text(cont1, GET_IMAGE_PATH("icon_3.png"), "WiFi密码:");
-    lv_obj_align_to(ta2, wifi_code, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
+    lv_obj_align_to(psw_ta, wifi_code, LV_ALIGN_OUT_RIGHT_MID, 10, 0);
 
+    // 创建开始连接按钮
     lv_obj_t *btn = init_select_btn(cont, 151, 66, 35, "开始连接", 30, 0, -5);
-    lv_obj_add_event_cb(btn, btn_click_event_cb_func, LV_EVENT_CLICKED, ta1);
-    lv_obj_add_event_cb(btn, btn_click_event_cb_func, LV_EVENT_CLICKED, ta2);
+    lv_obj_add_event_cb(btn, btn_connect_event_cb, LV_EVENT_CLICKED, NULL);
+
+    // 创建状态标签
+    status_label = lv_label_create(cont);
+    obj_font_set(status_label, FONT_TYPE_CN, 20);
+    lv_obj_set_style_text_color(status_label, lv_color_hex(0xffffff), 0);
+    lv_label_set_text(status_label, "请输入WiFi账号和密码");
+    lv_obj_align_to(status_label, psw_ta, LV_ALIGN_OUT_BOTTOM_MID, 0, 20);
 
     lv_obj_t *kb = lv_keyboard_create(lv_scr_act());
     // 设置键盘大小
@@ -249,11 +365,11 @@ void page_wifi_setting() // 日期格式
     // 初始隐藏键盘
     lv_obj_add_flag(kb, LV_OBJ_FLAG_HIDDEN);
     // 对齐，使得键盘在文本框右侧
-    lv_obj_align_to(kb, ta1, LV_ALIGN_OUT_RIGHT_MID, 0, 40);
+    lv_obj_align_to(kb, ssid_ta, LV_ALIGN_OUT_RIGHT_MID, 0, 40);
     // 放在label设置后才能居中对齐
     lv_obj_align_to(btn, kb, LV_ALIGN_OUT_RIGHT_MID, 20, 0);
 
     // 为文本框添加点击事件，显示键盘
-    lv_obj_add_event_cb(ta1, kb_show_event_cb, LV_EVENT_CLICKED, kb);
-    lv_obj_add_event_cb(ta2, kb_show_event_cb, LV_EVENT_CLICKED, kb);
+    lv_obj_add_event_cb(ssid_ta, kb_show_event_cb, LV_EVENT_CLICKED, kb);
+    lv_obj_add_event_cb(psw_ta, kb_show_event_cb, LV_EVENT_CLICKED, kb);
 }

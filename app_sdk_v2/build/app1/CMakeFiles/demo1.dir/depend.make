@@ -6,6 +6,7 @@ app1/CMakeFiles/demo1.dir/main.c.o: ../app1/res/res_conf.h
 app1/CMakeFiles/demo1.dir/main.c.o: ../app1/ui/page_conf.h
 app1/CMakeFiles/demo1.dir/main.c.o: ../component/font/font_utils.h
 app1/CMakeFiles/demo1.dir/main.c.o: ../component/net/http_manager.h
+app1/CMakeFiles/demo1.dir/main.c.o: ../component/player/audio_player_async.h
 app1/CMakeFiles/demo1.dir/main.c.o: ../component/wifi/wpa_manager.h
 app1/CMakeFiles/demo1.dir/main.c.o: ../lvgl/lvgl.h
 app1/CMakeFiles/demo1.dir/main.c.o: ../lvgl/src/core/lv_disp.h
@@ -134,8 +135,10 @@ app1/CMakeFiles/demo1.dir/main.c.o: ../app1/main.c
 
 app1/CMakeFiles/demo1.dir/ui/page_alarm.c.o: ../app1/res/font/font_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_alarm.c.o: ../app1/res/image/image_conf.h
+app1/CMakeFiles/demo1.dir/ui/page_alarm.c.o: ../app1/res/music/music_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_alarm.c.o: ../app1/res/res_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_alarm.c.o: ../component/font/font_utils.h
+app1/CMakeFiles/demo1.dir/ui/page_alarm.c.o: ../component/player/audio_player_async.h
 app1/CMakeFiles/demo1.dir/ui/page_alarm.c.o: ../lvgl/lvgl.h
 app1/CMakeFiles/demo1.dir/ui/page_alarm.c.o: ../lvgl/src/core/lv_disp.h
 app1/CMakeFiles/demo1.dir/ui/page_alarm.c.o: ../lvgl/src/core/lv_event.h
@@ -658,6 +661,7 @@ app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o: ../app1/res/font/font_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o: ../app1/res/image/image_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o: ../app1/res/res_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o: ../component/font/font_utils.h
+app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o: ../component/hal/em_hal_brightness.h
 app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o: ../lvgl/lvgl.h
 app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o: ../lvgl/src/core/lv_disp.h
 app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o: ../lvgl/src/core/lv_event.h
@@ -1048,6 +1052,7 @@ app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o: ../app1/res/font/font_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o: ../app1/res/image/image_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o: ../app1/res/res_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o: ../component/font/font_utils.h
+app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o: ../component/wifi/wpa_manager.h
 app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o: ../lvgl/lvgl.h
 app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o: ../lvgl/src/core/lv_disp.h
 app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o: ../lvgl/src/core/lv_event.h

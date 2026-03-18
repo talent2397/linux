@@ -7,6 +7,7 @@ app1/CMakeFiles/demo1.dir/main.c.o
  ../app1/ui/page_conf.h
  ../component/font/font_utils.h
  ../component/net/http_manager.h
+ ../component/player/audio_player_async.h
  ../component/wifi/wpa_manager.h
  ../lvgl/lvgl.h
  ../lvgl/src/core/lv_disp.h
@@ -135,8 +136,10 @@ app1/CMakeFiles/demo1.dir/main.c.o
 app1/CMakeFiles/demo1.dir/ui/page_alarm.c.o
  ../app1/res/font/font_conf.h
  ../app1/res/image/image_conf.h
+ ../app1/res/music/music_conf.h
  ../app1/res/res_conf.h
  ../component/font/font_utils.h
+ ../component/player/audio_player_async.h
  ../lvgl/lvgl.h
  ../lvgl/src/core/lv_disp.h
  ../lvgl/src/core/lv_event.h
@@ -659,6 +662,7 @@ app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o
  ../app1/res/image/image_conf.h
  ../app1/res/res_conf.h
  ../component/font/font_utils.h
+ ../component/hal/em_hal_brightness.h
  ../lvgl/lvgl.h
  ../lvgl/src/core/lv_disp.h
  ../lvgl/src/core/lv_event.h
@@ -1049,6 +1053,7 @@ app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o
  ../app1/res/image/image_conf.h
  ../app1/res/res_conf.h
  ../component/font/font_utils.h
+ ../component/wifi/wpa_manager.h
  ../lvgl/lvgl.h
  ../lvgl/src/core/lv_disp.h
  ../lvgl/src/core/lv_event.h

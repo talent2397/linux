@@ -526,6 +526,7 @@ app1/CMakeFiles/demo1.dir/all: platform/t113/src/CMakeFiles/lvgl_porting.dir/all
 app1/CMakeFiles/demo1.dir/all: component/osal/CMakeFiles/osal.dir/all
 app1/CMakeFiles/demo1.dir/all: component/wifi/CMakeFiles/wifi.dir/all
 app1/CMakeFiles/demo1.dir/all: component/net/CMakeFiles/http.dir/all
+app1/CMakeFiles/demo1.dir/all: component/player/CMakeFiles/player.dir/all
 app1/CMakeFiles/demo1.dir/all: component/font/CMakeFiles/font.dir/all
 app1/CMakeFiles/demo1.dir/all: lvgl/CMakeFiles/lvgl.dir/all
 	$(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/depend

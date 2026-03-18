@@ -4,6 +4,8 @@
 #include "image_conf.h"
 #include "font_conf.h"
 #include "page_conf.h"
+#include "em_hal_brightness.h" // 添加亮度控制头文件
+
 static lv_style_t com_style;
 
 static void lv_event_cb_func(lv_event_t *e)
@@ -14,18 +16,32 @@ static void lv_event_cb_func(lv_event_t *e)
     lv_obj_clean(act_scr);
     page_test_init();
 }
-static void slider_event_cb(lv_event_t *e)
+/* 亮度调节滑块事件回调 */
+static void brightness_slider_event_cb(lv_event_t *e)
 {
     lv_obj_t *slider = lv_event_get_target(e);
-    // 从 user_data 中获取当前滑块专属的 label
     lv_obj_t *label = (lv_obj_t *)lv_event_get_user_data(e);
 
     int value = (int)lv_slider_get_value(slider);
     lv_label_set_recolor(label, true);
     lv_label_set_text_fmt(label, "#1fc505 %d%%", value);
 
-    // 重新对齐
-    // lv_obj_align_to(label, slider, LV_ALIGN_OUT_RIGHT_MID, 20, 0);
+    // 调用硬件亮度调节函数
+    em_hal_brightness_set_value(value);
+}
+
+/* 音量调节滑块事件回调 */
+static void volume_slider_event_cb(lv_event_t *e)
+{
+    lv_obj_t *slider = lv_event_get_target(e);
+    lv_obj_t *label = (lv_obj_t *)lv_event_get_user_data(e);
+
+    int value = (int)lv_slider_get_value(slider);
+    lv_label_set_recolor(label, true);
+    lv_label_set_text_fmt(label, "#1fc505 %d%%", value);
+
+    // 音量调节功能（可根据需要实现）
+    // audio_volume_set_value(value);
 }
 // 初始化通用样式
 static void com_style_init()
@@ -70,35 +86,68 @@ static lv_obj_t *init_imag_text(lv_obj_t *parent, const char *src, const char *s
 
     return cont;
 }
-// 初始化一个滑块
-// 【关键修改】：多加了一个参数 align_target，用于告诉滑块它应该跟随谁对齐
-static lv_obj_t *init_slider(lv_obj_t *parent, lv_obj_t *align_target, uint32_t sra, uint32_t srb, uint32_t src, int size)
+/* 初始化亮度调节滑块 */
+static lv_obj_t *init_brightness_slider(lv_obj_t *parent, lv_obj_t *align_target)
 {
     lv_obj_t *slider = lv_slider_create(parent);
 
-    // 设置样式
-    lv_obj_set_style_bg_color(slider, lv_color_hex(sra), LV_PART_INDICATOR);
-    lv_obj_set_style_bg_color(slider, lv_color_hex(srb), LV_PART_KNOB);
-    lv_obj_set_style_border_color(slider, lv_color_hex(src), LV_PART_KNOB);
-    lv_obj_set_style_border_width(slider, size, LV_PART_KNOB);
+    // 设置亮度滑块样式
+    lv_obj_set_style_bg_color(slider, lv_color_hex(0x00ff00), LV_PART_INDICATOR);
+    lv_obj_set_style_bg_color(slider, lv_color_hex(0x00ff00), LV_PART_KNOB);
+    lv_obj_set_style_border_color(slider, lv_color_hex(0x00ff00), LV_PART_KNOB);
+    lv_obj_set_style_border_width(slider, 3, LV_PART_KNOB);
 
-    // 【关键修改1】：先将滑块对齐到左侧的文本/图标，确定好滑块的最终位置！
+    // 设置亮度滑块范围（0-100%）
+    lv_slider_set_range(slider, 0, 100);
+
+    // 设置默认亮度值（例如50%）
+    lv_slider_set_value(slider, 100, LV_ANIM_OFF);
+
+    // 对齐滑块
     lv_obj_align_to(slider, align_target, LV_ALIGN_OUT_RIGHT_MID, 30, 0);
 
-    // 创建局部 label
-    lv_obj_t *local_label = lv_label_create(parent);
+    // 创建亮度值显示标签
+    lv_obj_t *brightness_label = lv_label_create(parent);
+    lv_obj_set_width(brightness_label, 60);
+    lv_obj_set_style_text_align(brightness_label, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN);
+    lv_label_set_text_fmt(brightness_label, "%d%%", lv_slider_get_value(slider));
+    lv_obj_align_to(brightness_label, slider, LV_ALIGN_OUT_RIGHT_MID, 20, 0);
 
-    // 【关键修改2】：给 Label 设置固定宽度，并让文字在内部左对齐（彻底解决抖动）
-    lv_obj_set_width(local_label, 60); // 预留足够的宽度容纳 "100%"
-    lv_obj_set_style_text_align(local_label, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN);
+    // 绑定亮度调节事件回调
+    lv_obj_add_event_cb(slider, brightness_slider_event_cb, LV_EVENT_VALUE_CHANGED, brightness_label);
 
-    // 设置初始文字
-    lv_label_set_text_fmt(local_label, "%d%%", lv_slider_get_value(slider));
+    return slider;
+}
 
-    // 【关键修改3】：滑块位置确定后，再把 Label 对齐到滑块的右边（只需对齐这一次）
-    lv_obj_align_to(local_label, slider, LV_ALIGN_OUT_RIGHT_MID, 20, 0);
+/* 初始化音量调节滑块 */
+static lv_obj_t *init_volume_slider(lv_obj_t *parent, lv_obj_t *align_target)
+{
+    lv_obj_t *slider = lv_slider_create(parent);
 
-    lv_obj_add_event_cb(slider, slider_event_cb, LV_EVENT_VALUE_CHANGED, local_label);
+    // 设置音量滑块样式
+    lv_obj_set_style_bg_color(slider, lv_color_hex(0x00ff00), LV_PART_INDICATOR);
+    lv_obj_set_style_bg_color(slider, lv_color_hex(0x00ff00), LV_PART_KNOB);
+    lv_obj_set_style_border_color(slider, lv_color_hex(0x00ff00), LV_PART_KNOB);
+    lv_obj_set_style_border_width(slider, 3, LV_PART_KNOB);
+
+    // 设置音量滑块范围（0-100%）
+    lv_slider_set_range(slider, 0, 100);
+
+    // 设置默认音量值（例如70%）
+    lv_slider_set_value(slider, 70, LV_ANIM_OFF);
+
+    // 对齐滑块
+    lv_obj_align_to(slider, align_target, LV_ALIGN_OUT_RIGHT_MID, 30, 0);
+
+    // 创建音量值显示标签
+    lv_obj_t *volume_label = lv_label_create(parent);
+    lv_obj_set_width(volume_label, 60);
+    lv_obj_set_style_text_align(volume_label, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN);
+    lv_label_set_text_fmt(volume_label, "%d%%", lv_slider_get_value(slider));
+    lv_obj_align_to(volume_label, slider, LV_ALIGN_OUT_RIGHT_MID, 20, 0);
+
+    // 绑定音量调节事件回调
+    lv_obj_add_event_cb(slider, volume_slider_event_cb, LV_EVENT_VALUE_CHANGED, volume_label);
 
     return slider;
 }
@@ -165,11 +214,20 @@ void page_seeting()
     lv_obj_add_style(cont1, &com_style, LV_PART_MAIN);
     lv_obj_align(cont1, LV_ALIGN_CENTER, 0, 0);
 
+    // 创建亮度设置项
     lv_obj_t *liangdu_seeting = init_imag_text(cont1, GET_IMAGE_PATH("icon_brightness.png"), "亮度");
-    lv_obj_t *yinliang_seeting = init_imag_text(cont1, GET_IMAGE_PATH("icon_volume.png"), "音量");
     lv_obj_align(liangdu_seeting, LV_ALIGN_TOP_LEFT, 0, 0);
+
+    // 创建音量设置项
+    lv_obj_t *yinliang_seeting = init_imag_text(cont1, GET_IMAGE_PATH("icon_volume.png"), "音量");
     lv_obj_align(yinliang_seeting, LV_ALIGN_TOP_LEFT, 0, 40);
 
-    lv_obj_t *slider1 = init_slider(cont1, liangdu_seeting, 0x00ff00, 0x00ff00, 0x00ff00, 3);
-    lv_obj_t *slider2 = init_slider(cont1, yinliang_seeting, 0x00ff00, 0x00ff00, 0x00ff00, 3);
+    // 初始化亮度调节滑块并关联硬件函数
+    lv_obj_t *brightness_slider = init_brightness_slider(cont1, liangdu_seeting);
+
+    // 初始化音量调节滑块
+    lv_obj_t *volume_slider = init_volume_slider(cont1, yinliang_seeting);
+
+    // 初始化时设置默认亮度
+    em_hal_brightness_set_value(50);
 }

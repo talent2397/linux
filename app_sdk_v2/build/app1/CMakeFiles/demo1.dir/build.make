@@ -219,6 +219,8 @@ app1/demo1: component/font/libfont.a
 app1/demo1: component/wifi/libwifi.a
 app1/demo1: component/net/libhttp.a
 app1/demo1: platform/t113/src/liblvgl_porting.a
+app1/demo1: component/player/libplayer.a
+app1/demo1: platform/t113/src/liblvgl_porting.a
 app1/demo1: component/osal/libosal.a
 app1/demo1: app1/CMakeFiles/demo1.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable demo1"

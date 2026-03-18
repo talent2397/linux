@@ -34,6 +34,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../lvgl"
   "../component/wifi"
   "../component/net"
+  "../component/hal"
+  "../component/player"
   "../lvgl/.."
   "../lvgl/src"
   "../lvgl/src/core"
@@ -100,6 +102,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi/CMakeFiles/wifi.dir/DependInfo.cmake"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/net/CMakeFiles/http.dir/DependInfo.cmake"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/src/CMakeFiles/lvgl_porting.dir/DependInfo.cmake"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/player/CMakeFiles/player.dir/DependInfo.cmake"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal/CMakeFiles/osal.dir/DependInfo.cmake"
   )
 

@@ -7,6 +7,7 @@
 #include "font_conf.h"
 #include "wpa_manager.h"
 #include "http_manager.h"
+#include "audio_player_async.h"
 
 extern void lv_port_disp_init(bool is_disp_orientation);
 extern void lv_port_indev_init(void);
@@ -28,6 +29,9 @@ int main()
 
     font_init();
 
+    // 初始化音频播放器
+    init_async_audio_player();
+
     // 页面初始化
     page_test_init();
 
@@ -40,16 +44,8 @@ int main()
     // 注册回调
     wpa_manager_add_callback(wifi_status_callback_func, wifi_connect_status_callback);
 
-    // 【修改点2】：结构体必须先清零，防止脏数据导致密码末尾存在乱码！
-    wpa_ctrl_wifi_info_t wifi_info;
-    memset(&wifi_info, 0, sizeof(wpa_ctrl_wifi_info_t));
-
-    // 【修改点3】：强烈建议使用 strcpy 替代 memcpy，这样会自动带上 '\0' 结束符
-    strcpy(wifi_info.ssid, "talent");
-    strcpy(wifi_info.psw, "1234567890");
-
-    printf("准备连接 WiFi, SSID: %s\n", wifi_info.ssid);
-    wpa_manager_wifi_connect(&wifi_info);
+    // WiFi连接现在通过 page_wifi_setting.c 中的用户输入界面处理
+    printf("WiFi连接将通过设置界面手动配置\n");
 
     while (1)
     {
