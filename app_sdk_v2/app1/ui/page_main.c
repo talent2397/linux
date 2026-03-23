@@ -98,6 +98,7 @@ static void lv_event_cb_func(lv_event_t *e)
     case MENU_BLUETOOTH_SPEAKER:
         lv_obj_clean(lv_scr_act());
         page_yingxiang_setting();
+
         break;
     case MENU_DIAL_SETTING:
         lv_obj_clean(lv_scr_act());
@@ -178,7 +179,7 @@ static lv_obj_t *init_image_view(lv_obj_t *parent)
     lv_obj_set_flex_align(cont, LV_FLEX_ALIGN_SPACE_EVENLY, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
 
     init_imag_text(cont, GET_IMAGE_PATH("image_game.png"), "小游戏", MENU_SMALL_GAME);
-    init_imag_text(cont, GET_IMAGE_PATH("image_yinxiang.png"), "蓝牙音响", MENU_BLUETOOTH_SPEAKER);
+    init_imag_text(cont, GET_IMAGE_PATH("image_yinxiang.png"), "在线音乐", MENU_BLUETOOTH_SPEAKER);
     init_imag_text(cont, GET_IMAGE_PATH("icon_menu_dial.png"), "表盘设置", MENU_DIAL_SETTING);
     init_imag_text(cont, GET_IMAGE_PATH("icon_menu_city.png"), "城市设置", MENU_CITY_SETTING);
     init_imag_text(cont, GET_IMAGE_PATH("icon_menu_tomato_time.png"), "番茄时钟", MENU_TOMATO_CLOCK);

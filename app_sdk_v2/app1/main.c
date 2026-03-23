@@ -7,7 +7,6 @@
 #include "font_conf.h"
 #include "wpa_manager.h"
 #include "http_manager.h"
-#include "audio_player_async.h"
 
 extern void lv_port_disp_init(bool is_disp_orientation);
 extern void lv_port_indev_init(void);
@@ -28,9 +27,6 @@ int main()
     http_request_create();
 
     font_init();
-
-    // 初始化音频播放器
-    init_async_audio_player();
 
     // 页面初始化
     page_test_init();

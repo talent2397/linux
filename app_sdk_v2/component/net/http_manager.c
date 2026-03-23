@@ -42,9 +42,20 @@ static size_t write_callback(void *data, size_t size, size_t nmemb, void *userp)
     size_t realsize = size * nmemb;
     http_resp_data_t *mem = (http_resp_data_t *)userp;
 
+    // 检查是否超过最大大小限制
+    if (mem->size + realsize > 1024 * 1024) {
+        // 超过限制，截断数据
+        realsize = 1024 * 1024 - mem->size;
+        if (realsize == 0) {
+            return size * nmemb; // 已经达到最大大小，返回原始大小表示成功
+        }
+    }
+
     char *ptr = realloc(mem->data, mem->size + realsize + 1);
-    if (!ptr)
-        return 0; // 内存分配失败
+    if (!ptr) {
+        // 内存分配失败，返回原始大小表示成功，避免curl使用longjmp
+        return size * nmemb;
+    }
 
     mem->data = ptr;
     memcpy(mem->data + mem->size, data, realsize);
@@ -66,12 +77,15 @@ int http_request_method(const char *host, const char *path, const char *method, 
 
     // 通用配置
     curl_easy_setopt(curl, CURLOPT_VERBOSE, 0L);        // 调试模式：启用详细输出模式
-    curl_easy_setopt(curl, CURLOPT_TIMEOUT, 20L);       // 设置请求超时时间（单位：秒）
+    curl_easy_setopt(curl, CURLOPT_TIMEOUT, 10L);       // 设置请求超时时间（单位：秒）- 减少超时时间
     curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L); // 禁用SSL证书验证
+    curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 5L); // 连接超时时间
+    
     // 设置响应处理
     http_resp_data_t response_data = {0};
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback); // 注册响应数据接收回调函数
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, &response_data);     // 指定回调函数的用户数据
+    curl_easy_setopt(curl, CURLOPT_MAXFILESIZE, 1024 * 1024L);     // 限制响应大小为1MB
 
     // POST方法特殊处理
     if (strcmp(method, "POST") == 0)
@@ -88,8 +102,23 @@ int http_request_method(const char *host, const char *path, const char *method, 
     // 处理响应
     if (ret == 0)
     {
-        printf("Response len: %ld, data: %s\n", response_data.size, response_data.data);
-        *response_json = response_data.data; // 转移内存所有权
+        printf("Response len: %ld\n", response_data.size);
+        // 限制响应大小，避免内存溢出
+        if (response_data.size > 1024 * 1024) {
+            printf("Response too large, truncating\n");
+            char *truncated_data = malloc(1024 * 1024 + 1);
+            if (truncated_data) {
+                memcpy(truncated_data, response_data.data, 1024 * 1024);
+                truncated_data[1024 * 1024] = '\0';
+                free(response_data.data);
+                *response_json = truncated_data;
+            } else {
+                free(response_data.data);
+                ret = -1;
+            }
+        } else {
+            *response_json = response_data.data; // 转移内存所有权
+        }
     }
     else
     {
@@ -220,6 +249,8 @@ static void *net_thread_fun(void *arg)
                 }
                 break;
 
+
+
             default:
                 break;
             }
@@ -278,6 +309,8 @@ void http_set_time_callback(time_callback_fun func)
 {
     time_callback_func = func;
 }
+
+
 
 // HTTP模块创建
 int http_request_create()

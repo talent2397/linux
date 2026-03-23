@@ -6,8 +6,6 @@
 #include "image_conf.h"
 #include "font_conf.h"
 #include "page_conf.h"
-#include "music_conf.h"
-#include "audio_player_async.h"
 
 static lv_style_t com_style;
 
@@ -128,7 +126,8 @@ static void set_absolute_alarm(int hour, int minute)
 /* 播放闹钟提示音 */
 static void play_alarm_sound(void)
 {
-    start_play_audio_async(GET_MUSIC_PATH("audio_finish2.wav"));
+    // 已移除音乐播放功能
+    printf("闹钟时间到！\n");
 }
 
 /* 取消闹钟1按钮回调 */

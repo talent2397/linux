@@ -55,10 +55,17 @@ static void* audio_thread_fun(void *arg) {
 void start_play_audio_async(char *url) {
     // 初始化音频消息（指定启动命令ID）
     audio_obj obj = {.id = AUDIO_COMM_ID_START};
-    // 拷贝音频文件名
-    strncpy(obj.file_name, url, sizeof(obj.file_name)-1); 
-    // 发送消息到队列（超时时间1000ms）
-    if (osal_queue_send(&audio_queue, &obj, sizeof(audio_obj), 1000) == OSAL_ERROR) {
+    // 拷贝音频文件名，限制长度避免溢出
+    if (url && strlen(url) < sizeof(obj.file_name)) {
+        strcpy(obj.file_name, url);
+    } else if (url) {
+        // 截断过长的URL
+        strncpy(obj.file_name, url, sizeof(obj.file_name) - 1);
+        obj.file_name[sizeof(obj.file_name) - 1] = '\0';
+        printf("URL truncated to: %s\n", obj.file_name);
+    }
+    // 发送消息到队列（超时时间500ms - 减少超时时间）
+    if (osal_queue_send(&audio_queue, &obj, sizeof(audio_obj), 500) == OSAL_ERROR) {
         printf("Failed to send start cmd\n");
     }
 }
