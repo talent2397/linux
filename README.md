@@ -49,5 +49,9 @@ adb push build/app1/demo1 /data
  vi /etc/init.d/rc.final 
  ./usr/bin/demo & 
  
+git add .
+git commit -m ""
+git push 
+git push -f origin main
 修改后，记得保存，最好用reboot重启确保可以完全写入
 
