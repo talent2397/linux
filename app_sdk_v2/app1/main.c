@@ -24,24 +24,21 @@ int main()
     lv_port_disp_init(false);
     lv_port_indev_init();
 
-    http_request_create();
+    // http_request_create();
 
     font_init();
 
     // 页面初始化
     page_test_init();
 
-    wpa_manager_open();
+    //  wpa_manager_open();
 
     // 【修改点1】：关键延时！给 wpa_supplicant 守护进程和 Socket 建立留出时间
     // 很多嵌入式Linux板子在这里至少需要等待 1~2 秒，才能开始下发指令
     sleep(2);
 
     // 注册回调
-    wpa_manager_add_callback(wifi_status_callback_func, wifi_connect_status_callback);
-
-    // WiFi连接现在通过 page_wifi_setting.c 中的用户输入界面处理
-    printf("WiFi连接将通过设置界面手动配置\n");
+    // wpa_manager_add_callback(wifi_status_callback_func, wifi_connect_status_callback);
 
     while (1)
     {

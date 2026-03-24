@@ -260,6 +260,87 @@ ui/page_main.c.s:
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_main.c.s
 .PHONY : ui/page_main.c.s
 
+ui/page_music_ing.o: ui/page_music_ing.c.o
+
+.PHONY : ui/page_music_ing.o
+
+# target to build an object file
+ui/page_music_ing.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o
+.PHONY : ui/page_music_ing.c.o
+
+ui/page_music_ing.i: ui/page_music_ing.c.i
+
+.PHONY : ui/page_music_ing.i
+
+# target to preprocess a source file
+ui/page_music_ing.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.i
+.PHONY : ui/page_music_ing.c.i
+
+ui/page_music_ing.s: ui/page_music_ing.c.s
+
+.PHONY : ui/page_music_ing.s
+
+# target to generate assembly for a file
+ui/page_music_ing.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.s
+.PHONY : ui/page_music_ing.c.s
+
+ui/page_music_list.o: ui/page_music_list.c.o
+
+.PHONY : ui/page_music_list.o
+
+# target to build an object file
+ui/page_music_list.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o
+.PHONY : ui/page_music_list.c.o
+
+ui/page_music_list.i: ui/page_music_list.c.i
+
+.PHONY : ui/page_music_list.i
+
+# target to preprocess a source file
+ui/page_music_list.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_music_list.c.i
+.PHONY : ui/page_music_list.c.i
+
+ui/page_music_list.s: ui/page_music_list.c.s
+
+.PHONY : ui/page_music_list.s
+
+# target to generate assembly for a file
+ui/page_music_list.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_music_list.c.s
+.PHONY : ui/page_music_list.c.s
+
+ui/page_music_serach.o: ui/page_music_serach.c.o
+
+.PHONY : ui/page_music_serach.o
+
+# target to build an object file
+ui/page_music_serach.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.o
+.PHONY : ui/page_music_serach.c.o
+
+ui/page_music_serach.i: ui/page_music_serach.c.i
+
+.PHONY : ui/page_music_serach.i
+
+# target to preprocess a source file
+ui/page_music_serach.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.i
+.PHONY : ui/page_music_serach.c.i
+
+ui/page_music_serach.s: ui/page_music_serach.c.s
+
+.PHONY : ui/page_music_serach.s
+
+# target to generate assembly for a file
+ui/page_music_serach.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.s
+.PHONY : ui/page_music_serach.c.s
+
 ui/page_seeting.o: ui/page_seeting.c.o
 
 .PHONY : ui/page_seeting.o
@@ -368,33 +449,6 @@ ui/page_wifi_setting.c.s:
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.s
 .PHONY : ui/page_wifi_setting.c.s
 
-ui/page_yingxiang_setting.o: ui/page_yingxiang_setting.c.o
-
-.PHONY : ui/page_yingxiang_setting.o
-
-# target to build an object file
-ui/page_yingxiang_setting.c.o:
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.o
-.PHONY : ui/page_yingxiang_setting.c.o
-
-ui/page_yingxiang_setting.i: ui/page_yingxiang_setting.c.i
-
-.PHONY : ui/page_yingxiang_setting.i
-
-# target to preprocess a source file
-ui/page_yingxiang_setting.c.i:
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.i
-.PHONY : ui/page_yingxiang_setting.c.i
-
-ui/page_yingxiang_setting.s: ui/page_yingxiang_setting.c.s
-
-.PHONY : ui/page_yingxiang_setting.s
-
-# target to generate assembly for a file
-ui/page_yingxiang_setting.c.s:
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.s
-.PHONY : ui/page_yingxiang_setting.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -419,6 +473,15 @@ help:
 	@echo "... ui/page_main.o"
 	@echo "... ui/page_main.i"
 	@echo "... ui/page_main.s"
+	@echo "... ui/page_music_ing.o"
+	@echo "... ui/page_music_ing.i"
+	@echo "... ui/page_music_ing.s"
+	@echo "... ui/page_music_list.o"
+	@echo "... ui/page_music_list.i"
+	@echo "... ui/page_music_list.s"
+	@echo "... ui/page_music_serach.o"
+	@echo "... ui/page_music_serach.i"
+	@echo "... ui/page_music_serach.s"
 	@echo "... ui/page_seeting.o"
 	@echo "... ui/page_seeting.i"
 	@echo "... ui/page_seeting.s"
@@ -431,9 +494,6 @@ help:
 	@echo "... ui/page_wifi_setting.o"
 	@echo "... ui/page_wifi_setting.i"
 	@echo "... ui/page_wifi_setting.s"
-	@echo "... ui/page_yingxiang_setting.o"
-	@echo "... ui/page_yingxiang_setting.i"
-	@echo "... ui/page_yingxiang_setting.s"
 .PHONY : help
 
 

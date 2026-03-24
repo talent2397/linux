@@ -76,10 +76,14 @@ static void icon_click_handler(lv_event_t *e)
     else if (strcmp(icon_name, "icon_bofanglist") == 0)
     {
         printf("播放列表图标被点击\n");
+        lv_obj_clean(lv_scr_act());
+        page_music_list();
     }
     else if (strcmp(icon_name, "icon_bofang") == 0)
     {
         printf("播放图标被点击\n");
+        lv_obj_clean(lv_scr_act());
+        page_music_ing();
     }
     else if (strcmp(icon_name, "icon_delete") == 0)
     {
@@ -203,7 +207,7 @@ static lv_obj_t *init()
 
 // ======================= 页面主函数 =======================
 
-void page_yingxiang_setting()
+void page_music_search()
 {
     lv_obj_t *cont = init();
 
@@ -229,13 +233,13 @@ void page_yingxiang_setting()
     lv_obj_add_event_cb(icon1, icon_click_handler, LV_EVENT_CLICKED, (void *)"icon_sousuolist");
 
     lv_obj_t *icon2 = lv_img_create(cont_bg1);
-    lv_img_set_src(icon2, GET_IMAGE_PATH("icon_bofanglist.png"));
+    lv_img_set_src(icon2, GET_IMAGE_PATH("icon_unbofanglist.png"));
     lv_obj_set_style_img_recolor(icon2, lv_color_hex(0xffffff), LV_PART_MAIN);
     lv_obj_add_flag(icon2, LV_OBJ_FLAG_CLICKABLE);
     lv_obj_add_event_cb(icon2, icon_click_handler, LV_EVENT_CLICKED, (void *)"icon_bofanglist");
 
     lv_obj_t *icon3 = lv_img_create(cont_bg1);
-    lv_img_set_src(icon3, GET_IMAGE_PATH("icon_bofang.png"));
+    lv_img_set_src(icon3, GET_IMAGE_PATH("icon_unbofang.png"));
     lv_obj_set_style_img_recolor(icon3, lv_color_hex(0xffffff), LV_PART_MAIN);
     lv_obj_add_flag(icon3, LV_OBJ_FLAG_CLICKABLE);
     lv_obj_add_event_cb(icon3, icon_click_handler, LV_EVENT_CLICKED, (void *)"icon_bofang");

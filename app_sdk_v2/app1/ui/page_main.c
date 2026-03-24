@@ -97,8 +97,7 @@ static void lv_event_cb_func(lv_event_t *e)
         break;
     case MENU_BLUETOOTH_SPEAKER:
         lv_obj_clean(lv_scr_act());
-        page_yingxiang_setting();
-
+        page_music_search();
         break;
     case MENU_DIAL_SETTING:
         lv_obj_clean(lv_scr_act());

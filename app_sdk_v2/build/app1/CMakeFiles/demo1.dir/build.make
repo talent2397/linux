@@ -122,9 +122,48 @@ app1/CMakeFiles/demo1.dir/ui/page_main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/demo1.dir/ui/page_main.c.s"
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_main.c -o CMakeFiles/demo1.dir/ui/page_main.c.s
 
+app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o: app1/CMakeFiles/demo1.dir/flags.make
+app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o: ../app1/ui/page_music_ing.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o"
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/demo1.dir/ui/page_music_ing.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_ing.c
+
+app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/demo1.dir/ui/page_music_ing.c.i"
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_ing.c > CMakeFiles/demo1.dir/ui/page_music_ing.c.i
+
+app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/demo1.dir/ui/page_music_ing.c.s"
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_ing.c -o CMakeFiles/demo1.dir/ui/page_music_ing.c.s
+
+app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o: app1/CMakeFiles/demo1.dir/flags.make
+app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o: ../app1/ui/page_music_list.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o"
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/demo1.dir/ui/page_music_list.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_list.c
+
+app1/CMakeFiles/demo1.dir/ui/page_music_list.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/demo1.dir/ui/page_music_list.c.i"
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_list.c > CMakeFiles/demo1.dir/ui/page_music_list.c.i
+
+app1/CMakeFiles/demo1.dir/ui/page_music_list.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/demo1.dir/ui/page_music_list.c.s"
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_list.c -o CMakeFiles/demo1.dir/ui/page_music_list.c.s
+
+app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.o: app1/CMakeFiles/demo1.dir/flags.make
+app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.o: ../app1/ui/page_music_serach.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.o"
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/demo1.dir/ui/page_music_serach.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_serach.c
+
+app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/demo1.dir/ui/page_music_serach.c.i"
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_serach.c > CMakeFiles/demo1.dir/ui/page_music_serach.c.i
+
+app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/demo1.dir/ui/page_music_serach.c.s"
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_serach.c -o CMakeFiles/demo1.dir/ui/page_music_serach.c.s
+
 app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o: app1/CMakeFiles/demo1.dir/flags.make
 app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o: ../app1/ui/page_seeting.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o"
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/demo1.dir/ui/page_seeting.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_seeting.c
 
 app1/CMakeFiles/demo1.dir/ui/page_seeting.c.i: cmake_force
@@ -137,7 +176,7 @@ app1/CMakeFiles/demo1.dir/ui/page_seeting.c.s: cmake_force
 
 app1/CMakeFiles/demo1.dir/ui/page_time_setting.c.o: app1/CMakeFiles/demo1.dir/flags.make
 app1/CMakeFiles/demo1.dir/ui/page_time_setting.c.o: ../app1/ui/page_time_setting.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object app1/CMakeFiles/demo1.dir/ui/page_time_setting.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object app1/CMakeFiles/demo1.dir/ui/page_time_setting.c.o"
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/demo1.dir/ui/page_time_setting.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_time_setting.c
 
 app1/CMakeFiles/demo1.dir/ui/page_time_setting.c.i: cmake_force
@@ -150,7 +189,7 @@ app1/CMakeFiles/demo1.dir/ui/page_time_setting.c.s: cmake_force
 
 app1/CMakeFiles/demo1.dir/ui/page_tomato_setting.c.o: app1/CMakeFiles/demo1.dir/flags.make
 app1/CMakeFiles/demo1.dir/ui/page_tomato_setting.c.o: ../app1/ui/page_tomato_setting.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object app1/CMakeFiles/demo1.dir/ui/page_tomato_setting.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object app1/CMakeFiles/demo1.dir/ui/page_tomato_setting.c.o"
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/demo1.dir/ui/page_tomato_setting.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_tomato_setting.c
 
 app1/CMakeFiles/demo1.dir/ui/page_tomato_setting.c.i: cmake_force
@@ -163,7 +202,7 @@ app1/CMakeFiles/demo1.dir/ui/page_tomato_setting.c.s: cmake_force
 
 app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o: app1/CMakeFiles/demo1.dir/flags.make
 app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o: ../app1/ui/page_wifi_setting.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o"
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_wifi_setting.c
 
 app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.i: cmake_force
@@ -174,19 +213,6 @@ app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/demo1.dir/ui/page_wifi_setting.c.s"
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_wifi_setting.c -o CMakeFiles/demo1.dir/ui/page_wifi_setting.c.s
 
-app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.o: app1/CMakeFiles/demo1.dir/flags.make
-app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.o: ../app1/ui/page_yingxiang_setting.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.o"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_yingxiang_setting.c
-
-app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.i"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_yingxiang_setting.c > CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.i
-
-app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.s"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_yingxiang_setting.c -o CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.s
-
 # Object files for target demo1
 demo1_OBJECTS = \
 "CMakeFiles/demo1.dir/main.c.o" \
@@ -194,11 +220,13 @@ demo1_OBJECTS = \
 "CMakeFiles/demo1.dir/ui/page_alarm_dialog.c.o" \
 "CMakeFiles/demo1.dir/ui/page_city_setting.c.o" \
 "CMakeFiles/demo1.dir/ui/page_main.c.o" \
+"CMakeFiles/demo1.dir/ui/page_music_ing.c.o" \
+"CMakeFiles/demo1.dir/ui/page_music_list.c.o" \
+"CMakeFiles/demo1.dir/ui/page_music_serach.c.o" \
 "CMakeFiles/demo1.dir/ui/page_seeting.c.o" \
 "CMakeFiles/demo1.dir/ui/page_time_setting.c.o" \
 "CMakeFiles/demo1.dir/ui/page_tomato_setting.c.o" \
-"CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o" \
-"CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.o"
+"CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o"
 
 # External object files for target demo1
 demo1_EXTERNAL_OBJECTS =
@@ -208,11 +236,13 @@ app1/demo1: app1/CMakeFiles/demo1.dir/ui/page_alarm.c.o
 app1/demo1: app1/CMakeFiles/demo1.dir/ui/page_alarm_dialog.c.o
 app1/demo1: app1/CMakeFiles/demo1.dir/ui/page_city_setting.c.o
 app1/demo1: app1/CMakeFiles/demo1.dir/ui/page_main.c.o
+app1/demo1: app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o
+app1/demo1: app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o
+app1/demo1: app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.o
 app1/demo1: app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o
 app1/demo1: app1/CMakeFiles/demo1.dir/ui/page_time_setting.c.o
 app1/demo1: app1/CMakeFiles/demo1.dir/ui/page_tomato_setting.c.o
 app1/demo1: app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o
-app1/demo1: app1/CMakeFiles/demo1.dir/ui/page_yingxiang_setting.c.o
 app1/demo1: app1/CMakeFiles/demo1.dir/build.make
 app1/demo1: lvgl/liblvgl.a
 app1/demo1: component/font/libfont.a
@@ -221,7 +251,7 @@ app1/demo1: component/net/libhttp.a
 app1/demo1: platform/t113/src/liblvgl_porting.a
 app1/demo1: component/osal/libosal.a
 app1/demo1: app1/CMakeFiles/demo1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable demo1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable demo1"
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1 && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/demo1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
