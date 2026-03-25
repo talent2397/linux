@@ -658,6 +658,7 @@ app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o: ../app1/res/font/font_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o: ../app1/res/image/image_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o: ../app1/res/res_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o: ../component/font/font_utils.h
+app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o: ../component/net/http_manager.h
 app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o: ../lvgl/lvgl.h
 app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o: ../lvgl/src/core/lv_disp.h
 app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o: ../lvgl/src/core/lv_event.h
@@ -788,6 +789,7 @@ app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o: ../app1/res/font/font_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o: ../app1/res/image/image_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o: ../app1/res/res_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o: ../component/font/font_utils.h
+app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o: ../component/net/http_manager.h
 app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o: ../lvgl/lvgl.h
 app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o: ../lvgl/src/core/lv_disp.h
 app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o: ../lvgl/src/core/lv_event.h
@@ -918,6 +920,7 @@ app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.o: ../app1/res/font/font_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.o: ../app1/res/image/image_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.o: ../app1/res/res_conf.h
 app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.o: ../component/font/font_utils.h
+app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.o: ../component/net/http_manager.h
 app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.o: ../lvgl/lvgl.h
 app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.o: ../lvgl/src/core/lv_disp.h
 app1/CMakeFiles/demo1.dir/ui/page_music_serach.c.o: ../lvgl/src/core/lv_event.h

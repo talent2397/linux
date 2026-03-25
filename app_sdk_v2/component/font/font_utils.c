@@ -45,14 +45,25 @@ static lv_font_t* create_font_obj(int type, uint16_t size)
         return NULL;
     }
     lv_ft_info_t* ft_info = malloc(sizeof(lv_ft_info_t));
+    if (ft_info == NULL) {
+        return NULL;
+    }
     ft_info->name = font_type->font_url;
     ft_info->weight = size;
     ft_info->style = FT_FONT_STYLE_NORMAL;
     ft_info->mem = NULL;
     ft_info->mem_size = 0;
-    lv_ft_font_init(ft_info);
+    
+    if (lv_ft_font_init(ft_info) != LV_RES_OK) {
+        free(ft_info);
+        return NULL;
+    }
 
     font_obj_t* font_obj = _lv_ll_ins_tail(&font_obj_list);
+    if (font_obj == NULL) {
+        free(ft_info);
+        return NULL;
+    }
     font_obj->type = type;
     font_obj->size = size;
     font_obj->ft_info = ft_info;

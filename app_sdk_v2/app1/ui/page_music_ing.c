@@ -6,6 +6,8 @@
 #include "image_conf.h"
 #include "font_conf.h"
 #include "page_conf.h"
+#include "http_manager.h"
+#include "cJSON/cJSON.h"
 
 static lv_style_t com_style;
 
@@ -34,15 +36,153 @@ static lv_timer_t *g_album_rotate_timer = NULL;
 static bool g_is_playing = true;
 static int g_album_angle = 0; /* 0.1 degree unit */
 
-/* API 接口预留：未来可替换成网络请求 */
+// UI 元素引用 - 用于回调更新
+static lv_obj_t *g_song_title_label = NULL;
+static lv_obj_t *g_artist_label = NULL;
+
+// 全局变量：当前播放的歌曲信息
+static int g_current_song_id = 0;
+static char *g_current_song_url = NULL;
+static char g_current_song_name[256] = {0};
+static char g_current_artist[256] = {0};
+static char g_current_album[256] = {0};
+static int g_current_duration_ms = 0;
+
+// 歌曲详情回调函数
+static void music_detail_callback(char *json_str)
+{
+    printf("Detail callback received: %s\n", json_str);
+    cJSON *root = cJSON_Parse(json_str);
+    if (!root)
+    {
+        printf("Error parsing song detail\n");
+        return;
+    }
+
+    cJSON *songs = cJSON_GetObjectItem(root, "songs");
+    if (!songs || !cJSON_IsArray(songs) || cJSON_GetArraySize(songs) == 0)
+    {
+        printf("No song detail found\n");
+        cJSON_Delete(root);
+        return;
+    }
+
+    cJSON *song = cJSON_GetArrayItem(songs, 0);
+    if (!song)
+    {
+        printf("No song found\n");
+        cJSON_Delete(root);
+        return;
+    }
+
+    // 解析歌曲信息
+    cJSON *name = cJSON_GetObjectItem(song, "name");
+    cJSON *artists = cJSON_GetObjectItem(song, "artists");
+    cJSON *album = cJSON_GetObjectItem(song, "album");
+    cJSON *duration = cJSON_GetObjectItem(song, "duration");
+
+    if (name && artists && cJSON_IsArray(artists) && cJSON_GetArraySize(artists) > 0 && album && duration)
+    {
+        // 更新全局变量
+        snprintf(g_current_song_name, sizeof(g_current_song_name), "%s", name->valuestring);
+        g_current_duration_ms = duration->valueint;
+
+        cJSON *artist = cJSON_GetArrayItem(artists, 0);
+        cJSON *artist_name = cJSON_GetObjectItem(artist, "name");
+        if (artist_name)
+            snprintf(g_current_artist, sizeof(g_current_artist), "%s", artist_name->valuestring);
+
+        cJSON *album_name = cJSON_GetObjectItem(album, "name");
+        if (album_name)
+            snprintf(g_current_album, sizeof(g_current_album), "%s", album_name->valuestring);
+
+        // 更新 UI 显示
+        if (g_song_title_label != NULL)
+        {
+            lv_label_set_text(g_song_title_label, g_current_song_name);
+        }
+        if (g_artist_label != NULL)
+        {
+            lv_label_set_text_fmt(g_artist_label, "%s - %s", g_current_artist, g_current_album);
+        }
+        if (g_label_time_total != NULL)
+        {
+            int minutes = g_current_duration_ms / 60000;
+            int seconds = (g_current_duration_ms % 60000) / 1000;
+            char time_buf[16];
+            snprintf(time_buf, sizeof(time_buf), "%02d:%02d", minutes, seconds);
+            lv_label_set_text(g_label_time_total, time_buf);
+        }
+
+        printf("UI updated: %s - %s\n", g_current_song_name, g_current_artist);
+    }
+
+    cJSON_Delete(root);
+}
+
+// 歌曲播放地址回调函数
+static void music_url_callback(char *json_str)
+{
+    printf("URL callback received: %s\n", json_str);
+    // 解析播放地址
+    cJSON *root = cJSON_Parse(json_str);
+    if (!root)
+    {
+        printf("Error parsing song URL\n");
+        return;
+    }
+
+    cJSON *data = cJSON_GetObjectItem(root, "data");
+    if (!data || !cJSON_IsArray(data) || cJSON_GetArraySize(data) == 0)
+    {
+        printf("No song URL found\n");
+        cJSON_Delete(root);
+        return;
+    }
+
+    cJSON *item = cJSON_GetArrayItem(data, 0);
+    if (!item)
+    {
+        printf("No item found\n");
+        cJSON_Delete(root);
+        return;
+    }
+
+    cJSON *url = cJSON_GetObjectItem(item, "url");
+    if (url && url->valuestring)
+    {
+        // 释放旧的播放地址
+        if (g_current_song_url)
+        {
+            free(g_current_song_url);
+            g_current_song_url = NULL;
+        }
+        g_current_song_url = strdup(url->valuestring);
+        printf("Got song URL: %s\n", g_current_song_url);
+        // 开始播放
+        // TODO: 实现音频播放
+    }
+
+    cJSON_Delete(root);
+}
+
+/* API 接口：获取当前播放信息 */
 static int music_api_get_playing_info(music_playing_info_t *out_info)
 {
-    (void)out_info;
-    /* TODO:
-     * 1. 调用网络 API 获取当前播放信息
-     * 2. 解析歌曲名/歌手/专辑/时长/进度/音量/喜欢状态
-     * 3. 成功返回 1，失败返回 0
-     */
+    if (!out_info)
+        return 0;
+
+    // 检查是否有当前播放的歌曲
+    if (g_current_song_id > 0)
+    {
+        // 设置回调函数
+        http_set_music_detail_callback(music_detail_callback);
+        http_set_music_url_callback(music_url_callback);
+        // 获取歌曲详情和播放地址
+        http_music_get_detail_async(g_current_song_id);
+        http_music_get_url_async(g_current_song_id);
+        return 1;
+    }
     return 0;
 }
 
@@ -316,12 +456,14 @@ void page_music_ing()
     lv_label_set_text(song_title, info.song_name);
     lv_obj_set_style_text_color(song_title, lv_color_hex(0xFFFFFF), 0);
     lv_obj_align(song_title, LV_ALIGN_TOP_LEFT, 0, 30);
+    g_song_title_label = song_title; // 保存全局引用
 
     lv_obj_t *artist_label = lv_label_create(mid_cont);
     obj_font_set(artist_label, FONT_TYPE_CN, 16);
     lv_label_set_text_fmt(artist_label, "%s - %s", info.artist, info.album);
     lv_obj_set_style_text_color(artist_label, lv_color_hex(0x1DB954), 0); // 歌手名绿色
     lv_obj_align_to(artist_label, song_title, LV_ALIGN_OUT_BOTTOM_LEFT, 0, 12);
+    g_artist_label = artist_label; // 保存全局引用
 
     /* 标签区：空心描边样式，贴合原图 */
     lv_obj_t *tag_row = lv_obj_create(mid_cont);
@@ -421,6 +563,9 @@ void page_music_ing()
     // 【修改的播放按钮】：绿色大圆背景 + 黑色播放图标
     lv_obj_t *play_bg = lv_obj_create(center_group);
     lv_obj_remove_style_all(play_bg);
+    lv_obj_set_size(play_bg, 60, 60);
+    lv_obj_set_style_bg_color(play_bg, lv_color_hex(0x1DB954), LV_PART_MAIN);
+    lv_obj_set_style_radius(play_bg, 30, LV_PART_MAIN);
     lv_obj_add_flag(play_bg, LV_OBJ_FLAG_CLICKABLE);
     lv_obj_add_event_cb(play_bg, icon_click_handler, LV_EVENT_CLICKED, (void *)"icon_play_toggle");
 
