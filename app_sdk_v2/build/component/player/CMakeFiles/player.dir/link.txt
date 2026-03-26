@@ -1,2 +1,2 @@
-/usr/bin/ar qc libplayer.a  CMakeFiles/player.dir/audio_player_async.c.o
-/usr/bin/ranlib libplayer.a
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ar qc libplayer.a  CMakeFiles/player.dir/audio_player_async.c.o
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ranlib libplayer.a

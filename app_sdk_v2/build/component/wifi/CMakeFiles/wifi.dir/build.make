@@ -60,28 +60,28 @@ include component/wifi/CMakeFiles/wifi.dir/flags.make
 component/wifi/CMakeFiles/wifi.dir/wpa_manager.c.o: component/wifi/CMakeFiles/wifi.dir/flags.make
 component/wifi/CMakeFiles/wifi.dir/wpa_manager.c.o: ../component/wifi/wpa_manager.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object component/wifi/CMakeFiles/wifi.dir/wpa_manager.c.o"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wifi.dir/wpa_manager.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/wifi/wpa_manager.c
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wifi.dir/wpa_manager.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/wifi/wpa_manager.c
 
 component/wifi/CMakeFiles/wifi.dir/wpa_manager.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/wifi.dir/wpa_manager.c.i"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/wifi/wpa_manager.c > CMakeFiles/wifi.dir/wpa_manager.c.i
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/wifi/wpa_manager.c > CMakeFiles/wifi.dir/wpa_manager.c.i
 
 component/wifi/CMakeFiles/wifi.dir/wpa_manager.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/wifi.dir/wpa_manager.c.s"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/wifi/wpa_manager.c -o CMakeFiles/wifi.dir/wpa_manager.c.s
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/wifi/wpa_manager.c -o CMakeFiles/wifi.dir/wpa_manager.c.s
 
 component/wifi/CMakeFiles/wifi.dir/utils/base_utils.c.o: component/wifi/CMakeFiles/wifi.dir/flags.make
 component/wifi/CMakeFiles/wifi.dir/utils/base_utils.c.o: ../component/wifi/utils/base_utils.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object component/wifi/CMakeFiles/wifi.dir/utils/base_utils.c.o"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wifi.dir/utils/base_utils.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/wifi/utils/base_utils.c
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/wifi.dir/utils/base_utils.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/wifi/utils/base_utils.c
 
 component/wifi/CMakeFiles/wifi.dir/utils/base_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/wifi.dir/utils/base_utils.c.i"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/wifi/utils/base_utils.c > CMakeFiles/wifi.dir/utils/base_utils.c.i
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/wifi/utils/base_utils.c > CMakeFiles/wifi.dir/utils/base_utils.c.i
 
 component/wifi/CMakeFiles/wifi.dir/utils/base_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/wifi.dir/utils/base_utils.c.s"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/wifi/utils/base_utils.c -o CMakeFiles/wifi.dir/utils/base_utils.c.s
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/wifi/utils/base_utils.c -o CMakeFiles/wifi.dir/utils/base_utils.c.s
 
 # Object files for target wifi
 wifi_OBJECTS = \

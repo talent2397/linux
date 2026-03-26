@@ -1,2 +1,2 @@
-/usr/bin/ar qc libhttp.a  CMakeFiles/http.dir/http_manager.c.o
-/usr/bin/ranlib libhttp.a
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ar qc libhttp.a  CMakeFiles/http.dir/http_manager.c.o
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ranlib libhttp.a

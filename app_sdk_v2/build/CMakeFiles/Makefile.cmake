@@ -19,9 +19,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../component/usb_hid/CMakeLists.txt"
   "../component/wifi/CMakeLists.txt"
   "../lvgl/CMakeLists.txt"
-  "../platform/x86linux/CMakeLists.txt"
-  "../platform/x86linux/linux.cmake"
-  "../platform/x86linux/src/CMakeLists.txt"
+  "../platform/t113/CMakeLists.txt"
+  "../platform/t113/src/CMakeLists.txt"
+  "../platform/t113/t113.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -52,8 +52,8 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "platform/x86linux/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "platform/x86linux/src/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "platform/t113/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "platform/t113/src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "component/osal/CMakeFiles/CMakeDirectoryInformation.cmake"
   "component/wifi/CMakeFiles/CMakeDirectoryInformation.cmake"
   "component/net/CMakeFiles/CMakeDirectoryInformation.cmake"
@@ -66,7 +66,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "platform/x86linux/src/CMakeFiles/lvgl_porting.dir/DependInfo.cmake"
+  "platform/t113/src/CMakeFiles/lvgl_porting.dir/DependInfo.cmake"
   "component/osal/CMakeFiles/osal.dir/DependInfo.cmake"
   "component/wifi/CMakeFiles/wifi.dir/DependInfo.cmake"
   "component/net/CMakeFiles/http.dir/DependInfo.cmake"

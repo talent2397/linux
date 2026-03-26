@@ -1,10 +1,10 @@
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/rebuild_cache.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles/edit_cache.dir
-/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/x86linux/CMakeFiles/rebuild_cache.dir
-/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/x86linux/CMakeFiles/edit_cache.dir
-/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/x86linux/src/CMakeFiles/rebuild_cache.dir
-/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/x86linux/src/CMakeFiles/edit_cache.dir
-/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/x86linux/src/CMakeFiles/lvgl_porting.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/CMakeFiles/rebuild_cache.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/CMakeFiles/edit_cache.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/src/CMakeFiles/rebuild_cache.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/src/CMakeFiles/edit_cache.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/src/CMakeFiles/lvgl_porting.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal/CMakeFiles/rebuild_cache.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal/CMakeFiles/edit_cache.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal/CMakeFiles/osal.dir

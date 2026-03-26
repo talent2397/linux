@@ -37,7 +37,7 @@ static char *url_encode(const char *str)
     CURL *curl = curl_easy_init();
     if (!curl)
         return NULL;
-    
+
     char *encoded = curl_easy_escape(curl, str, 0);
     curl_easy_cleanup(curl);
     return encoded;
@@ -63,16 +63,19 @@ static size_t write_callback(void *data, size_t size, size_t nmemb, void *userp)
     http_resp_data_t *mem = (http_resp_data_t *)userp;
 
     // 检查是否超过最大大小限制
-    if (mem->size + realsize > 1024 * 1024) {
+    if (mem->size + realsize > 1024 * 1024)
+    {
         // 超过限制，截断数据
         realsize = 1024 * 1024 - mem->size;
-        if (realsize == 0) {
+        if (realsize == 0)
+        {
             return size * nmemb; // 已经达到最大大小，返回原始大小表示成功
         }
     }
 
     char *ptr = realloc(mem->data, mem->size + realsize + 1);
-    if (!ptr) {
+    if (!ptr)
+    {
         // 内存分配失败，返回原始大小表示成功，避免curl使用longjmp
         return size * nmemb;
     }
@@ -96,12 +99,12 @@ int http_request_method(const char *host, const char *path, const char *method, 
     curl_easy_setopt(curl, CURLOPT_URL, url);
 
     // 通用配置
-    curl_easy_setopt(curl, CURLOPT_VERBOSE, 0L);        // 调试模式：关闭详细输出
-    curl_easy_setopt(curl, CURLOPT_TIMEOUT, 15L);       // 增加超时时间到15秒
-    curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L); // 禁用SSL证书验证
+    curl_easy_setopt(curl, CURLOPT_VERBOSE, 0L);         // 调试模式：关闭详细输出
+    curl_easy_setopt(curl, CURLOPT_TIMEOUT, 15L);        // 增加超时时间到15秒
+    curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);  // 禁用SSL证书验证
     curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 10L); // 连接超时时间
     curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);  // 跟随重定向
-    
+
     // 设置响应处理
     http_resp_data_t response_data = {0};
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback); // 注册响应数据接收回调函数
@@ -125,19 +128,25 @@ int http_request_method(const char *host, const char *path, const char *method, 
     {
         printf("Response len: %ld\n", response_data.size);
         // 限制响应大小，避免内存溢出
-        if (response_data.size > 1024 * 1024) {
+        if (response_data.size > 1024 * 1024)
+        {
             printf("Response too large, truncating\n");
             char *truncated_data = malloc(1024 * 1024 + 1);
-            if (truncated_data) {
+            if (truncated_data)
+            {
                 memcpy(truncated_data, response_data.data, 1024 * 1024);
                 truncated_data[1024 * 1024] = '\0';
                 free(response_data.data);
                 *response_json = truncated_data;
-            } else {
+            }
+            else
+            {
                 free(response_data.data);
                 ret = -1;
             }
-        } else {
+        }
+        else
+        {
             *response_json = response_data.data; // 转移内存所有权
         }
     }
@@ -402,34 +411,26 @@ void http_music_search_async(const char *keyword, int page, int limit)
 {
     net_obj obj;
     memset(&obj, 0, sizeof(net_obj));
-    
-    // 尝试使用多个可用的音乐API
-    // 如果第一个失败，可以扩展到其他API
-    strcpy(obj.host, "http://123.207.35.229");
-    
-    // URL 编码关键词
+
+    // 修改为你的本地音乐服务器 IP
+    strcpy(obj.host, "http://10.26.246.145");
+
     char *encoded_keyword = url_encode(keyword);
     if (encoded_keyword)
     {
-        sprintf(obj.path, "/search?keywords=%s&limit=%d&offset=%d&type=1", encoded_keyword, limit, (page-1)*limit);
+        // 使用 Meting API 格式
+        sprintf(obj.path, "/api?server=netease&type=search&keywords=%s", encoded_keyword);
         free(encoded_keyword);
     }
     else
     {
-        sprintf(obj.path, "/search?keywords=%s&limit=%d&offset=%d&type=1", keyword, limit, (page-1)*limit);
+        sprintf(obj.path, "/api?server=netease&type=search&keywords=%s", keyword);
     }
-    
+
     obj.id = NET_MUSIC_SEARCH;
     strcpy(obj.data, "");
     strcpy(obj.type, "GET");
-    int ret = osal_queue_send(&net_queue, &obj, sizeof(net_obj), 1000);
-    if (ret == OSAL_ERROR)
-    {
-        printf("queue send error in music search\n");
-    }
-    
-    // 打印搜索信息，便于调试
-    printf("Music search queued: host=%s, path=%s\n", obj.host, obj.path);
+    osal_queue_send(&net_queue, &obj, sizeof(net_obj), 1000);
 }
 
 // 异步获取歌曲播放地址
@@ -437,16 +438,16 @@ void http_music_get_url_async(int song_id)
 {
     net_obj obj;
     memset(&obj, 0, sizeof(net_obj));
-    strcpy(obj.host, "http://123.207.35.229");
-    sprintf(obj.path, "/song/url?id=%d", song_id);
+    // 修改为你的本地音乐服务器 IP
+    strcpy(obj.host, "http://10.26.246.145");
+
+    // 使用 Meting API 获取 URL 格式
+    sprintf(obj.path, "/api?server=netease&type=url&id=%d", song_id);
+
     obj.id = NET_MUSIC_GET_URL;
     strcpy(obj.data, "");
     strcpy(obj.type, "GET");
-    int ret = osal_queue_send(&net_queue, &obj, sizeof(net_obj), 1000);
-    if (ret == OSAL_ERROR)
-    {
-        printf("queue send error in music get url\n");
-    }
+    osal_queue_send(&net_queue, &obj, sizeof(net_obj), 1000);
 }
 
 // 异步获取歌词

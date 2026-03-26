@@ -60,15 +60,15 @@ include component/player/CMakeFiles/player.dir/flags.make
 component/player/CMakeFiles/player.dir/audio_player_async.c.o: component/player/CMakeFiles/player.dir/flags.make
 component/player/CMakeFiles/player.dir/audio_player_async.c.o: ../component/player/audio_player_async.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object component/player/CMakeFiles/player.dir/audio_player_async.c.o"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/player && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/player.dir/audio_player_async.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/player/audio_player_async.c
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/player && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/player.dir/audio_player_async.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/player/audio_player_async.c
 
 component/player/CMakeFiles/player.dir/audio_player_async.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/player.dir/audio_player_async.c.i"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/player && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/player/audio_player_async.c > CMakeFiles/player.dir/audio_player_async.c.i
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/player && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/player/audio_player_async.c > CMakeFiles/player.dir/audio_player_async.c.i
 
 component/player/CMakeFiles/player.dir/audio_player_async.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/player.dir/audio_player_async.c.s"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/player && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/player/audio_player_async.c -o CMakeFiles/player.dir/audio_player_async.c.s
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/player && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/player/audio_player_async.c -o CMakeFiles/player.dir/audio_player_async.c.s
 
 # Object files for target player
 player_OBJECTS = \

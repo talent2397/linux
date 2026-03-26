@@ -42,12 +42,10 @@ static lv_obj_t *g_song_title_label = NULL;
 static lv_obj_t *g_artist_label = NULL;
 
 // 全局变量：当前播放的歌曲信息
-static int g_current_song_id = 0;
-static char *g_current_song_url = NULL;
+static char g_current_song_url[512] = {0};
 static char g_current_song_name[256] = {0};
 static char g_current_artist[256] = {0};
 static char g_current_album[256] = {0};
-static int g_current_duration_ms = 0;
 
 // ★ 新增：页面存活状态标记
 static bool g_is_ing_page_active = false;
@@ -58,7 +56,8 @@ static void cleanup_before_exit(void)
     g_is_ing_page_active = false;
 
     // 1. 彻底干掉悬空定时器！防止跑到别的页面还在转圈报错
-    if (g_album_rotate_timer != NULL) {
+    if (g_album_rotate_timer != NULL)
+    {
         lv_timer_del(g_album_rotate_timer);
         g_album_rotate_timer = NULL;
     }
@@ -73,77 +72,16 @@ static void cleanup_before_exit(void)
     g_song_title_label = NULL;
     g_artist_label = NULL;
 }
-
-// ★ 将歌曲详情解析移入异步主线程回调
-static void async_music_detail_cb(void *p)
+void set_current_play_song(const char *url, const char *name, const char *artist, const char *album)
 {
-    char *json_str = (char *)p;
-    if (json_str)
-    {
-        // 只有当前页面还在，才允许更新UI
-        if (g_is_ing_page_active)
-        {
-            printf("Detail callback received (Main Thread)\n");
-            cJSON *root = cJSON_Parse(json_str);
-            if (root)
-            {
-                cJSON *songs = cJSON_GetObjectItem(root, "songs");
-                if (songs && cJSON_IsArray(songs) && cJSON_GetArraySize(songs) > 0)
-                {
-                    cJSON *song = cJSON_GetArrayItem(songs, 0);
-                    if (song)
-                    {
-                        cJSON *name = cJSON_GetObjectItem(song, "name");
-                        cJSON *artists = cJSON_GetObjectItem(song, "artists");
-                        cJSON *album = cJSON_GetObjectItem(song, "album");
-                        cJSON *duration = cJSON_GetObjectItem(song, "duration");
-
-                        if (name && artists && cJSON_IsArray(artists) && cJSON_GetArraySize(artists) > 0 && album && duration)
-                        {
-                            snprintf(g_current_song_name, sizeof(g_current_song_name), "%s", name->valuestring);
-                            g_current_duration_ms = duration->valueint;
-
-                            cJSON *artist = cJSON_GetArrayItem(artists, 0);
-                            cJSON *artist_name = cJSON_GetObjectItem(artist, "name");
-                            if (artist_name)
-                                snprintf(g_current_artist, sizeof(g_current_artist), "%s", artist_name->valuestring);
-
-                            cJSON *album_name = cJSON_GetObjectItem(album, "name");
-                            if (album_name)
-                                snprintf(g_current_album, sizeof(g_current_album), "%s", album_name->valuestring);
-
-                            // 更新 UI
-                            if (g_song_title_label != NULL)
-                                lv_label_set_text(g_song_title_label, g_current_song_name);
-                                
-                            if (g_artist_label != NULL)
-                                lv_label_set_text_fmt(g_artist_label, "%s - %s", g_current_artist, g_current_album);
-                                
-                            if (g_label_time_total != NULL)
-                            {
-                                int minutes = g_current_duration_ms / 60000;
-                                int seconds = (g_current_duration_ms % 60000) / 1000;
-                                char time_buf[16];
-                                snprintf(time_buf, sizeof(time_buf), "%02d:%02d", minutes, seconds);
-                                lv_label_set_text(g_label_time_total, time_buf);
-                            }
-                            printf("UI updated: %s - %s\n", g_current_song_name, g_current_artist);
-                        }
-                    }
-                }
-                cJSON_Delete(root);
-            }
-        }
-        free(json_str);
-    }
-}
-
-// 歌曲详情网络回调（子线程执行）
-static void music_detail_callback(char *json_str)
-{
-    if (!json_str) return;
-    char *json_copy = strdup(json_str);
-    if (json_copy) lv_async_call(async_music_detail_cb, json_copy);
+    if (url)
+        snprintf(g_current_song_url, sizeof(g_current_song_url), "%s", url);
+    if (name)
+        snprintf(g_current_song_name, sizeof(g_current_song_name), "%s", name);
+    if (artist)
+        snprintf(g_current_artist, sizeof(g_current_artist), "%s", artist);
+    if (album)
+        snprintf(g_current_album, sizeof(g_current_album), "%s", album);
 }
 
 // ★ 将歌曲URL获取移入异步主线程回调
@@ -154,29 +92,43 @@ static void async_music_url_cb(void *p)
     {
         if (g_is_ing_page_active)
         {
-            printf("URL callback received (Main Thread)\n");
             cJSON *root = cJSON_Parse(json_str);
             if (root)
             {
-                cJSON *data = cJSON_GetObjectItem(root, "data");
-                if (data && cJSON_IsArray(data) && cJSON_GetArraySize(data) > 0)
+                // 兼容多格式解析提取 URL
+                cJSON *url_node = cJSON_GetObjectItem(root, "url");
+                if (!url_node && cJSON_IsArray(root))
                 {
-                    cJSON *item = cJSON_GetArrayItem(data, 0);
+                    cJSON *item = cJSON_GetArrayItem(root, 0);
                     if (item)
+                        url_node = cJSON_GetObjectItem(item, "url");
+                }
+                if (!url_node)
+                {
+                    cJSON *data = cJSON_GetObjectItem(root, "data");
+                    if (data && cJSON_IsArray(data))
                     {
-                        cJSON *url = cJSON_GetObjectItem(item, "url");
-                        if (url && url->valuestring)
-                        {
-                            if (g_current_song_url)
-                            {
-                                free(g_current_song_url);
-                                g_current_song_url = NULL;
-                            }
-                            g_current_song_url = strdup(url->valuestring);
-                            printf("Got song URL: %s\n", g_current_song_url);
-                            // TODO: 实现音频播放
-                        }
+                        cJSON *item = cJSON_GetArrayItem(data, 0);
+                        if (item)
+                            url_node = cJSON_GetObjectItem(item, "url");
                     }
+                }
+
+                if (url_node && cJSON_IsString(url_node) && url_node->valuestring)
+                {
+                    strncpy(g_current_song_url, url_node->valuestring, sizeof(g_current_song_url) - 1);
+                    g_current_song_url[sizeof(g_current_song_url) - 1] = '\0';
+                    printf(">>> 成功获取到播放链接: %s\n", g_current_song_url);
+
+                    // ================= 核心：调用系统底层的 mpg123 进行播放 =================
+                    char cmd[1024];
+                    // 1. 先安全杀掉之前可能正在播放的 mpg123 (防止声音重叠)
+                    system("killall -9 mpg123 2>/dev/null");
+                    // 2. 拼装后台播放命令 (& 符号代表后台运行)
+                    snprintf(cmd, sizeof(cmd), "mpg123 \"%s\" &", g_current_song_url);
+                    // 3. 执行系统命令！
+                    system(cmd);
+                    // ====================================================================
                 }
                 cJSON_Delete(root);
             }
@@ -188,29 +140,53 @@ static void async_music_url_cb(void *p)
 // 歌曲播放地址网络回调（子线程执行）
 static void music_url_callback(char *json_str)
 {
-    if (!json_str) return;
+    if (!json_str)
+        return;
     char *json_copy = strdup(json_str);
-    if (json_copy) lv_async_call(async_music_url_cb, json_copy);
+    if (json_copy)
+        lv_async_call(async_music_url_cb, json_copy);
 }
 
 /* API 接口：获取当前播放信息 */
+// --- 替换获取当前信息的 API，不再请求 detail，直接读缓存的全局变量 ---
+/* API 接口：获取当前播放信息并立刻触发系统播放！ */
 static int music_api_get_playing_info(music_playing_info_t *out_info)
 {
-    if (!out_info) return 0;
-    if (g_current_song_id > 0)
+    if (!out_info)
+        return 0;
+
+    // 如果有有效的 URL，直接开播！
+    if (strlen(g_current_song_url) > 0)
     {
-        http_set_music_detail_callback(music_detail_callback);
-        http_set_music_url_callback(music_url_callback);
-        http_music_get_detail_async(g_current_song_id);
-        http_music_get_url_async(g_current_song_id);
+        out_info->song_name = g_current_song_name;
+        out_info->artist = g_current_artist;
+        out_info->album = g_current_album;
+        out_info->current_time = "00:00";
+        out_info->total_time = "--:--";
+        out_info->progress_value = 0;
+        out_info->liked = false;
+        out_info->loop_on = true;
+        out_info->volume = 68;
+
+        printf(">>> UI 已经加载，立刻后台呼叫 mpg123 播放: %s\n", g_current_song_url);
+
+        char cmd[1024];
+        // 1. 杀掉以前可能在播放的进程
+        system("killall -9 mpg123 2>/dev/null");
+        // 2. 拼接命令（加上 & 放后台运行，并且屏蔽 mpg123 的日志打印免得刷屏）
+        snprintf(cmd, sizeof(cmd), "mpg123 \"%s\" > /dev/null 2>&1 &", g_current_song_url);
+        // 3. 执行！
+        system(cmd);
+
         return 1;
     }
-    return 0;
+    return 0; // 没有数据则返回假，会触发假数据兜底
 }
 
 static void get_mock_playing_info(music_playing_info_t *out_info)
 {
-    if (out_info == NULL) return;
+    if (out_info == NULL)
+        return;
     out_info->song_name = "夜曲 (Nocturne)";
     out_info->artist = "周杰伦";
     out_info->album = "十一月的萧邦";
@@ -255,6 +231,7 @@ static void album_rotate_timer_cb(lv_timer_t *timer)
     lv_img_set_angle(g_album_img, g_album_angle);
 }
 
+// --- 替换播放与暂停状态控制 (通过发送 STOP 和 CONT 信号挂起 mpg123) ---
 static void set_play_state(bool play)
 {
     g_is_playing = play;
@@ -264,12 +241,21 @@ static void set_play_state(bool play)
         g_album_rotate_timer = lv_timer_create(album_rotate_timer_cb, 60, NULL);
     }
 
-    if (g_album_rotate_timer != NULL)
+    if (play)
     {
-        if (play)
-            lv_timer_resume(g_album_rotate_timer);
-        else
-            lv_timer_pause(g_album_rotate_timer);
+        lv_timer_resume(g_album_rotate_timer);
+        // 继续播放音频
+        system("killall -CONT mpg123 2>/dev/null");
+        if (g_play_btn_img)
+            lv_img_set_src(g_play_btn_img, GET_IMAGE_PATH("icon_zanting2.png"));
+    }
+    else
+    {
+        lv_timer_pause(g_album_rotate_timer);
+        // 挂起/暂停音频
+        system("killall -STOP mpg123 2>/dev/null");
+        if (g_play_btn_img)
+            lv_img_set_src(g_play_btn_img, GET_IMAGE_PATH("icon_bofang1.png")); // 确保有一张播放图标
     }
 }
 
@@ -278,7 +264,8 @@ static void icon_click_handler(lv_event_t *e)
 {
     const char *icon_name = (const char *)lv_event_get_user_data(e);
 
-    if (icon_name == NULL) return;
+    if (icon_name == NULL)
+        return;
 
     if (strcmp(icon_name, "icon_sousuolist") == 0)
     {
@@ -290,7 +277,7 @@ static void icon_click_handler(lv_event_t *e)
     {
         cleanup_before_exit();
         lv_obj_clean(lv_scr_act());
-        page_music_list(); 
+        page_music_list();
     }
     else if (strcmp(icon_name, "icon_play_toggle") == 0)
     {
@@ -421,7 +408,7 @@ void page_music_ing()
 
     // ----------------- 右侧主内容区 cont_bg2 -----------------
     lv_obj_t *cont_bg2 = lv_obj_create(lv_scr_act());
-    lv_obj_clear_flag(cont_bg2, LV_OBJ_FLAG_SCROLLABLE); 
+    lv_obj_clear_flag(cont_bg2, LV_OBJ_FLAG_SCROLLABLE);
     lv_obj_set_size(cont_bg2, 1318, 220);
     lv_obj_align_to(cont_bg2, cont_bg1, LV_ALIGN_OUT_RIGHT_TOP, 0, 0);
     lv_obj_set_style_bg_color(cont_bg2, lv_color_hex(0x0F1115), LV_PART_MAIN);
@@ -432,7 +419,7 @@ void page_music_ing()
     /* 左侧：专辑图片 */
     lv_obj_t *album_wrap = lv_obj_create(cont_bg2);
     lv_obj_remove_style_all(album_wrap);
-    lv_obj_set_size(album_wrap, 180, 180); 
+    lv_obj_set_size(album_wrap, 180, 180);
     lv_obj_align(album_wrap, LV_ALIGN_LEFT_MID, 40, 0);
 
     g_album_img = lv_img_create(album_wrap);
@@ -450,14 +437,14 @@ void page_music_ing()
     lv_label_set_text(song_title, info.song_name);
     lv_obj_set_style_text_color(song_title, lv_color_hex(0xFFFFFF), 0);
     lv_obj_align(song_title, LV_ALIGN_TOP_LEFT, 0, 30);
-    g_song_title_label = song_title; 
+    g_song_title_label = song_title;
 
     lv_obj_t *artist_label = lv_label_create(mid_cont);
     obj_font_set(artist_label, FONT_TYPE_CN, 16);
     lv_label_set_text_fmt(artist_label, "%s - %s", info.artist, info.album);
     lv_obj_set_style_text_color(artist_label, lv_color_hex(0x1DB954), 0);
     lv_obj_align_to(artist_label, song_title, LV_ALIGN_OUT_BOTTOM_LEFT, 0, 12);
-    g_artist_label = artist_label; 
+    g_artist_label = artist_label;
 
     /* 标签区 */
     lv_obj_t *tag_row = lv_obj_create(mid_cont);
@@ -471,8 +458,8 @@ void page_music_ing()
     lv_obj_remove_style_all(tag_a);
     lv_obj_set_size(tag_a, 54, 20);
     lv_obj_set_style_radius(tag_a, 4, LV_PART_MAIN);
-    lv_obj_set_style_bg_opa(tag_a, 0, LV_PART_MAIN); 
-    lv_obj_set_style_border_width(tag_a, 1, LV_PART_MAIN); 
+    lv_obj_set_style_bg_opa(tag_a, 0, LV_PART_MAIN);
+    lv_obj_set_style_border_width(tag_a, 1, LV_PART_MAIN);
     lv_obj_set_style_border_color(tag_a, lv_color_hex(0x1DB954), LV_PART_MAIN);
 
     lv_obj_t *tag_a_text = lv_label_create(tag_a);
@@ -485,8 +472,8 @@ void page_music_ing()
     lv_obj_remove_style_all(tag_b);
     lv_obj_set_size(tag_b, 74, 20);
     lv_obj_set_style_radius(tag_b, 4, LV_PART_MAIN);
-    lv_obj_set_style_bg_opa(tag_b, 0, LV_PART_MAIN); 
-    lv_obj_set_style_border_width(tag_b, 1, LV_PART_MAIN); 
+    lv_obj_set_style_bg_opa(tag_b, 0, LV_PART_MAIN);
+    lv_obj_set_style_border_width(tag_b, 1, LV_PART_MAIN);
     lv_obj_set_style_border_color(tag_b, lv_color_hex(0x8E95A9), LV_PART_MAIN);
 
     lv_obj_t *tag_b_text = lv_label_create(tag_b);
@@ -499,7 +486,7 @@ void page_music_ing()
     lv_obj_t *progress_row = lv_obj_create(cont_bg2);
     lv_obj_remove_style_all(progress_row);
     lv_obj_set_size(progress_row, 700, 24);
-    lv_obj_align(progress_row, LV_ALIGN_TOP_LEFT, 520, 65); 
+    lv_obj_align(progress_row, LV_ALIGN_TOP_LEFT, 520, 65);
 
     g_label_time_cur = lv_label_create(progress_row);
     obj_font_set(g_label_time_cur, FONT_TYPE_CN, 13);
@@ -513,10 +500,10 @@ void page_music_ing()
     lv_slider_set_range(g_progress, 0, 100);
     lv_slider_set_value(g_progress, info.progress_value, LV_ANIM_OFF);
     lv_obj_set_style_radius(g_progress, 6, LV_PART_MAIN);
-    lv_obj_set_style_bg_color(g_progress, lv_color_hex(0x282C34), LV_PART_MAIN); 
-    lv_obj_set_style_bg_color(g_progress, lv_color_hex(0x1DB954), LV_PART_INDICATOR); 
+    lv_obj_set_style_bg_color(g_progress, lv_color_hex(0x282C34), LV_PART_MAIN);
+    lv_obj_set_style_bg_color(g_progress, lv_color_hex(0x1DB954), LV_PART_INDICATOR);
     lv_obj_set_style_bg_opa(g_progress, LV_OPA_COVER, LV_PART_INDICATOR);
-    lv_obj_set_style_bg_color(g_progress, lv_color_hex(0xFFFFFF), LV_PART_KNOB); 
+    lv_obj_set_style_bg_color(g_progress, lv_color_hex(0xFFFFFF), LV_PART_KNOB);
     lv_obj_set_style_pad_all(g_progress, -2, LV_PART_KNOB);
 
     g_label_time_total = lv_label_create(progress_row);
@@ -549,9 +536,9 @@ void page_music_ing()
     lv_obj_set_flex_align(center_group, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
     lv_obj_set_style_pad_column(center_group, 30, LV_PART_MAIN);
 
-    create_control_icon(center_group, GET_IMAGE_PATH("icon_suiji.png"), "icon_loop", lv_color_hex(0xFFFFFF)); 
+    create_control_icon(center_group, GET_IMAGE_PATH("icon_suiji.png"), "icon_loop", lv_color_hex(0xFFFFFF));
     create_control_icon(center_group, GET_IMAGE_PATH("icon_shangyishou.png"), "icon_prev", lv_color_hex(0xFFFFFF));
-    
+
     lv_obj_t *play_bg = lv_obj_create(center_group);
     lv_obj_remove_style_all(play_bg);
     lv_obj_set_size(play_bg, 60, 60);

@@ -12,15 +12,19 @@
 
 static lv_style_t com_style;
 static bool g_is_list_page_active = false;
-static lv_obj_t *g_list_cont = NULL; 
+static lv_obj_t *g_list_cont = NULL;
 
-typedef struct {
-    int index;           
-    int song_id;         
-    char name[256];      
-    char artist[256];    
-    char album[256];     
-    char duration[16];   
+extern void set_current_play_song(const char *url, const char *name, const char *artist, const char *album);
+
+typedef struct
+{
+    int index;
+    int song_id;
+    char name[256];
+    char artist[256];
+    char album[256];
+    char duration[16];
+    char play_url[512]; // ★ 新增：直接把播放地址存下来
 } music_track_t;
 
 static music_track_t *g_search_results = NULL;
@@ -28,7 +32,8 @@ static int g_search_result_count = 0;
 
 static void free_search_results(void)
 {
-    if (g_search_results != NULL) {
+    if (g_search_results != NULL)
+    {
         free(g_search_results);
         g_search_results = NULL;
     }
@@ -75,11 +80,20 @@ static void cleanup_before_exit(void)
 
 static void play_row_click_handler(lv_event_t *e)
 {
-    int track_idx = (int)(intptr_t)lv_event_get_user_data(e);
-    printf("播放歌曲ID: %d\n", track_idx);
+    // 这里拿到的 idx 就是第几首歌（0-9）
+    int idx = (int)(intptr_t)lv_event_get_user_data(e);
+
+    printf("准备播放: %s - %s\n", g_search_results[idx].name, g_search_results[idx].artist);
+
+    // ★ 把刚才拼好的 URL 和 歌名 传给播放页面！
+    set_current_play_song(g_search_results[idx].play_url,
+                          g_search_results[idx].name,
+                          g_search_results[idx].artist,
+                          g_search_results[idx].album);
+
     cleanup_before_exit();
     lv_obj_clean(lv_scr_act());
-    page_music_ing();
+    page_music_ing(); // 跳转到播放界面
 }
 
 static void create_song_row(lv_obj_t *parent, const music_track_t *track, int global_idx)
@@ -130,7 +144,7 @@ static void create_song_row(lv_obj_t *parent, const music_track_t *track, int gl
     lv_obj_set_flex_align(action_cont, LV_FLEX_ALIGN_END, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
     lv_obj_set_style_pad_column(action_cont, 4, LV_PART_MAIN);
     lv_obj_add_flag(action_cont, LV_OBJ_FLAG_CLICKABLE);
-    lv_obj_add_event_cb(action_cont, play_row_click_handler, LV_EVENT_CLICKED, (void *)(intptr_t)track->song_id);
+    lv_obj_add_event_cb(action_cont, play_row_click_handler, LV_EVENT_CLICKED, (void *)(intptr_t)global_idx);
 
     lv_obj_t *play_img = lv_img_create(action_cont);
     lv_img_set_src(play_img, GET_IMAGE_PATH("icon_bofang1.png"));
@@ -144,13 +158,15 @@ static void create_song_row(lv_obj_t *parent, const music_track_t *track, int gl
 
 static void update_music_list_ui(void)
 {
-    if (!g_list_cont) return;
+    if (!g_list_cont)
+        return;
     lv_obj_clean(g_list_cont);
 
     music_track_t *tracks = g_search_results;
     int count = g_search_result_count;
 
-    if (count == 0) {
+    if (count == 0)
+    {
         tracks = (music_track_t *)mock_tracks;
         count = MOCK_TRACK_COUNT;
     }
@@ -168,25 +184,102 @@ static void update_music_list_ui(void)
 
         int start = p * SONGS_PER_PAGE;
         int end = start + SONGS_PER_PAGE;
-        if (end > count) end = count;
+        if (end > count)
+            end = count;
 
-        for (int i = start; i < end; i++) {
+        for (int i = start; i < end; i++)
+        {
             create_song_row(page, &tracks[i], i);
         }
     }
 }
 
 // ★ 防御性数据提取：防止因为 API 返回 NULL 导致的崩溃
-static const char* extract_str(cJSON *node) {
-    if (node && cJSON_IsString(node) && node->valuestring) return node->valuestring;
+static const char *extract_str(cJSON *node)
+{
+    if (node && cJSON_IsString(node) && node->valuestring)
+        return node->valuestring;
     return "未知";
 }
 
-static int extract_id(cJSON *node) {
-    if (!node) return 0;
-    if (cJSON_IsNumber(node)) return node->valueint;
-    if (cJSON_IsString(node) && node->valuestring) return atoi(node->valuestring);
+static int extract_id(cJSON *node)
+{
+    if (!node)
+        return 0;
+    if (cJSON_IsNumber(node))
+        return node->valueint;
+    if (cJSON_IsString(node) && node->valuestring)
+        return atoi(node->valuestring);
     return 0;
+}
+
+// 暴力提取歌手名（兼容字符串、数组、对象各种嵌套）
+static void extract_artist(cJSON *song, char *buf, size_t len)
+{
+    cJSON *artist = cJSON_GetObjectItem(song, "artist");
+    if (!artist)
+        artist = cJSON_GetObjectItem(song, "artists");
+    if (!artist)
+        artist = cJSON_GetObjectItem(song, "SingerName");
+    if (!artist)
+        artist = cJSON_GetObjectItem(song, "ar"); // 网易云原生格式
+
+    if (artist)
+    {
+        if (cJSON_IsString(artist))
+        {
+            snprintf(buf, len, "%s", artist->valuestring);
+            return;
+        }
+        if (cJSON_IsArray(artist) && cJSON_GetArraySize(artist) > 0)
+        {
+            cJSON *item = cJSON_GetArrayItem(artist, 0);
+            if (cJSON_IsString(item))
+            {
+                snprintf(buf, len, "%s", item->valuestring);
+                return;
+            }
+            if (cJSON_IsObject(item))
+            {
+                cJSON *name = cJSON_GetObjectItem(item, "name");
+                if (cJSON_IsString(name))
+                {
+                    snprintf(buf, len, "%s", name->valuestring);
+                    return;
+                }
+            }
+        }
+    }
+    snprintf(buf, len, "未知");
+}
+
+// 暴力提取专辑名
+static void extract_album(cJSON *song, char *buf, size_t len)
+{
+    cJSON *album = cJSON_GetObjectItem(song, "album");
+    if (!album)
+        album = cJSON_GetObjectItem(song, "al");
+    if (!album)
+        album = cJSON_GetObjectItem(song, "AlbumName");
+
+    if (album)
+    {
+        if (cJSON_IsString(album))
+        {
+            snprintf(buf, len, "%s", album->valuestring);
+            return;
+        }
+        if (cJSON_IsObject(album))
+        {
+            cJSON *name = cJSON_GetObjectItem(album, "name");
+            if (cJSON_IsString(name))
+            {
+                snprintf(buf, len, "%s", name->valuestring);
+                return;
+            }
+        }
+    }
+    snprintf(buf, len, "未知");
 }
 
 static void async_music_search_cb(void *p)
@@ -198,84 +291,114 @@ static void async_music_search_cb(void *p)
         {
             free_search_results();
             cJSON *root = cJSON_Parse(json_str);
-            int is_new_format = 0;
-
-            if (root && cJSON_IsArray(root)) {
-                is_new_format = 1;
-            }
 
             if (root)
             {
                 cJSON *songs = NULL;
-                if (is_new_format) {
+
+                // 1. 尝试寻找真正的数组入口 (兼容几乎所有主流API格式)
+                if (cJSON_IsArray(root))
+                {
                     songs = root;
-                } else {
-                    cJSON *result = cJSON_GetObjectItem(root, "result");
-                    if (result) songs = cJSON_GetObjectItem(result, "songs");
-                    if (!songs) {
-                        cJSON *data = cJSON_GetObjectItem(root, "data");
-                        if (data) songs = cJSON_GetObjectItem(data, "lists");
+                }
+                else
+                {
+                    cJSON *data = cJSON_GetObjectItem(root, "data");
+                    if (data && cJSON_IsArray(data))
+                        songs = data;
+
+                    if (!songs)
+                    {
+                        cJSON *result = cJSON_GetObjectItem(root, "result");
+                        if (result)
+                        {
+                            if (cJSON_IsArray(result))
+                                songs = result;
+                            else
+                                songs = cJSON_GetObjectItem(result, "songs");
+                        }
                     }
                 }
-                
-                if (songs && cJSON_IsArray(songs))
+
+                // --- 这里加了一层保险！如果还解析失败，会把你的真实格式打印在终端 ---
+                if (!songs || !cJSON_IsArray(songs))
+                {
+                    printf(">>> 致命错误：找不到歌曲数组！JSON 前300字符: %.*s\n", 300, json_str);
+                }
+                else
                 {
                     g_search_result_count = cJSON_GetArraySize(songs);
-                    if (g_search_result_count > 10) g_search_result_count = 10;
+                    if (g_search_result_count > 10)
+                        g_search_result_count = 10; // 限制展示10条
 
                     if (g_search_result_count > 0)
                     {
                         g_search_results = (music_track_t *)malloc(sizeof(music_track_t) * g_search_result_count);
                         if (g_search_results)
                         {
-                            // ★ 核心修复 3：彻底格式化内存，防乱码防脏数据
                             memset(g_search_results, 0, sizeof(music_track_t) * g_search_result_count);
-                            
+
                             for (int i = 0; i < g_search_result_count; i++)
                             {
                                 cJSON *song = cJSON_GetArrayItem(songs, i);
-                                if (!song) continue;
+                                if (!song)
+                                    continue;
 
                                 g_search_results[i].index = i + 1;
-                                
-                                // 安全提取 JSON 字段
-                                if (is_new_format) {
-                                    g_search_results[i].song_id = extract_id(cJSON_GetObjectItem(song, "rid"));
-                                    snprintf(g_search_results[i].name, sizeof(g_search_results[i].name), "%s", extract_str(cJSON_GetObjectItem(song, "songName")));
-                                    snprintf(g_search_results[i].artist, sizeof(g_search_results[i].artist), "%s", extract_str(cJSON_GetObjectItem(song, "artist")));
-                                    snprintf(g_search_results[i].album, sizeof(g_search_results[i].album), "%s", "");
-                                } else {
-                                    cJSON *song_name = cJSON_GetObjectItem(song, "SongName");
-                                    if (song_name) {
-                                        g_search_results[i].song_id = extract_id(cJSON_GetObjectItem(song, "id"));
-                                        snprintf(g_search_results[i].name, sizeof(g_search_results[i].name), "%s", extract_str(song_name));
-                                        snprintf(g_search_results[i].artist, sizeof(g_search_results[i].artist), "%s", extract_str(cJSON_GetObjectItem(song, "SingerName")));
-                                        snprintf(g_search_results[i].album, sizeof(g_search_results[i].album), "%s", extract_str(cJSON_GetObjectItem(song, "AlbumName")));
-                                    } else {
-                                        g_search_results[i].song_id = extract_id(cJSON_GetObjectItem(song, "id"));
-                                        snprintf(g_search_results[i].name, sizeof(g_search_results[i].name), "%s", extract_str(cJSON_GetObjectItem(song, "name")));
-                                        snprintf(g_search_results[i].artist, sizeof(g_search_results[i].artist), "未知");
-                                        snprintf(g_search_results[i].album, sizeof(g_search_results[i].album), "未知");
-                                    }
+
+                                // 1. 提取歌名 (APlayer格式叫 title)
+                                cJSON *title_node = cJSON_GetObjectItem(song, "title");
+                                snprintf(g_search_results[i].name, sizeof(g_search_results[i].name), "%s", extract_str(title_node));
+
+                                // 2. 提取歌手 (APlayer格式叫 author)
+                                cJSON *author_node = cJSON_GetObjectItem(song, "author");
+                                snprintf(g_search_results[i].artist, sizeof(g_search_results[i].artist), "%s", extract_str(author_node));
+
+                                // 3. 专辑 (APlayer没返回，直接写死)
+                                snprintf(g_search_results[i].album, sizeof(g_search_results[i].album), "未知");
+
+                                // 4. 时长写死
+                                snprintf(g_search_results[i].duration, sizeof(g_search_results[i].duration), "--:--");
+
+                                // 5. ★ 最关键的一步：提取 url 字段，并拼上服务器的 IP！
+                                cJSON *url_node = cJSON_GetObjectItem(song, "url");
+                                if (url_node && cJSON_IsString(url_node) && url_node->valuestring)
+                                {
+                                    // 拼接完整的 MP3 请求路径
+                                    snprintf(g_search_results[i].play_url, sizeof(g_search_results[i].play_url),
+                                             "http://10.26.246.145%s", url_node->valuestring);
                                 }
-                                snprintf(g_search_results[i].duration, sizeof(g_search_results[i].duration), "%s", "--:--");
+                                else
+                                {
+                                    strcpy(g_search_results[i].play_url, ""); // 防错置空
+                                }
+
+                                // 成功验证打印 (把拼好的链接打印出来看看对不对！)
+                                printf("解析成功[%d]: %s - %s \n播放链接: %s\n",
+                                       i, g_search_results[i].name, g_search_results[i].artist, g_search_results[i].play_url);
                             }
                         }
                     }
                 }
                 cJSON_Delete(root);
             }
+            else
+            {
+                printf(">>> JSON 格式错误或为空！\n");
+            }
             update_music_list_ui();
         }
-        free(json_str); 
+        free(json_str);
     }
 }
 
 static void music_search_callback(char *json_str)
 {
-    if (json_str == NULL) return;
+    if (json_str == NULL)
+        return;
     char *json_copy = strdup(json_str);
-    if (json_copy) lv_async_call(async_music_search_cb, json_copy);
+    if (json_copy)
+        lv_async_call(async_music_search_cb, json_copy);
 }
 
 static void lv_event_cb_func(lv_event_t *e)
@@ -288,7 +411,8 @@ static void lv_event_cb_func(lv_event_t *e)
 static void icon_click_handler(lv_event_t *e)
 {
     const char *icon_name = lv_event_get_user_data(e);
-    if (icon_name == NULL) return;
+    if (icon_name == NULL)
+        return;
 
     if (strcmp(icon_name, "icon_sousuolist") == 0)
     {
@@ -307,7 +431,8 @@ static void icon_click_handler(lv_event_t *e)
 static void com_style_init()
 {
     lv_style_init(&com_style);
-    if (!lv_style_is_empty(&com_style)) lv_style_reset(&com_style);
+    if (!lv_style_is_empty(&com_style))
+        lv_style_reset(&com_style);
     lv_style_set_bg_color(&com_style, lv_color_hex(0x000000));
     lv_style_set_radius(&com_style, 0);
     lv_style_set_border_width(&com_style, 0);
@@ -403,7 +528,8 @@ void page_music_list_with_search(const char *keyword)
 
     const char *headers[] = {"#", "歌曲名", "歌手", "专辑", "时长"};
     int widths[] = {COL_IDX_W, COL_NAME_W, COL_ARTIST_W, COL_ALBUM_W, COL_ACTION_W};
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; i++)
+    {
         lv_obj_t *lb = lv_label_create(header);
         obj_font_set(lb, FONT_TYPE_CN, 14);
         lv_label_set_text(lb, headers[i]);

@@ -1,2 +1,2 @@
-/usr/bin/ar qc libwifi.a  CMakeFiles/wifi.dir/wpa_manager.c.o CMakeFiles/wifi.dir/utils/base_utils.c.o
-/usr/bin/ranlib libwifi.a
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ar qc libwifi.a  CMakeFiles/wifi.dir/wpa_manager.c.o CMakeFiles/wifi.dir/utils/base_utils.c.o
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ranlib libwifi.a
