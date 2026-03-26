@@ -3,12 +3,12 @@ set(CMAKE_HOST_SYSTEM_NAME "Linux")
 set(CMAKE_HOST_SYSTEM_VERSION "5.15.0-139-generic")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
-include("/home/xiaoyubb/xiangmu/app_sdk_v2/platform/t113/t113.cmake")
+include("/home/xiaoyubb/xiangmu/app_sdk_v2/platform/x86linux/linux.cmake")
 
 set(CMAKE_SYSTEM "Linux")
 set(CMAKE_SYSTEM_NAME "Linux")
 set(CMAKE_SYSTEM_VERSION "")
-set(CMAKE_SYSTEM_PROCESSOR "arm")
+set(CMAKE_SYSTEM_PROCESSOR "")
 
 set(CMAKE_CROSSCOMPILING "TRUE")
 

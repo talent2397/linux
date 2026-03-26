@@ -120,7 +120,7 @@ lvgl_porting: cmake_check_build_system
 
 # fast build rule for target.
 lvgl_porting/fast:
-	$(MAKE) -f platform/t113/src/CMakeFiles/lvgl_porting.dir/build.make platform/t113/src/CMakeFiles/lvgl_porting.dir/build
+	$(MAKE) -f platform/x86linux/src/CMakeFiles/lvgl_porting.dir/build.make platform/x86linux/src/CMakeFiles/lvgl_porting.dir/build
 .PHONY : lvgl_porting/fast
 
 #=============================================================================

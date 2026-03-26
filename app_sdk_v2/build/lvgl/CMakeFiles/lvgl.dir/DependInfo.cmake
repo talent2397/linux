@@ -248,11 +248,13 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../lvgl/src/widgets"
   "../lvgl/.."
   "../lvgl"
+  "../platform/x86linux/src/porting/device"
+  "../component/hal"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/src/CMakeFiles/lvgl_porting.dir/DependInfo.cmake"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/x86linux/src/CMakeFiles/lvgl_porting.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

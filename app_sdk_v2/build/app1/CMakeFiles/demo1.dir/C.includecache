@@ -1038,7 +1038,7 @@ lv_label.h
 
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_conf.h
 
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_list.c
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_ing.c
 stdio.h
 -
 stdlib.h
@@ -1046,8 +1046,6 @@ stdlib.h
 string.h
 -
 stdbool.h
--
-stddef.h
 -
 lvgl.h
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/lvgl.h
@@ -1061,26 +1059,4 @@ http_manager.h
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/http_manager.h
 cJSON/cJSON.h
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/cJSON/cJSON.h
-
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_serach.c
-stdio.h
--
-stdlib.h
--
-string.h
--
-stdbool.h
--
-stddef.h
--
-lvgl.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/lvgl.h
-image_conf.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/image_conf.h
-font_conf.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/font_conf.h
-page_conf.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_conf.h
-http_manager.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/http_manager.h
 

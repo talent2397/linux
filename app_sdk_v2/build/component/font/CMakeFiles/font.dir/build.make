@@ -60,15 +60,15 @@ include component/font/CMakeFiles/font.dir/flags.make
 component/font/CMakeFiles/font.dir/font_utils.c.o: component/font/CMakeFiles/font.dir/flags.make
 component/font/CMakeFiles/font.dir/font_utils.c.o: ../component/font/font_utils.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object component/font/CMakeFiles/font.dir/font_utils.c.o"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/font && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/font.dir/font_utils.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/font/font_utils.c
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/font && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/font.dir/font_utils.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/font/font_utils.c
 
 component/font/CMakeFiles/font.dir/font_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/font.dir/font_utils.c.i"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/font && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/font/font_utils.c > CMakeFiles/font.dir/font_utils.c.i
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/font && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/font/font_utils.c > CMakeFiles/font.dir/font_utils.c.i
 
 component/font/CMakeFiles/font.dir/font_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/font.dir/font_utils.c.s"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/font && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/font/font_utils.c -o CMakeFiles/font.dir/font_utils.c.s
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/font && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/font/font_utils.c -o CMakeFiles/font.dir/font_utils.c.s
 
 # Object files for target font
 font_OBJECTS = \

@@ -60,28 +60,28 @@ include component/usb_hid/CMakeFiles/usb_hid.dir/flags.make
 component/usb_hid/CMakeFiles/usb_hid.dir/usb_hid_async.c.o: component/usb_hid/CMakeFiles/usb_hid.dir/flags.make
 component/usb_hid/CMakeFiles/usb_hid.dir/usb_hid_async.c.o: ../component/usb_hid/usb_hid_async.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object component/usb_hid/CMakeFiles/usb_hid.dir/usb_hid_async.c.o"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/usb_hid.dir/usb_hid_async.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/usb_hid/usb_hid_async.c
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/usb_hid.dir/usb_hid_async.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/usb_hid/usb_hid_async.c
 
 component/usb_hid/CMakeFiles/usb_hid.dir/usb_hid_async.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/usb_hid.dir/usb_hid_async.c.i"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/usb_hid/usb_hid_async.c > CMakeFiles/usb_hid.dir/usb_hid_async.c.i
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/usb_hid/usb_hid_async.c > CMakeFiles/usb_hid.dir/usb_hid_async.c.i
 
 component/usb_hid/CMakeFiles/usb_hid.dir/usb_hid_async.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/usb_hid.dir/usb_hid_async.c.s"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/usb_hid/usb_hid_async.c -o CMakeFiles/usb_hid.dir/usb_hid_async.c.s
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/usb_hid/usb_hid_async.c -o CMakeFiles/usb_hid.dir/usb_hid_async.c.s
 
 component/usb_hid/CMakeFiles/usb_hid.dir/usb_hid_utils.c.o: component/usb_hid/CMakeFiles/usb_hid.dir/flags.make
 component/usb_hid/CMakeFiles/usb_hid.dir/usb_hid_utils.c.o: ../component/usb_hid/usb_hid_utils.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xiaoyubb/xiangmu/app_sdk_v2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object component/usb_hid/CMakeFiles/usb_hid.dir/usb_hid_utils.c.o"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/usb_hid.dir/usb_hid_utils.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/usb_hid/usb_hid_utils.c
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/usb_hid.dir/usb_hid_utils.c.o   -c /home/xiaoyubb/xiangmu/app_sdk_v2/component/usb_hid/usb_hid_utils.c
 
 component/usb_hid/CMakeFiles/usb_hid.dir/usb_hid_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/usb_hid.dir/usb_hid_utils.c.i"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/usb_hid/usb_hid_utils.c > CMakeFiles/usb_hid.dir/usb_hid_utils.c.i
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/xiaoyubb/xiangmu/app_sdk_v2/component/usb_hid/usb_hid_utils.c > CMakeFiles/usb_hid.dir/usb_hid_utils.c.i
 
 component/usb_hid/CMakeFiles/usb_hid.dir/usb_hid_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/usb_hid.dir/usb_hid_utils.c.s"
-	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid && /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/usb_hid/usb_hid_utils.c -o CMakeFiles/usb_hid.dir/usb_hid_utils.c.s
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/xiaoyubb/xiangmu/app_sdk_v2/component/usb_hid/usb_hid_utils.c -o CMakeFiles/usb_hid.dir/usb_hid_utils.c.s
 
 # Object files for target usb_hid
 usb_hid_OBJECTS = \
