@@ -457,12 +457,12 @@ void http_music_search_async(const char *keyword, int page, int limit)
     if (encoded_keyword)
     {
         // 使用 Meting API 格式
-        sprintf(obj.path, "/api?server=netease&type=search&keywords=%s", encoded_keyword);
+        sprintf(obj.path, "/api?server=netease&type=search&id=%s", encoded_keyword);
         free(encoded_keyword);
     }
     else
     {
-        sprintf(obj.path, "/api?server=netease&type=search&keywords=%s", keyword);
+        sprintf(obj.path, "/api?server=netease&type=search&id=%s", keyword);
     }
 
     obj.id = NET_MUSIC_SEARCH;
