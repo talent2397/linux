@@ -18,11 +18,15 @@ res_conf.h
 
 ../app1/res/res_conf.h
 
+../app1/ui/page_conf.h
+
 ../component/font/font_utils.h
 lvgl/lvgl.h
 ../component/font/lvgl/lvgl.h
 
 ../component/net/http_manager.h
+
+../component/wifi/wpa_manager.h
 
 ../lvgl/lvgl.h
 src/misc/lv_log.h
@@ -1036,7 +1040,49 @@ lv_label.h
 lv_label.h
 ../lvgl/src/widgets/lv_label.h
 
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/main.c
+unistd.h
+-
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+lvgl.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/lvgl.h
+page_conf.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/page_conf.h
+font_conf.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/font_conf.h
+wpa_manager.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/wpa_manager.h
+http_manager.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/http_manager.h
+
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_conf.h
+
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+time.h
+-
+lvgl.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/lvgl.h
+image_conf.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/image_conf.h
+font_conf.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/font_conf.h
+page_conf.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_conf.h
+wpa_manager.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/wpa_manager.h
+http_manager.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/http_manager.h
 
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_ing.c
 stdio.h
@@ -1083,4 +1129,26 @@ http_manager.h
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/http_manager.h
 cJSON/cJSON.h
 /home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/cJSON/cJSON.h
+
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_serach.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdbool.h
+-
+stddef.h
+-
+lvgl.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/lvgl.h
+image_conf.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/image_conf.h
+font_conf.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/font_conf.h
+page_conf.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_conf.h
+http_manager.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/http_manager.h
 

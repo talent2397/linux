@@ -4,18 +4,19 @@
 typedef enum
 {
     NET_GET_WEATHER = 0,
-    NET_GET_TIME, // 【新增】网络时间的队列命令 ID
-    NET_MUSIC_SEARCH,       // 搜索歌曲
-    NET_MUSIC_GET_URL,      // 获取播放地址
-    NET_MUSIC_GET_LYRIC,    // 获取歌词
-    NET_MUSIC_GET_DETAIL,   // 获取歌曲详情
+    NET_GET_TIME,         // 【新增】网络时间的队列命令 ID
+    NET_MUSIC_SEARCH,     // 搜索歌曲
+    NET_MUSIC_GET_URL,    // 获取播放地址
+    NET_MUSIC_GET_LYRIC,  // 获取歌词
+    NET_MUSIC_GET_DETAIL, // 获取歌曲详情
+    NET_MUSIC_DOWNLOAD,   // 【新增】下载音乐
 } NET_COMM_ID;
 
 typedef struct
 {
     NET_COMM_ID id;
-    char host[100];
-    char path[100];
+    char host[512];
+    char path[512];
     char data[50];
     char type[10];
     int loop_flag;
@@ -36,6 +37,12 @@ typedef void (*music_search_callback_fun)(char *str);
 typedef void (*music_url_callback_fun)(char *str);
 typedef void (*music_lyric_callback_fun)(char *str);
 typedef void (*music_detail_callback_fun)(char *str);
+
+typedef void (*music_download_callback_fun)(int success);
+
+// 【新增】下载 API
+void http_music_download_async(const char *url);
+void http_set_music_download_callback(music_download_callback_fun func);
 
 int http_request_create(void);
 

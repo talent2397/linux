@@ -29,6 +29,8 @@ static music_url_callback_fun music_url_callback_func = NULL;
 static music_lyric_callback_fun music_lyric_callback_func = NULL;
 static music_detail_callback_fun music_detail_callback_func = NULL;
 
+static music_download_callback_fun music_download_callback_func = NULL;
+
 /**
  * @brief URL 编码函数
  */
@@ -347,6 +349,42 @@ static void *net_thread_fun(void *arg)
                 }
                 break;
 
+            case NET_MUSIC_DOWNLOAD:
+                printf("handle NET_MUSIC_DOWNLOAD: %s\n", obj.host);
+                {
+                    CURL *curl = curl_easy_init();
+                    if (curl)
+                    {
+                        // 写入到系统的 /tmp 临时目录（在内存里，速度极快不伤Flash）
+                        FILE *fp = fopen("/tmp/music.mp3", "wb");
+                        if (fp)
+                        {
+                            curl_easy_setopt(curl, CURLOPT_URL, obj.host);
+                            curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L); // 自动处理 302 跳转！
+                            curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
+                            curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp); // curl自动将数据写入文件
+
+                            CURLcode res = curl_easy_perform(curl);
+                            fclose(fp);
+
+                            if (res == CURLE_OK)
+                            {
+                                printf("MP3 下载成功！\n");
+                                if (music_download_callback_func != NULL)
+                                    music_download_callback_func(1);
+                            }
+                            else
+                            {
+                                printf("MP3 下载失败: %s\n", curl_easy_strerror(res));
+                                if (music_download_callback_func != NULL)
+                                    music_download_callback_func(0);
+                            }
+                        }
+                        curl_easy_cleanup(curl);
+                    }
+                }
+                break;
+
             default:
                 break;
             }
@@ -528,4 +566,21 @@ int http_request_create()
         return -1;
     }
     return 0;
+}
+
+void http_music_download_async(const char *url)
+{
+    net_obj obj;
+    memset(&obj, 0, sizeof(net_obj));
+    // 直接把整个链接塞进 host 即可
+    strncpy(obj.host, url, sizeof(obj.host) - 1);
+    strcpy(obj.path, "");
+    obj.id = NET_MUSIC_DOWNLOAD;
+    strcpy(obj.type, "GET");
+    osal_queue_send(&net_queue, &obj, sizeof(net_obj), 1000);
+}
+
+void http_set_music_download_callback(music_download_callback_fun func)
+{
+    music_download_callback_func = func;
 }

@@ -10,8 +10,8 @@
 #include "http_manager.h"
 
 static lv_style_t com_style;
-static lv_obj_t *kb = NULL; 
-static lv_obj_t *g_ta_search = NULL; 
+static lv_obj_t *kb = NULL;
+static lv_obj_t *g_ta_search = NULL;
 
 extern void page_music_list_with_search(const char *keyword);
 
@@ -53,7 +53,7 @@ static void cleanup_before_exit(void)
 {
     if (kb != NULL)
     {
-        lv_keyboard_set_textarea(kb, NULL); 
+        lv_keyboard_set_textarea(kb, NULL);
         lv_obj_del(kb);
         kb = NULL;
     }
@@ -70,7 +70,8 @@ static void lv_event_cb_func(lv_event_t *e)
 static void icon_click_handler(lv_event_t *e)
 {
     const char *icon_name = lv_event_get_user_data(e);
-    if (icon_name == NULL) return;
+    if (icon_name == NULL)
+        return;
 
     if (strcmp(icon_name, "icon_bofanglist") == 0)
     {
@@ -89,16 +90,17 @@ static void icon_click_handler(lv_event_t *e)
 static void search_btn_click_handler(lv_event_t *e)
 {
     lv_obj_t *ta = g_ta_search;
-    if (ta == NULL) ta = lv_event_get_user_data(e);
+    if (ta == NULL)
+        ta = lv_event_get_user_data(e);
     const char *keyword = lv_textarea_get_text(ta);
     if (keyword && strlen(keyword) > 0)
     {
         // ★ 核心修复 1：把输入的文字拷贝一份存到安全区
         char *safe_keyword = strdup(keyword);
-        
+
         cleanup_before_exit();
         lv_obj_clean(lv_scr_act()); // 清除UI（此刻旧 keyword 指针彻底失效）
-        
+
         // 使用安全的副本传递
         page_music_list_with_search(safe_keyword);
         free(safe_keyword); // 用完后释放内存
@@ -113,27 +115,30 @@ static void tag_click_handler(lv_event_t *e)
     {
         const char *text = lv_label_get_text(label);
         const char *search_text = text;
-        
+
         while (*search_text && ((*search_text >= '0' && *search_text <= '9') || *search_text == '.' || *search_text == ' '))
         {
-            if (*search_text == '.' || *search_text == ' ') {
+            if (*search_text == '.' || *search_text == ' ')
+            {
                 search_text++;
-                if (strncmp(search_text, "- ", 2) == 0) search_text += 2;
+                if (strncmp(search_text, "- ", 2) == 0)
+                    search_text += 2;
                 break;
             }
             search_text++;
         }
-        
-        while (*search_text == ' ') search_text++;
+
+        while (*search_text == ' ')
+            search_text++;
 
         if (strlen(search_text) > 0)
         {
             // ★ 核心修复 2：深拷贝
             char *safe_keyword = strdup(search_text);
-            
+
             cleanup_before_exit();
             lv_obj_clean(lv_scr_act());
-            
+
             page_music_list_with_search(safe_keyword);
             free(safe_keyword);
         }
@@ -147,7 +152,8 @@ static void ta_event_cb(lv_event_t *e)
 
     if (code == LV_EVENT_FOCUSED)
     {
-        if (kb == NULL) {
+        if (kb == NULL)
+        {
             kb = lv_keyboard_create(lv_layer_top());
             lv_obj_set_size(kb, 800, 220);
             lv_obj_align(kb, LV_ALIGN_BOTTOM_MID, 0, 0);
@@ -158,7 +164,8 @@ static void ta_event_cb(lv_event_t *e)
     }
     else if (code == LV_EVENT_DEFOCUSED || code == LV_EVENT_CANCEL || code == LV_EVENT_READY)
     {
-        if (kb != NULL) {
+        if (kb != NULL)
+        {
             lv_obj_add_flag(kb, LV_OBJ_FLAG_HIDDEN);
         }
     }
@@ -187,7 +194,8 @@ static lv_obj_t *create_tag_btn(lv_obj_t *parent, const char *text, lv_color_t t
 static void com_style_init()
 {
     lv_style_init(&com_style);
-    if (!lv_style_is_empty(&com_style)) lv_style_reset(&com_style);
+    if (!lv_style_is_empty(&com_style))
+        lv_style_reset(&com_style);
     lv_style_set_bg_color(&com_style, lv_color_hex(0x000000));
     lv_style_set_radius(&com_style, 0);
     lv_style_set_border_width(&com_style, 0);
@@ -248,7 +256,7 @@ void page_music_search()
 
     lv_obj_t *cont_bg2 = lv_obj_create(lv_scr_act());
     lv_obj_clear_flag(cont_bg2, LV_OBJ_FLAG_SCROLLABLE);
-    lv_obj_set_size(cont_bg2, 1318, 400); 
+    lv_obj_set_size(cont_bg2, 1318, 400);
     lv_obj_align_to(cont_bg2, cont_bg1, LV_ALIGN_OUT_RIGHT_TOP, 0, 0);
     lv_obj_set_style_bg_color(cont_bg2, lv_color_make(23, 20, 20), LV_PART_MAIN);
     lv_obj_set_style_bg_opa(cont_bg2, 80, LV_PART_MAIN);
@@ -301,7 +309,8 @@ void page_music_search()
     lv_obj_set_style_pad_gap(history_flex, 15, LV_PART_MAIN);
 
     ApiResult_t history_data = api_get_search_history();
-    for (int i = 0; i < history_data.count; i++) {
+    for (int i = 0; i < history_data.count; i++)
+    {
         lv_obj_t *btn = create_tag_btn(history_flex, history_data.items[i], lv_color_hex(0xffffff));
         lv_obj_add_event_cb(btn, tag_click_handler, LV_EVENT_CLICKED, NULL);
     }
@@ -322,7 +331,8 @@ void page_music_search()
     lv_obj_set_style_pad_gap(hot_flex, 15, LV_PART_MAIN);
 
     ApiResult_t hot_data = api_get_hot_search();
-    for (int i = 0; i < hot_data.count; i++) {
+    for (int i = 0; i < hot_data.count; i++)
+    {
         lv_color_t color = (i == 0) ? lv_color_hex(0xff4d4f) : ((i == 1) ? lv_color_hex(0xff7a45) : ((i == 2) ? lv_color_hex(0xffa940) : lv_color_hex(0xffffff)));
         lv_obj_t *btn = create_tag_btn(hot_flex, hot_data.items[i], color);
         lv_obj_add_event_cb(btn, tag_click_handler, LV_EVENT_CLICKED, NULL);

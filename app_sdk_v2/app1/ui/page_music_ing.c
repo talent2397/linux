@@ -11,7 +11,7 @@
 #include "cJSON/cJSON.h"
 
 static lv_style_t com_style;
-
+static int g_current_song_id = 0;
 // ======================= API 数据接口模拟 =======================
 
 typedef struct
@@ -50,6 +50,28 @@ static char g_current_album[256] = {0};
 // ★ 新增：页面存活状态标记
 static bool g_is_ing_page_active = false;
 
+static void async_play_downloaded_cb(void *p)
+{
+    int success = (int)(intptr_t)p;
+    if (success && g_is_ing_page_active)
+    {
+        printf(">>> 下载完成！系统后台呼叫 mpg123 播放 /tmp/music.mp3\n");
+        // 先杀掉旧的，再播放新下载好的本地文件！
+        system("killall -9 mpg123 2>/dev/null");
+        system("mpg123 /tmp/music.mp3 > /dev/null 2>&1 &");
+    }
+    else if (!success)
+    {
+        printf(">>> 音乐下载失败！\n");
+    }
+}
+
+// 下载完成后的回调（在子线程被触发）
+static void music_download_callback(int success)
+{
+    lv_async_call(async_play_downloaded_cb, (void *)(intptr_t)success);
+}
+
 // ★ 新增：退出页面前的终极清理（解决核心崩溃问题）
 static void cleanup_before_exit(void)
 {
@@ -72,8 +94,10 @@ static void cleanup_before_exit(void)
     g_song_title_label = NULL;
     g_artist_label = NULL;
 }
-void set_current_play_song(const char *url, const char *name, const char *artist, const char *album)
+// 修改接收函数
+void set_current_play_song(int song_id, const char *url, const char *name, const char *artist, const char *album)
 {
+    g_current_song_id = song_id; // 保存ID
     if (url)
         snprintf(g_current_song_url, sizeof(g_current_song_url), "%s", url);
     if (name)
@@ -95,7 +119,6 @@ static void async_music_url_cb(void *p)
             cJSON *root = cJSON_Parse(json_str);
             if (root)
             {
-                // 兼容多格式解析提取 URL
                 cJSON *url_node = cJSON_GetObjectItem(root, "url");
                 if (!url_node && cJSON_IsArray(root))
                 {
@@ -118,15 +141,14 @@ static void async_music_url_cb(void *p)
                 {
                     strncpy(g_current_song_url, url_node->valuestring, sizeof(g_current_song_url) - 1);
                     g_current_song_url[sizeof(g_current_song_url) - 1] = '\0';
-                    printf(">>> 成功获取到播放链接: %s\n", g_current_song_url);
+                    printf(">>> 成功解析到真正的 MP3 播放链接: %s\n", g_current_song_url);
 
-                    // ================= 核心：调用系统底层的 mpg123 进行播放 =================
+                    // ================= 核心修复：管道流处理HTTPS与重定向 =================
                     char cmd[1024];
-                    // 1. 先安全杀掉之前可能正在播放的 mpg123 (防止声音重叠)
-                    system("killall -9 mpg123 2>/dev/null");
-                    // 2. 拼装后台播放命令 (& 符号代表后台运行)
-                    snprintf(cmd, sizeof(cmd), "mpg123 \"%s\" &", g_current_song_url);
-                    // 3. 执行系统命令！
+                    // 1. 彻底干掉以前的 curl 和 mpg123
+                    system("killall -9 curl mpg123 2>/dev/null");
+                    // 2. 使用 curl -L 处理重定向，管道符传给 mpg123 - 。必须用单引号 '%s' 包裹防止URL里的&被系统截断！
+                    snprintf(cmd, sizeof(cmd), "(curl -s -L '%s' | mpg123 - ) > /dev/null 2>&1 &", g_current_song_url);
                     system(cmd);
                     // ====================================================================
                 }
@@ -148,14 +170,11 @@ static void music_url_callback(char *json_str)
 }
 
 /* API 接口：获取当前播放信息 */
-// --- 替换获取当前信息的 API，不再请求 detail，直接读缓存的全局变量 ---
-/* API 接口：获取当前播放信息并立刻触发系统播放！ */
 static int music_api_get_playing_info(music_playing_info_t *out_info)
 {
     if (!out_info)
         return 0;
 
-    // 如果有有效的 URL，直接开播！
     if (strlen(g_current_song_url) > 0)
     {
         out_info->song_name = g_current_song_name;
@@ -168,19 +187,15 @@ static int music_api_get_playing_info(music_playing_info_t *out_info)
         out_info->loop_on = true;
         out_info->volume = 68;
 
-        printf(">>> UI 已经加载，立刻后台呼叫 mpg123 播放: %s\n", g_current_song_url);
+        printf(">>> UI 已经加载，呼叫 libcurl 异步下载到内存: %s\n", g_current_song_url);
 
-        char cmd[1024];
-        // 1. 杀掉以前可能在播放的进程
-        system("killall -9 mpg123 2>/dev/null");
-        // 2. 拼接命令（加上 & 放后台运行，并且屏蔽 mpg123 的日志打印免得刷屏）
-        snprintf(cmd, sizeof(cmd), "mpg123 \"%s\" > /dev/null 2>&1 &", g_current_song_url);
-        // 3. 执行！
-        system(cmd);
+        // 绑定回调，发起 C 代码级的纯正 HTTP 下载！
+        http_set_music_download_callback(music_download_callback);
+        http_music_download_async(g_current_song_url);
 
         return 1;
     }
-    return 0; // 没有数据则返回假，会触发假数据兜底
+    return 0;
 }
 
 static void get_mock_playing_info(music_playing_info_t *out_info)
@@ -235,16 +250,13 @@ static void album_rotate_timer_cb(lv_timer_t *timer)
 static void set_play_state(bool play)
 {
     g_is_playing = play;
-
     if (g_album_rotate_timer == NULL)
     {
         g_album_rotate_timer = lv_timer_create(album_rotate_timer_cb, 60, NULL);
     }
-
     if (play)
     {
         lv_timer_resume(g_album_rotate_timer);
-        // 继续播放音频
         system("killall -CONT mpg123 2>/dev/null");
         if (g_play_btn_img)
             lv_img_set_src(g_play_btn_img, GET_IMAGE_PATH("icon_zanting2.png"));
@@ -252,13 +264,11 @@ static void set_play_state(bool play)
     else
     {
         lv_timer_pause(g_album_rotate_timer);
-        // 挂起/暂停音频
         system("killall -STOP mpg123 2>/dev/null");
         if (g_play_btn_img)
-            lv_img_set_src(g_play_btn_img, GET_IMAGE_PATH("icon_bofang1.png")); // 确保有一张播放图标
+            lv_img_set_src(g_play_btn_img, GET_IMAGE_PATH("icon_bofang1.png"));
     }
 }
-
 // 图标点击事件处理函数
 static void icon_click_handler(lv_event_t *e)
 {

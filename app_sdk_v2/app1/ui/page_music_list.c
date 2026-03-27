@@ -14,7 +14,7 @@ static lv_style_t com_style;
 static bool g_is_list_page_active = false;
 static lv_obj_t *g_list_cont = NULL;
 
-extern void set_current_play_song(const char *url, const char *name, const char *artist, const char *album);
+extern void set_current_play_song(int song_id, const char *url, const char *name, const char *artist, const char *album);
 
 typedef struct
 {
@@ -80,13 +80,12 @@ static void cleanup_before_exit(void)
 
 static void play_row_click_handler(lv_event_t *e)
 {
-    // 这里拿到的 idx 就是第几首歌（0-9）
     int idx = (int)(intptr_t)lv_event_get_user_data(e);
-
     printf("准备播放: %s - %s\n", g_search_results[idx].name, g_search_results[idx].artist);
 
-    // ★ 把刚才拼好的 URL 和 歌名 传给播放页面！
-    set_current_play_song(g_search_results[idx].play_url,
+    // ★ 核心修改：把 song_id 一并传过去！
+    set_current_play_song(g_search_results[idx].song_id,
+                          g_search_results[idx].play_url,
                           g_search_results[idx].name,
                           g_search_results[idx].artist,
                           g_search_results[idx].album);
@@ -345,6 +344,11 @@ static void async_music_search_cb(void *p)
                                     continue;
 
                                 g_search_results[i].index = i + 1;
+
+                                cJSON *id_node = cJSON_GetObjectItem(song, "id");
+                                if (!id_node)
+                                    id_node = cJSON_GetObjectItem(song, "songmid");
+                                g_search_results[i].song_id = extract_id(id_node);
 
                                 // 1. 提取歌名 (APlayer格式叫 title)
                                 cJSON *title_node = cJSON_GetObjectItem(song, "title");
