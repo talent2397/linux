@@ -5,6 +5,15 @@
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/src/CMakeFiles/rebuild_cache.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/src/CMakeFiles/edit_cache.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/src/CMakeFiles/lvgl_porting.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/app_sound/CMakeFiles/rebuild_cache.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/app_sound/CMakeFiles/edit_cache.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/app_sound/CMakeFiles/app_sound.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/app_control_center/CMakeFiles/rebuild_cache.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/app_control_center/CMakeFiles/edit_cache.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/app_control_center/CMakeFiles/app_control_center.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/app_xiaozhi/CMakeFiles/edit_cache.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/app_xiaozhi/CMakeFiles/rebuild_cache.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/app_xiaozhi/CMakeFiles/app_xiaozhi.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal/CMakeFiles/rebuild_cache.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal/CMakeFiles/edit_cache.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal/CMakeFiles/osal.dir
@@ -23,6 +32,9 @@
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid/CMakeFiles/rebuild_cache.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid/CMakeFiles/edit_cache.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid/CMakeFiles/usb_hid.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/bt_audio/CMakeFiles/rebuild_cache.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/bt_audio/CMakeFiles/edit_cache.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/bt_audio/CMakeFiles/bt_audio.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/lvgl/CMakeFiles/edit_cache.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/lvgl/CMakeFiles/rebuild_cache.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/lvgl/CMakeFiles/lvgl_demos.dir
@@ -30,3 +42,5 @@
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/rebuild_cache.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/edit_cache.dir
 /home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/res/CMakeFiles/rebuild_cache.dir
+/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/res/CMakeFiles/edit_cache.dir

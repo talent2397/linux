@@ -7,6 +7,7 @@
 #else
 #define FONT_PATH "/usr/res/font/"
 #define IMAGE_PATH "/usr/res/image/"
+#define MUSIC_PATH PROJECT_RES_URL "music/"
 #endif
 
 #endif

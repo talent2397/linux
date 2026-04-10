@@ -190,6 +190,9 @@ set(CMAKE_TARGET_DEFINITIONS_C
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
+  "../third_party/install/alsa/include"
+  "../third_party/install/opus/include"
+  "../third_party/install/boost/include"
   "../lvgl/src"
   "../lvgl/src/core"
   "../lvgl/src/draw"

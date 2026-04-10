@@ -1,0 +1,416 @@
+seq.lo: seq.c \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/stdc-predef.h \
+ seq_local.h ../../include/local.h ../../include/config.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/unistd.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/features.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/sys/cdefs.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/wordsize.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/long-double.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/gnu/stubs.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/gnu/stubs-hard.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/posix_opt.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/environments.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/timesize.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/typesizes.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/time64.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include/stddef.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/confname.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/getopt_posix.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/getopt_core.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/stdio.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/libc-header-start.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include/stdarg.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/__fpos_t.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/__mbstate_t.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/__fpos64_t.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/__FILE.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/FILE.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/struct_FILE.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/cookie_io_functions_t.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stdio_lim.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/sys_errlist.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stdio.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/stdlib.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/waitflags.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/waitstatus.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/floatn.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/floatn-common.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/locale_t.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/__locale_t.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/sys/types.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/clock_t.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/clockid_t.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/time_t.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/timer_t.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stdint-intn.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/endian.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/endian.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/byteswap.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/uintn-identity.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/sys/select.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/select.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/sigset_t.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/__sigset_t.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/struct_timeval.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/struct_timespec.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/pthreadtypes.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/thread-shared-types.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/pthreadtypes-arch.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/alloca.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stdlib-bsearch.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stdlib-float.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/string.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/strings.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/fcntl.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/fcntl.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/fcntl-linux.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/struct_iovec.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/falloc.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stat.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/assert.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/poll.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/sys/poll.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/poll.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/errno.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/errno.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/errno.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/errno.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm-generic/errno.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm-generic/errno-base.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/error_t.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/types.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/types.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm-generic/int-ll64.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/bitsperlong.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm-generic/bitsperlong.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/posix_types.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/stddef.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/posix_types.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm-generic/posix_types.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/ioctl.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/ioctl.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm-generic/ioctl.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/dlfcn.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/dlfcn.h \
+ ../../include/sound/asound.h ../../include/alsa/sound/type_compat.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include/stdint.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/stdint.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/wchar.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stdint-uintn.h \
+ ../../include/alsa/sound/uapi/asound.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/byteorder.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/byteorder/little_endian.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/swab.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/swab.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/time.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/time.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/timex.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/struct_tm.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/struct_itimerspec.h \
+ ../../include/asoundef.h ../../include/alsa-symbols.h \
+ ../../include/version.h ../../include/global.h ../../include/input.h \
+ ../../include/output.h ../../include/error.h ../../include/conf.h \
+ ../../include/pcm.h ../../include/pcm_plugin.h ../../include/rawmidi.h \
+ ../../include/ump.h ../../include/timer.h ../../include/hwdep.h \
+ ../../include/control.h ../../include/mixer.h ../../include/seq_event.h \
+ ../../include/seq.h ../../include/sound/asequencer.h \
+ ../../include/alsa/sound/uapi/asequencer.h ../../include/seqmid.h \
+ ../../include/seq_midi_event.h ../../include/list.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed/limits.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed/syslimits.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/limits.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/posix1_lim.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/local_lim.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/limits.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/posix2_lim.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/xopen_lim.h \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/uio_lim.h
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/stdc-predef.h:
+
+seq_local.h:
+
+../../include/local.h:
+
+../../include/config.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/unistd.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/features.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/sys/cdefs.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/wordsize.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/long-double.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/gnu/stubs.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/gnu/stubs-hard.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/posix_opt.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/environments.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/timesize.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/typesizes.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/time64.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include/stddef.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/confname.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/getopt_posix.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/getopt_core.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/stdio.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/libc-header-start.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include/stdarg.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/__fpos_t.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/__mbstate_t.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/__fpos64_t.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/__FILE.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/FILE.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/struct_FILE.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/cookie_io_functions_t.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stdio_lim.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/sys_errlist.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stdio.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/stdlib.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/waitflags.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/waitstatus.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/floatn.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/floatn-common.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/locale_t.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/__locale_t.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/sys/types.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/clock_t.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/clockid_t.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/time_t.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/timer_t.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stdint-intn.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/endian.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/endian.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/byteswap.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/uintn-identity.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/sys/select.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/select.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/sigset_t.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/__sigset_t.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/struct_timeval.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/struct_timespec.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/pthreadtypes.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/thread-shared-types.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/pthreadtypes-arch.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/alloca.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stdlib-bsearch.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stdlib-float.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/string.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/strings.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/fcntl.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/fcntl.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/fcntl-linux.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/struct_iovec.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/falloc.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stat.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/assert.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/poll.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/sys/poll.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/poll.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/errno.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/errno.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/errno.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/errno.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm-generic/errno.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm-generic/errno-base.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/error_t.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/types.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/types.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm-generic/int-ll64.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/bitsperlong.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm-generic/bitsperlong.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/posix_types.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/stddef.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/posix_types.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm-generic/posix_types.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/ioctl.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/ioctl.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm-generic/ioctl.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/dlfcn.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/dlfcn.h:
+
+../../include/sound/asound.h:
+
+../../include/alsa/sound/type_compat.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include/stdint.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/stdint.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/wchar.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/stdint-uintn.h:
+
+../../include/alsa/sound/uapi/asound.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/byteorder.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/byteorder/little_endian.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/swab.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/asm/swab.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/time.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/time.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/timex.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/struct_tm.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/types/struct_itimerspec.h:
+
+../../include/asoundef.h:
+
+../../include/alsa-symbols.h:
+
+../../include/version.h:
+
+../../include/global.h:
+
+../../include/input.h:
+
+../../include/output.h:
+
+../../include/error.h:
+
+../../include/conf.h:
+
+../../include/pcm.h:
+
+../../include/pcm_plugin.h:
+
+../../include/rawmidi.h:
+
+../../include/ump.h:
+
+../../include/timer.h:
+
+../../include/hwdep.h:
+
+../../include/control.h:
+
+../../include/mixer.h:
+
+../../include/seq_event.h:
+
+../../include/seq.h:
+
+../../include/sound/asequencer.h:
+
+../../include/alsa/sound/uapi/asequencer.h:
+
+../../include/seqmid.h:
+
+../../include/seq_midi_event.h:
+
+../../include/list.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed/limits.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/lib/gcc/arm-openwrt-linux-gnueabi/8.3.0/include-fixed/syslimits.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/limits.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/posix1_lim.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/local_lim.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/linux/limits.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/posix2_lim.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/xopen_lim.h:
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/bits/uio_lim.h:

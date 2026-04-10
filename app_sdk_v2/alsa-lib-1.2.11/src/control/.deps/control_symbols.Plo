@@ -1,0 +1,4 @@
+control_symbols.lo: control_symbols.c \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/stdc-predef.h
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/stdc-predef.h:

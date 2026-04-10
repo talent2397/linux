@@ -1,4 +1,3 @@
-
 # README
 
 ## 环境要求
@@ -54,4 +53,36 @@ git commit -m ""
 git push 
 git push -f origin main
 修改后，记得保存，最好用reboot重启确保可以完全写入
+
+1、编译
+./build.sh clean
+./build.sh -t113
+
+2、应用和资源推送到板卡中
+adb push platform/t113/lib/\* /usr/lib/
+adb push build/app1/res/\* /usr/res/
+adb push build/app1/demo1 /usr/bin/
+adb push build/app\_control\_center/app\_control\_center /usr/bin/
+adb push build/app\_sound/app\_sound /usr/bin/
+
+特别注意，工程实现的几个依赖库较大，如果你的板卡中已有其它资源，剩余存储空间不足，建议你重新烧录一个干净的系统进行测试，避免空间不足push失败。
+
+3、 运行前，需要先连接网络，然后同步网络时间，才可以正常运行，进入adb shell。
+运行前，建议先杀掉开机启动的应用。然后执行下方语句运行，一共有三个应用
+
+adb push build/app1/demo1 /data
+
+# -n 表示前台运行，-q 表示同步完时间后退出，-p 指定 NTP 服务器
+ntpd -n -q -p ntp.aliyun.com
+
+cd /usr/bin/
+
+demo1 &
+
+app_sound &
+
+app_control_center & 
+
+
+```
 

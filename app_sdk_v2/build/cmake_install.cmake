@@ -44,6 +44,21 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/xiaoyubb/xiangmu/app_sdk_v2/build/app_sound/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/xiaoyubb/xiangmu/app_sdk_v2/build/app_control_center/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/xiaoyubb/xiangmu/app_sdk_v2/build/app_xiaozhi/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal/cmake_install.cmake")
 endif()
 
@@ -70,6 +85,11 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/bt_audio/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

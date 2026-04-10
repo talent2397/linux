@@ -39,6 +39,9 @@ set(CMAKE_TARGET_DEFINITIONS_C
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
+  "../third_party/install/alsa/include"
+  "../third_party/install/opus/include"
+  "../third_party/install/boost/include"
   "../platform/t113/src/hal"
   "../platform/t113/src/porting/g2d"
   "../platform/t113/src/utils"

@@ -1,0 +1,2 @@
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ar qc libbt_audio.a  CMakeFiles/bt_audio.dir/app_bt_audio.c.o
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/bin/arm-openwrt-linux-ranlib libbt_audio.a

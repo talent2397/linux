@@ -5,9 +5,15 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/main.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/main.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/data/device_data.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/data/device_data.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_ai/ipc_udp.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_ai/ipc_udp.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_ai/page_ai.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_ai/page_ai.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_ai/ui_system.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_ai/ui_system.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_alarm.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_alarm.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_alarm_dialog.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_alarm_dialog.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_alarm_remind.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_alarm_remind.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_city_setting.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_city_setting.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_conf.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_conf.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_main.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_main.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_ing.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_music_ing.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_music_list.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_music_list.c.o"
@@ -15,29 +21,53 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_seeting.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_seeting.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_time_setting.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_time_setting.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_tomato_setting.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_tomato_setting.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_warn.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_warn.c.o"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_wifi_setting.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/utils/ble_mesh.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/utils/ble_mesh.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/utils/clock/lv_clock0.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/utils/clock/lv_clock0.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/utils/clock/lv_clock1.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/utils/clock/lv_clock1.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/utils/clock/lv_clock2.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/utils/clock/lv_clock2.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/utils/file/file_save.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/utils/file/file_save.c.o"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/utils/utils.c" "/home/xiaoyubb/xiangmu/app_sdk_v2/build/app1/CMakeFiles/demo1.dir/ui/utils/utils.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
   "LV_CONF_INCLUDE_SIMPLE"
+  "PROJECT_RES_URL=\"/usr/res/\""
   )
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
+  "../third_party/install/alsa/include"
+  "../third_party/install/opus/include"
+  "../third_party/install/boost/include"
   "../app1/."
-  "../app1/./res"
-  "../app1/./res/font"
-  "../app1/./res/image"
-  "../app1/./ui"
-  "../component/font"
+  "../app1/ui"
+  "../app1/ui/data"
+  "../app1/ui/page_ai"
+  "../app1/ui/utils"
+  "../app1/ui/utils/clock"
+  "../app1/ui/utils/file"
+  "../app1/res"
+  "../app1/res/color"
+  "../app1/res/font"
+  "../app1/res/music"
+  "../app1/res/image"
   "../lvgl"
+  "../lvgl/src"
+  "../lvgl/demos"
+  "../component/hal"
   "../component/wifi"
   "../component/net"
-  "../component/hal"
+  "../component/osal"
+  "../component/font"
+  "../component/player"
+  "../component/usb_hid"
+  "../component/net/inc"
+  "../component/bt_audio"
   "../lvgl/.."
-  "../lvgl/src"
   "../lvgl/src/core"
   "../lvgl/src/draw"
   "../lvgl/src/draw/nxp_pxp"
@@ -97,11 +127,15 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/lvgl/CMakeFiles/lvgl_demos.dir/DependInfo.cmake"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/build/lvgl/CMakeFiles/lvgl.dir/DependInfo.cmake"
-  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/font/CMakeFiles/font.dir/DependInfo.cmake"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/src/CMakeFiles/lvgl_porting.dir/DependInfo.cmake"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/wifi/CMakeFiles/wifi.dir/DependInfo.cmake"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/net/CMakeFiles/http.dir/DependInfo.cmake"
-  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/platform/t113/src/CMakeFiles/lvgl_porting.dir/DependInfo.cmake"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/player/CMakeFiles/player.dir/DependInfo.cmake"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/font/CMakeFiles/font.dir/DependInfo.cmake"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/usb_hid/CMakeFiles/usb_hid.dir/DependInfo.cmake"
+  "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/bt_audio/CMakeFiles/bt_audio.dir/DependInfo.cmake"
   "/home/xiaoyubb/xiangmu/app_sdk_v2/build/component/osal/CMakeFiles/osal.dir/DependInfo.cmake"
   )
 

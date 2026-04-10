@@ -1,0 +1,4 @@
+seq_symbols.lo: seq_symbols.c \
+ /home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/stdc-predef.h
+
+/home/xiaoyubb/Downloads/toolchain-sunxi-glibc-gcc-830/toolchain/include/stdc-predef.h:

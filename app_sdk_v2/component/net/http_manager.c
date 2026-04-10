@@ -23,28 +23,6 @@ static osal_thread_t net_thread = NULL;
 static weather_callback_fun weather_callback_func = NULL;
 static time_callback_fun time_callback_func = NULL; // 【新增】记录时间回调函数的全局变量
 
-// 音乐相关回调函数
-static music_search_callback_fun music_search_callback_func = NULL;
-static music_url_callback_fun music_url_callback_func = NULL;
-static music_lyric_callback_fun music_lyric_callback_func = NULL;
-static music_detail_callback_fun music_detail_callback_func = NULL;
-
-static music_download_callback_fun music_download_callback_func = NULL;
-
-/**
- * @brief URL 编码函数
- */
-static char *url_encode(const char *str)
-{
-    CURL *curl = curl_easy_init();
-    if (!curl)
-        return NULL;
-
-    char *encoded = curl_easy_escape(curl, str, 0);
-    curl_easy_cleanup(curl);
-    return encoded;
-}
-
 /**
  * @brief 组装HTTP请求URL
  */
@@ -65,19 +43,16 @@ static size_t write_callback(void *data, size_t size, size_t nmemb, void *userp)
     http_resp_data_t *mem = (http_resp_data_t *)userp;
 
     // 检查是否超过最大大小限制
-    if (mem->size + realsize > 1024 * 1024)
-    {
+    if (mem->size + realsize > 1024 * 1024) {
         // 超过限制，截断数据
         realsize = 1024 * 1024 - mem->size;
-        if (realsize == 0)
-        {
+        if (realsize == 0) {
             return size * nmemb; // 已经达到最大大小，返回原始大小表示成功
         }
     }
 
     char *ptr = realloc(mem->data, mem->size + realsize + 1);
-    if (!ptr)
-    {
+    if (!ptr) {
         // 内存分配失败，返回原始大小表示成功，避免curl使用longjmp
         return size * nmemb;
     }
@@ -101,12 +76,11 @@ int http_request_method(const char *host, const char *path, const char *method, 
     curl_easy_setopt(curl, CURLOPT_URL, url);
 
     // 通用配置
-    curl_easy_setopt(curl, CURLOPT_VERBOSE, 0L);         // 调试模式：关闭详细输出
-    curl_easy_setopt(curl, CURLOPT_TIMEOUT, 15L);        // 增加超时时间到15秒
-    curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);  // 禁用SSL证书验证
-    curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 10L); // 连接超时时间
-    curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);  // 跟随重定向
-
+    curl_easy_setopt(curl, CURLOPT_VERBOSE, 0L);        // 调试模式：启用详细输出模式
+    curl_easy_setopt(curl, CURLOPT_TIMEOUT, 10L);       // 设置请求超时时间（单位：秒）- 减少超时时间
+    curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L); // 禁用SSL证书验证
+    curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 5L); // 连接超时时间
+    
     // 设置响应处理
     http_resp_data_t response_data = {0};
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback); // 注册响应数据接收回调函数
@@ -130,25 +104,19 @@ int http_request_method(const char *host, const char *path, const char *method, 
     {
         printf("Response len: %ld\n", response_data.size);
         // 限制响应大小，避免内存溢出
-        if (response_data.size > 1024 * 1024)
-        {
+        if (response_data.size > 1024 * 1024) {
             printf("Response too large, truncating\n");
             char *truncated_data = malloc(1024 * 1024 + 1);
-            if (truncated_data)
-            {
+            if (truncated_data) {
                 memcpy(truncated_data, response_data.data, 1024 * 1024);
                 truncated_data[1024 * 1024] = '\0';
                 free(response_data.data);
                 *response_json = truncated_data;
-            }
-            else
-            {
+            } else {
                 free(response_data.data);
                 ret = -1;
             }
-        }
-        else
-        {
+        } else {
             *response_json = response_data.data; // 转移内存所有权
         }
     }
@@ -281,109 +249,7 @@ static void *net_thread_fun(void *arg)
                 }
                 break;
 
-            // 处理音乐搜索
-            case NET_MUSIC_SEARCH:
-                printf("handle NET_MUSIC_SEARCH\n");
-                response_json_str = NULL;
-                if (http_request_method(obj.host, obj.path, obj.type, obj.data, &response_json_str) == 0)
-                {
-                    if (response_json_str != NULL)
-                    {
-                        if (music_search_callback_func != NULL)
-                        {
-                            music_search_callback_func(response_json_str);
-                        }
-                        free(response_json_str);
-                    }
-                }
-                break;
 
-            // 处理获取歌曲播放地址
-            case NET_MUSIC_GET_URL:
-                printf("handle NET_MUSIC_GET_URL\n");
-                response_json_str = NULL;
-                if (http_request_method(obj.host, obj.path, obj.type, obj.data, &response_json_str) == 0)
-                {
-                    if (response_json_str != NULL)
-                    {
-                        if (music_url_callback_func != NULL)
-                        {
-                            music_url_callback_func(response_json_str);
-                        }
-                        free(response_json_str);
-                    }
-                }
-                break;
-
-            // 处理获取歌词
-            case NET_MUSIC_GET_LYRIC:
-                printf("handle NET_MUSIC_GET_LYRIC\n");
-                response_json_str = NULL;
-                if (http_request_method(obj.host, obj.path, obj.type, obj.data, &response_json_str) == 0)
-                {
-                    if (response_json_str != NULL)
-                    {
-                        if (music_lyric_callback_func != NULL)
-                        {
-                            music_lyric_callback_func(response_json_str);
-                        }
-                        free(response_json_str);
-                    }
-                }
-                break;
-
-            // 处理获取歌曲详情
-            case NET_MUSIC_GET_DETAIL:
-                printf("handle NET_MUSIC_GET_DETAIL\n");
-                response_json_str = NULL;
-                if (http_request_method(obj.host, obj.path, obj.type, obj.data, &response_json_str) == 0)
-                {
-                    if (response_json_str != NULL)
-                    {
-                        if (music_detail_callback_func != NULL)
-                        {
-                            music_detail_callback_func(response_json_str);
-                        }
-                        free(response_json_str);
-                    }
-                }
-                break;
-
-            case NET_MUSIC_DOWNLOAD:
-                printf("handle NET_MUSIC_DOWNLOAD: %s\n", obj.host);
-                {
-                    CURL *curl = curl_easy_init();
-                    if (curl)
-                    {
-                        // 写入到系统的 /tmp 临时目录（在内存里，速度极快不伤Flash）
-                        FILE *fp = fopen("/tmp/music.mp3", "wb");
-                        if (fp)
-                        {
-                            curl_easy_setopt(curl, CURLOPT_URL, obj.host);
-                            curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L); // 自动处理 302 跳转！
-                            curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
-                            curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp); // curl自动将数据写入文件
-
-                            CURLcode res = curl_easy_perform(curl);
-                            fclose(fp);
-
-                            if (res == CURLE_OK)
-                            {
-                                printf("MP3 下载成功！\n");
-                                if (music_download_callback_func != NULL)
-                                    music_download_callback_func(1);
-                            }
-                            else
-                            {
-                                printf("MP3 下载失败: %s\n", curl_easy_strerror(res));
-                                if (music_download_callback_func != NULL)
-                                    music_download_callback_func(0);
-                            }
-                        }
-                        curl_easy_cleanup(curl);
-                    }
-                }
-                break;
 
             default:
                 break;
@@ -444,107 +310,7 @@ void http_set_time_callback(time_callback_fun func)
     time_callback_func = func;
 }
 
-// 异步搜索歌曲
-void http_music_search_async(const char *keyword, int page, int limit)
-{
-    net_obj obj;
-    memset(&obj, 0, sizeof(net_obj));
 
-    // 修改为你的本地音乐服务器 IP
-    strcpy(obj.host, "http://10.26.246.145");
-
-    char *encoded_keyword = url_encode(keyword);
-    if (encoded_keyword)
-    {
-        // 使用 Meting API 格式
-        sprintf(obj.path, "/api?server=netease&type=search&id=%s", encoded_keyword);
-        free(encoded_keyword);
-    }
-    else
-    {
-        sprintf(obj.path, "/api?server=netease&type=search&id=%s", keyword);
-    }
-
-    obj.id = NET_MUSIC_SEARCH;
-    strcpy(obj.data, "");
-    strcpy(obj.type, "GET");
-    osal_queue_send(&net_queue, &obj, sizeof(net_obj), 1000);
-}
-
-// 异步获取歌曲播放地址
-void http_music_get_url_async(int song_id)
-{
-    net_obj obj;
-    memset(&obj, 0, sizeof(net_obj));
-    // 修改为你的本地音乐服务器 IP
-    strcpy(obj.host, "http://10.26.246.145");
-
-    // 使用 Meting API 获取 URL 格式
-    sprintf(obj.path, "/api?server=netease&type=url&id=%d", song_id);
-
-    obj.id = NET_MUSIC_GET_URL;
-    strcpy(obj.data, "");
-    strcpy(obj.type, "GET");
-    osal_queue_send(&net_queue, &obj, sizeof(net_obj), 1000);
-}
-
-// 异步获取歌词
-void http_music_get_lyric_async(int song_id)
-{
-    net_obj obj;
-    memset(&obj, 0, sizeof(net_obj));
-    strcpy(obj.host, "http://123.207.35.229");
-    sprintf(obj.path, "/lyric?id=%d", song_id);
-    obj.id = NET_MUSIC_GET_LYRIC;
-    strcpy(obj.data, "");
-    strcpy(obj.type, "GET");
-    int ret = osal_queue_send(&net_queue, &obj, sizeof(net_obj), 1000);
-    if (ret == OSAL_ERROR)
-    {
-        printf("queue send error in music get lyric\n");
-    }
-}
-
-// 异步获取歌曲详情
-void http_music_get_detail_async(int song_id)
-{
-    net_obj obj;
-    memset(&obj, 0, sizeof(net_obj));
-    strcpy(obj.host, "http://123.207.35.229");
-    sprintf(obj.path, "/song/detail?ids=%d", song_id);
-    obj.id = NET_MUSIC_GET_DETAIL;
-    strcpy(obj.data, "");
-    strcpy(obj.type, "GET");
-    int ret = osal_queue_send(&net_queue, &obj, sizeof(net_obj), 1000);
-    if (ret == OSAL_ERROR)
-    {
-        printf("queue send error in music get detail\n");
-    }
-}
-
-// 设置音乐搜索回调函数
-void http_set_music_search_callback(music_search_callback_fun func)
-{
-    music_search_callback_func = func;
-}
-
-// 设置音乐播放地址回调函数
-void http_set_music_url_callback(music_url_callback_fun func)
-{
-    music_url_callback_func = func;
-}
-
-// 设置音乐歌词回调函数
-void http_set_music_lyric_callback(music_lyric_callback_fun func)
-{
-    music_lyric_callback_func = func;
-}
-
-// 设置音乐详情回调函数
-void http_set_music_detail_callback(music_detail_callback_fun func)
-{
-    music_detail_callback_func = func;
-}
 
 // HTTP模块创建
 int http_request_create()
@@ -566,21 +332,4 @@ int http_request_create()
         return -1;
     }
     return 0;
-}
-
-void http_music_download_async(const char *url)
-{
-    net_obj obj;
-    memset(&obj, 0, sizeof(net_obj));
-    // 直接把整个链接塞进 host 即可
-    strncpy(obj.host, url, sizeof(obj.host) - 1);
-    strcpy(obj.path, "");
-    obj.id = NET_MUSIC_DOWNLOAD;
-    strcpy(obj.type, "GET");
-    osal_queue_send(&net_queue, &obj, sizeof(net_obj), 1000);
-}
-
-void http_set_music_download_callback(music_download_callback_fun func)
-{
-    music_download_callback_func = func;
 }

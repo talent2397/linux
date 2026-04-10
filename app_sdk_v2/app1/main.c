@@ -26,7 +26,7 @@ int main()
 
     http_request_create();
 
-    font_init();
+    FONT_INIT();
 
     // 页面初始化
     page_test_init();

@@ -6,8 +6,13 @@
 #include "image_conf.h"
 #include "font_conf.h"
 #include "page_conf.h"
+#include "device_data.h"
+#include "lv_clock.h"
 #include "wpa_manager.h"
 #include "http_manager.h"
+#include "em_hal_time.h"
+#include "app_bt_audio.h"
+#include "device_data.h" // 确保已经包含了这个头文件
 
 static lv_style_t com_style;
 static lv_obj_t *time_label;
@@ -94,6 +99,8 @@ static void lv_event_cb_func(lv_event_t *e)
     switch (id)
     {
     case MENU_SMALL_GAME:
+        lv_obj_clean(lv_scr_act());
+        init_page_ai();
         break;
     case MENU_BLUETOOTH_SPEAKER:
         lv_obj_clean(lv_scr_act());
@@ -177,7 +184,7 @@ static lv_obj_t *init_image_view(lv_obj_t *parent)
     lv_obj_set_scrollbar_mode(cont, LV_SCROLLBAR_MODE_OFF);
     lv_obj_set_flex_align(cont, LV_FLEX_ALIGN_SPACE_EVENLY, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
 
-    init_imag_text(cont, GET_IMAGE_PATH("image_game.png"), "小游戏", MENU_SMALL_GAME);
+    init_imag_text(cont, GET_IMAGE_PATH("image_game.png"), "AI助手", MENU_SMALL_GAME);
     init_imag_text(cont, GET_IMAGE_PATH("image_yinxiang.png"), "在线音乐", MENU_BLUETOOTH_SPEAKER);
     init_imag_text(cont, GET_IMAGE_PATH("icon_menu_dial.png"), "表盘设置", MENU_DIAL_SETTING);
     init_imag_text(cont, GET_IMAGE_PATH("icon_menu_city.png"), "城市设置", MENU_CITY_SETTING);
@@ -259,6 +266,16 @@ static void update_wifi_icon(WPA_WIFI_CONNECT_STATUS_E status)
 void wifi_connect_status_callback(WPA_WIFI_CONNECT_STATUS_E status)
 {
     update_wifi_icon(status);
+    // 【新增代码】将最新的 WiFi 状态同步给全局设备状态 device_state
+    if (status == WPA_WIFI_CONNECT)
+    {
+        // 传入 1 会自动将状态设为 WPA_WIFI_CONNECT，并调用 refresh_page_ai()
+        set_wifi_connect_state(1);
+    }
+    else
+    {
+        set_wifi_connect_state(0);
+    }
 }
 
 static void network_sync_timer_cb(lv_timer_t *timer)

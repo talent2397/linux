@@ -152,6 +152,114 @@ main.c.s:
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/main.c.s
 .PHONY : main.c.s
 
+ui/data/device_data.o: ui/data/device_data.c.o
+
+.PHONY : ui/data/device_data.o
+
+# target to build an object file
+ui/data/device_data.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/data/device_data.c.o
+.PHONY : ui/data/device_data.c.o
+
+ui/data/device_data.i: ui/data/device_data.c.i
+
+.PHONY : ui/data/device_data.i
+
+# target to preprocess a source file
+ui/data/device_data.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/data/device_data.c.i
+.PHONY : ui/data/device_data.c.i
+
+ui/data/device_data.s: ui/data/device_data.c.s
+
+.PHONY : ui/data/device_data.s
+
+# target to generate assembly for a file
+ui/data/device_data.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/data/device_data.c.s
+.PHONY : ui/data/device_data.c.s
+
+ui/page_ai/ipc_udp.o: ui/page_ai/ipc_udp.c.o
+
+.PHONY : ui/page_ai/ipc_udp.o
+
+# target to build an object file
+ui/page_ai/ipc_udp.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_ai/ipc_udp.c.o
+.PHONY : ui/page_ai/ipc_udp.c.o
+
+ui/page_ai/ipc_udp.i: ui/page_ai/ipc_udp.c.i
+
+.PHONY : ui/page_ai/ipc_udp.i
+
+# target to preprocess a source file
+ui/page_ai/ipc_udp.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_ai/ipc_udp.c.i
+.PHONY : ui/page_ai/ipc_udp.c.i
+
+ui/page_ai/ipc_udp.s: ui/page_ai/ipc_udp.c.s
+
+.PHONY : ui/page_ai/ipc_udp.s
+
+# target to generate assembly for a file
+ui/page_ai/ipc_udp.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_ai/ipc_udp.c.s
+.PHONY : ui/page_ai/ipc_udp.c.s
+
+ui/page_ai/page_ai.o: ui/page_ai/page_ai.c.o
+
+.PHONY : ui/page_ai/page_ai.o
+
+# target to build an object file
+ui/page_ai/page_ai.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_ai/page_ai.c.o
+.PHONY : ui/page_ai/page_ai.c.o
+
+ui/page_ai/page_ai.i: ui/page_ai/page_ai.c.i
+
+.PHONY : ui/page_ai/page_ai.i
+
+# target to preprocess a source file
+ui/page_ai/page_ai.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_ai/page_ai.c.i
+.PHONY : ui/page_ai/page_ai.c.i
+
+ui/page_ai/page_ai.s: ui/page_ai/page_ai.c.s
+
+.PHONY : ui/page_ai/page_ai.s
+
+# target to generate assembly for a file
+ui/page_ai/page_ai.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_ai/page_ai.c.s
+.PHONY : ui/page_ai/page_ai.c.s
+
+ui/page_ai/ui_system.o: ui/page_ai/ui_system.c.o
+
+.PHONY : ui/page_ai/ui_system.o
+
+# target to build an object file
+ui/page_ai/ui_system.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_ai/ui_system.c.o
+.PHONY : ui/page_ai/ui_system.c.o
+
+ui/page_ai/ui_system.i: ui/page_ai/ui_system.c.i
+
+.PHONY : ui/page_ai/ui_system.i
+
+# target to preprocess a source file
+ui/page_ai/ui_system.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_ai/ui_system.c.i
+.PHONY : ui/page_ai/ui_system.c.i
+
+ui/page_ai/ui_system.s: ui/page_ai/ui_system.c.s
+
+.PHONY : ui/page_ai/ui_system.s
+
+# target to generate assembly for a file
+ui/page_ai/ui_system.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_ai/ui_system.c.s
+.PHONY : ui/page_ai/ui_system.c.s
+
 ui/page_alarm.o: ui/page_alarm.c.o
 
 .PHONY : ui/page_alarm.o
@@ -206,6 +314,33 @@ ui/page_alarm_dialog.c.s:
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_alarm_dialog.c.s
 .PHONY : ui/page_alarm_dialog.c.s
 
+ui/page_alarm_remind.o: ui/page_alarm_remind.c.o
+
+.PHONY : ui/page_alarm_remind.o
+
+# target to build an object file
+ui/page_alarm_remind.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_alarm_remind.c.o
+.PHONY : ui/page_alarm_remind.c.o
+
+ui/page_alarm_remind.i: ui/page_alarm_remind.c.i
+
+.PHONY : ui/page_alarm_remind.i
+
+# target to preprocess a source file
+ui/page_alarm_remind.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_alarm_remind.c.i
+.PHONY : ui/page_alarm_remind.c.i
+
+ui/page_alarm_remind.s: ui/page_alarm_remind.c.s
+
+.PHONY : ui/page_alarm_remind.s
+
+# target to generate assembly for a file
+ui/page_alarm_remind.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_alarm_remind.c.s
+.PHONY : ui/page_alarm_remind.c.s
+
 ui/page_city_setting.o: ui/page_city_setting.c.o
 
 .PHONY : ui/page_city_setting.o
@@ -232,6 +367,33 @@ ui/page_city_setting.s: ui/page_city_setting.c.s
 ui/page_city_setting.c.s:
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_city_setting.c.s
 .PHONY : ui/page_city_setting.c.s
+
+ui/page_conf.o: ui/page_conf.c.o
+
+.PHONY : ui/page_conf.o
+
+# target to build an object file
+ui/page_conf.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_conf.c.o
+.PHONY : ui/page_conf.c.o
+
+ui/page_conf.i: ui/page_conf.c.i
+
+.PHONY : ui/page_conf.i
+
+# target to preprocess a source file
+ui/page_conf.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_conf.c.i
+.PHONY : ui/page_conf.c.i
+
+ui/page_conf.s: ui/page_conf.c.s
+
+.PHONY : ui/page_conf.s
+
+# target to generate assembly for a file
+ui/page_conf.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_conf.c.s
+.PHONY : ui/page_conf.c.s
 
 ui/page_main.o: ui/page_main.c.o
 
@@ -422,6 +584,33 @@ ui/page_tomato_setting.c.s:
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_tomato_setting.c.s
 .PHONY : ui/page_tomato_setting.c.s
 
+ui/page_warn.o: ui/page_warn.c.o
+
+.PHONY : ui/page_warn.o
+
+# target to build an object file
+ui/page_warn.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_warn.c.o
+.PHONY : ui/page_warn.c.o
+
+ui/page_warn.i: ui/page_warn.c.i
+
+.PHONY : ui/page_warn.i
+
+# target to preprocess a source file
+ui/page_warn.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_warn.c.i
+.PHONY : ui/page_warn.c.i
+
+ui/page_warn.s: ui/page_warn.c.s
+
+.PHONY : ui/page_warn.s
+
+# target to generate assembly for a file
+ui/page_warn.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_warn.c.s
+.PHONY : ui/page_warn.c.s
+
 ui/page_wifi_setting.o: ui/page_wifi_setting.c.o
 
 .PHONY : ui/page_wifi_setting.o
@@ -449,6 +638,168 @@ ui/page_wifi_setting.c.s:
 	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/page_wifi_setting.c.s
 .PHONY : ui/page_wifi_setting.c.s
 
+ui/utils/ble_mesh.o: ui/utils/ble_mesh.c.o
+
+.PHONY : ui/utils/ble_mesh.o
+
+# target to build an object file
+ui/utils/ble_mesh.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/ble_mesh.c.o
+.PHONY : ui/utils/ble_mesh.c.o
+
+ui/utils/ble_mesh.i: ui/utils/ble_mesh.c.i
+
+.PHONY : ui/utils/ble_mesh.i
+
+# target to preprocess a source file
+ui/utils/ble_mesh.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/ble_mesh.c.i
+.PHONY : ui/utils/ble_mesh.c.i
+
+ui/utils/ble_mesh.s: ui/utils/ble_mesh.c.s
+
+.PHONY : ui/utils/ble_mesh.s
+
+# target to generate assembly for a file
+ui/utils/ble_mesh.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/ble_mesh.c.s
+.PHONY : ui/utils/ble_mesh.c.s
+
+ui/utils/clock/lv_clock0.o: ui/utils/clock/lv_clock0.c.o
+
+.PHONY : ui/utils/clock/lv_clock0.o
+
+# target to build an object file
+ui/utils/clock/lv_clock0.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/clock/lv_clock0.c.o
+.PHONY : ui/utils/clock/lv_clock0.c.o
+
+ui/utils/clock/lv_clock0.i: ui/utils/clock/lv_clock0.c.i
+
+.PHONY : ui/utils/clock/lv_clock0.i
+
+# target to preprocess a source file
+ui/utils/clock/lv_clock0.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/clock/lv_clock0.c.i
+.PHONY : ui/utils/clock/lv_clock0.c.i
+
+ui/utils/clock/lv_clock0.s: ui/utils/clock/lv_clock0.c.s
+
+.PHONY : ui/utils/clock/lv_clock0.s
+
+# target to generate assembly for a file
+ui/utils/clock/lv_clock0.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/clock/lv_clock0.c.s
+.PHONY : ui/utils/clock/lv_clock0.c.s
+
+ui/utils/clock/lv_clock1.o: ui/utils/clock/lv_clock1.c.o
+
+.PHONY : ui/utils/clock/lv_clock1.o
+
+# target to build an object file
+ui/utils/clock/lv_clock1.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/clock/lv_clock1.c.o
+.PHONY : ui/utils/clock/lv_clock1.c.o
+
+ui/utils/clock/lv_clock1.i: ui/utils/clock/lv_clock1.c.i
+
+.PHONY : ui/utils/clock/lv_clock1.i
+
+# target to preprocess a source file
+ui/utils/clock/lv_clock1.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/clock/lv_clock1.c.i
+.PHONY : ui/utils/clock/lv_clock1.c.i
+
+ui/utils/clock/lv_clock1.s: ui/utils/clock/lv_clock1.c.s
+
+.PHONY : ui/utils/clock/lv_clock1.s
+
+# target to generate assembly for a file
+ui/utils/clock/lv_clock1.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/clock/lv_clock1.c.s
+.PHONY : ui/utils/clock/lv_clock1.c.s
+
+ui/utils/clock/lv_clock2.o: ui/utils/clock/lv_clock2.c.o
+
+.PHONY : ui/utils/clock/lv_clock2.o
+
+# target to build an object file
+ui/utils/clock/lv_clock2.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/clock/lv_clock2.c.o
+.PHONY : ui/utils/clock/lv_clock2.c.o
+
+ui/utils/clock/lv_clock2.i: ui/utils/clock/lv_clock2.c.i
+
+.PHONY : ui/utils/clock/lv_clock2.i
+
+# target to preprocess a source file
+ui/utils/clock/lv_clock2.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/clock/lv_clock2.c.i
+.PHONY : ui/utils/clock/lv_clock2.c.i
+
+ui/utils/clock/lv_clock2.s: ui/utils/clock/lv_clock2.c.s
+
+.PHONY : ui/utils/clock/lv_clock2.s
+
+# target to generate assembly for a file
+ui/utils/clock/lv_clock2.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/clock/lv_clock2.c.s
+.PHONY : ui/utils/clock/lv_clock2.c.s
+
+ui/utils/file/file_save.o: ui/utils/file/file_save.c.o
+
+.PHONY : ui/utils/file/file_save.o
+
+# target to build an object file
+ui/utils/file/file_save.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/file/file_save.c.o
+.PHONY : ui/utils/file/file_save.c.o
+
+ui/utils/file/file_save.i: ui/utils/file/file_save.c.i
+
+.PHONY : ui/utils/file/file_save.i
+
+# target to preprocess a source file
+ui/utils/file/file_save.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/file/file_save.c.i
+.PHONY : ui/utils/file/file_save.c.i
+
+ui/utils/file/file_save.s: ui/utils/file/file_save.c.s
+
+.PHONY : ui/utils/file/file_save.s
+
+# target to generate assembly for a file
+ui/utils/file/file_save.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/file/file_save.c.s
+.PHONY : ui/utils/file/file_save.c.s
+
+ui/utils/utils.o: ui/utils/utils.c.o
+
+.PHONY : ui/utils/utils.o
+
+# target to build an object file
+ui/utils/utils.c.o:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/utils.c.o
+.PHONY : ui/utils/utils.c.o
+
+ui/utils/utils.i: ui/utils/utils.c.i
+
+.PHONY : ui/utils/utils.i
+
+# target to preprocess a source file
+ui/utils/utils.c.i:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/utils.c.i
+.PHONY : ui/utils/utils.c.i
+
+ui/utils/utils.s: ui/utils/utils.c.s
+
+.PHONY : ui/utils/utils.s
+
+# target to generate assembly for a file
+ui/utils/utils.c.s:
+	cd /home/xiaoyubb/xiangmu/app_sdk_v2/build && $(MAKE) -f app1/CMakeFiles/demo1.dir/build.make app1/CMakeFiles/demo1.dir/ui/utils/utils.c.s
+.PHONY : ui/utils/utils.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -461,15 +812,33 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... ui/data/device_data.o"
+	@echo "... ui/data/device_data.i"
+	@echo "... ui/data/device_data.s"
+	@echo "... ui/page_ai/ipc_udp.o"
+	@echo "... ui/page_ai/ipc_udp.i"
+	@echo "... ui/page_ai/ipc_udp.s"
+	@echo "... ui/page_ai/page_ai.o"
+	@echo "... ui/page_ai/page_ai.i"
+	@echo "... ui/page_ai/page_ai.s"
+	@echo "... ui/page_ai/ui_system.o"
+	@echo "... ui/page_ai/ui_system.i"
+	@echo "... ui/page_ai/ui_system.s"
 	@echo "... ui/page_alarm.o"
 	@echo "... ui/page_alarm.i"
 	@echo "... ui/page_alarm.s"
 	@echo "... ui/page_alarm_dialog.o"
 	@echo "... ui/page_alarm_dialog.i"
 	@echo "... ui/page_alarm_dialog.s"
+	@echo "... ui/page_alarm_remind.o"
+	@echo "... ui/page_alarm_remind.i"
+	@echo "... ui/page_alarm_remind.s"
 	@echo "... ui/page_city_setting.o"
 	@echo "... ui/page_city_setting.i"
 	@echo "... ui/page_city_setting.s"
+	@echo "... ui/page_conf.o"
+	@echo "... ui/page_conf.i"
+	@echo "... ui/page_conf.s"
 	@echo "... ui/page_main.o"
 	@echo "... ui/page_main.i"
 	@echo "... ui/page_main.s"
@@ -491,9 +860,30 @@ help:
 	@echo "... ui/page_tomato_setting.o"
 	@echo "... ui/page_tomato_setting.i"
 	@echo "... ui/page_tomato_setting.s"
+	@echo "... ui/page_warn.o"
+	@echo "... ui/page_warn.i"
+	@echo "... ui/page_warn.s"
 	@echo "... ui/page_wifi_setting.o"
 	@echo "... ui/page_wifi_setting.i"
 	@echo "... ui/page_wifi_setting.s"
+	@echo "... ui/utils/ble_mesh.o"
+	@echo "... ui/utils/ble_mesh.i"
+	@echo "... ui/utils/ble_mesh.s"
+	@echo "... ui/utils/clock/lv_clock0.o"
+	@echo "... ui/utils/clock/lv_clock0.i"
+	@echo "... ui/utils/clock/lv_clock0.s"
+	@echo "... ui/utils/clock/lv_clock1.o"
+	@echo "... ui/utils/clock/lv_clock1.i"
+	@echo "... ui/utils/clock/lv_clock1.s"
+	@echo "... ui/utils/clock/lv_clock2.o"
+	@echo "... ui/utils/clock/lv_clock2.i"
+	@echo "... ui/utils/clock/lv_clock2.s"
+	@echo "... ui/utils/file/file_save.o"
+	@echo "... ui/utils/file/file_save.i"
+	@echo "... ui/utils/file/file_save.s"
+	@echo "... ui/utils/utils.o"
+	@echo "... ui/utils/utils.i"
+	@echo "... ui/utils/utils.s"
 .PHONY : help
 
 

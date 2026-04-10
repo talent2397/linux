@@ -124,6 +124,45 @@ lvgl_porting/fast:
 .PHONY : lvgl_porting/fast
 
 #=============================================================================
+# Target rules for targets named app_sound
+
+# Build rule for target.
+app_sound: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 app_sound
+.PHONY : app_sound
+
+# fast build rule for target.
+app_sound/fast:
+	$(MAKE) -f app_sound/CMakeFiles/app_sound.dir/build.make app_sound/CMakeFiles/app_sound.dir/build
+.PHONY : app_sound/fast
+
+#=============================================================================
+# Target rules for targets named app_control_center
+
+# Build rule for target.
+app_control_center: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 app_control_center
+.PHONY : app_control_center
+
+# fast build rule for target.
+app_control_center/fast:
+	$(MAKE) -f app_control_center/CMakeFiles/app_control_center.dir/build.make app_control_center/CMakeFiles/app_control_center.dir/build
+.PHONY : app_control_center/fast
+
+#=============================================================================
+# Target rules for targets named app_xiaozhi
+
+# Build rule for target.
+app_xiaozhi: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 app_xiaozhi
+.PHONY : app_xiaozhi
+
+# fast build rule for target.
+app_xiaozhi/fast:
+	$(MAKE) -f app_xiaozhi/CMakeFiles/app_xiaozhi.dir/build.make app_xiaozhi/CMakeFiles/app_xiaozhi.dir/build
+.PHONY : app_xiaozhi/fast
+
+#=============================================================================
 # Target rules for targets named osal
 
 # Build rule for target.
@@ -202,6 +241,19 @@ usb_hid/fast:
 .PHONY : usb_hid/fast
 
 #=============================================================================
+# Target rules for targets named bt_audio
+
+# Build rule for target.
+bt_audio: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 bt_audio
+.PHONY : bt_audio
+
+# fast build rule for target.
+bt_audio/fast:
+	$(MAKE) -f component/bt_audio/CMakeFiles/bt_audio.dir/build.make component/bt_audio/CMakeFiles/bt_audio.dir/build
+.PHONY : bt_audio/fast
+
+#=============================================================================
 # Target rules for targets named lvgl_demos
 
 # Build rule for target.
@@ -249,12 +301,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... lvgl_porting"
+	@echo "... app_sound"
+	@echo "... app_control_center"
+	@echo "... app_xiaozhi"
 	@echo "... osal"
 	@echo "... wifi"
 	@echo "... http"
 	@echo "... player"
 	@echo "... font"
 	@echo "... usb_hid"
+	@echo "... bt_audio"
 	@echo "... lvgl_demos"
 	@echo "... lvgl"
 	@echo "... demo1"
