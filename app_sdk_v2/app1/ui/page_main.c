@@ -271,6 +271,10 @@ void wifi_connect_status_callback(WPA_WIFI_CONNECT_STATUS_E status)
     {
         // 传入 1 会自动将状态设为 WPA_WIFI_CONNECT，并调用 refresh_page_ai()
         set_wifi_connect_state(1);
+        // 2. 【新增功能】调用 shell 命令同步阿里云 NTP 时间
+        // 注意末尾的 '&'，它能让命令在后台异步执行，防止阻塞 UI 或者事件线程
+        printf("WiFi connected, syncing time with NTP...\n");
+        system("ntpd -n -q -p ntp.aliyun.com &");
     }
     else
     {

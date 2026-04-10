@@ -81,7 +81,7 @@ demo1 &
 
 app_sound &
 
-app_control_center & 
+app_control_center &
 
 
 ```
