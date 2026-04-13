@@ -4,6 +4,7 @@
 app1/CMakeFiles/demo1.dir/main.c.o: ../app1/res/font/font_conf.h
 app1/CMakeFiles/demo1.dir/main.c.o: ../app1/res/music/music_conf.h
 app1/CMakeFiles/demo1.dir/main.c.o: ../app1/res/res_conf.h
+app1/CMakeFiles/demo1.dir/main.c.o: ../app1/ui/page_ai/ui_system.h
 app1/CMakeFiles/demo1.dir/main.c.o: ../app1/ui/page_conf.h
 app1/CMakeFiles/demo1.dir/main.c.o: ../component/font/font_utils.h
 app1/CMakeFiles/demo1.dir/main.c.o: ../component/hal/em_hal_audio.h

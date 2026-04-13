@@ -12,55 +12,29 @@ res_conf.h
 font_utils.h
 ../app1/res/font/font_utils.h
 
-../app1/res/image/image_conf.h
-res_conf.h
-../app1/res/image/res_conf.h
-
 ../app1/res/music/music_conf.h
 res_conf.h
 ../app1/res/music/res_conf.h
 
 ../app1/res/res_conf.h
 
-../app1/ui/data/device_data.h
-stdio.h
--
-lvgl.h
-../app1/ui/data/lvgl.h
-wpa_manager.h
-../app1/ui/data/wpa_manager.h
+../app1/ui/page_ai/ui_system.h
 
-../app1/ui/utils/clock/lv_clock.h
-stdio.h
--
+../app1/ui/page_conf.h
 lvgl.h
-../app1/ui/utils/clock/lvgl.h
-time.h
--
-sys/time.h
--
-image_conf.h
-../app1/ui/utils/clock/image_conf.h
-
-../component/bt_audio/app_bt_audio.h
-stdbool.h
--
-stdint.h
--
-stdio.h
--
+../app1/ui/lvgl.h
+music_conf.h
+../app1/ui/music_conf.h
+em_hal_audio.h
+../app1/ui/em_hal_audio.h
+audio_player_async.h
+../app1/ui/audio_player_async.h
 
 ../component/font/font_utils.h
 lvgl/lvgl.h
 ../component/font/lvgl/lvgl.h
 
 ../component/hal/em_hal_audio.h
-
-../component/hal/em_hal_time.h
-stdint.h
--
-sys/time.h
--
 
 ../component/net/http_manager.h
 
@@ -1080,45 +1054,25 @@ lv_label.h
 lv_label.h
 ../lvgl/src/widgets/lv_label.h
 
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_conf.h
-lvgl.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/lvgl.h
-music_conf.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/music_conf.h
-em_hal_audio.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/em_hal_audio.h
-audio_player_async.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/audio_player_async.h
-
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_main.c
-stdio.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/main.c
+unistd.h
 -
 stdlib.h
 -
+stdio.h
+-
 string.h
 -
-time.h
--
 lvgl.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/lvgl.h
-image_conf.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/image_conf.h
-font_conf.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/font_conf.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/lvgl.h
 page_conf.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/page_conf.h
-device_data.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/device_data.h
-lv_clock.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/lv_clock.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/page_conf.h
+font_conf.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/font_conf.h
 wpa_manager.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/wpa_manager.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/wpa_manager.h
 http_manager.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/http_manager.h
-em_hal_time.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/em_hal_time.h
-app_bt_audio.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/app_bt_audio.h
-device_data.h
-/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui/device_data.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/http_manager.h
+ui_system.h
+/home/xiaoyubb/xiangmu/app_sdk_v2/app1/ui_system.h
 

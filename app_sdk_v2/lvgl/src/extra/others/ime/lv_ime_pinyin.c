@@ -105,7 +105,7 @@ lv_pinyin_dict_t lv_ime_pinyin_def_dict[] = {
     { "chi", "尺吃持赤池遅歯" },
     { "chong", "充种重種" },
     { "chu", "出初楚触處処" },
-    { "chuan", "川船傳" },
+    { "chuan", "川穿船传串喘傳" },
     { "chuang", "創窓" },
     { "chun", "春" },
     { "ci", "此次辞差" },

@@ -215,7 +215,6 @@ void init_page_ai()
         lv_obj_set_style_text_color(g_pt_lv_100ask_xz_ai.label_chat, lv_color_hex(0xFFFFFF), 0);
         obj_font_set(g_pt_lv_100ask_xz_ai.label_chat, FONT_TYPE_CN, 20);
         lv_label_set_text(g_pt_lv_100ask_xz_ai.label_chat, "Hi！有什么可以帮到你呢？");
-        is_init = true;
     }
     else
     {
@@ -226,6 +225,9 @@ void init_page_ai()
         lv_obj_set_style_text_color(label, lv_color_hex(0xFFFFFF), 0);
         lv_label_set_text(label, "请先连接网络后，再打开此页面体验");
     }
+
+    // 无论WiFi是否连接，只要页面初始化完成就设置 is_init = true
+    is_init = true;
 }
 
 void refresh_page_ai()
@@ -233,7 +235,6 @@ void refresh_page_ai()
     if (is_init)
     {
         printf("refresh_page_ai: 当前在AI页面，WiFi状态改变，刷新页面\n");
-        is_init = false;
         delete_current_page(&com_style);
         init_page_ai();
     }

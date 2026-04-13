@@ -7,6 +7,7 @@
 #include "font_conf.h"
 #include "wpa_manager.h"
 #include "http_manager.h"
+#include "ui_system.h"
 
 extern void lv_port_disp_init(bool is_disp_orientation);
 extern void lv_port_indev_init(void);
@@ -27,6 +28,9 @@ int main()
     http_request_create();
 
     FONT_INIT();
+
+    // AI系统初始化 - 初始化UDP IPC端点以接收AI服务消息
+    ui_system_init();
 
     // 页面初始化
     page_test_init();
